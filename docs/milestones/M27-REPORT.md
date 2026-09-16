@@ -1,6 +1,6 @@
 # M27 — Proof Trail Integrity
 
-**Status:** Built — drafts awaiting owner review
+**Status:** Built and applied — awaiting owner lock
 **Approved:** owner, after the M26 lock audit
 **Scope:** make the destinations of the evidence trail worthy of the claims pointing at
 them, and make provenance continuously verified rather than verified once.
@@ -106,13 +106,23 @@ against the live corpus; the issue-creation branch has not been exercised, becau
 doing so would mean breaking a real pin. The verification logic underneath it is unit
 tested for every failure mode.
 
+**READMEs** — owner reviewed and approved all four, applied 2026-09-16:
+
+| Repository                   | Before      | After                         |
+| ---------------------------- | ----------- | ----------------------------- |
+| `MLOps-Governance-Dashboard` | 29 bytes    | 5,036                         |
+| `Malware-Detection-Using-ML` | 28 bytes    | 2,910                         |
+| `Boring_AI`                  | 1,583 bytes | 3,826                         |
+| `Steward_AI`                 | 5,707 bytes | 6,388 (patched, not replaced) |
+
+Then checked what the new pages actually do: all 31 links across the four READMEs
+resolve, and `verify:sources` still reports 18/18. A dead link on a page arguing for
+provenance would be worse than no link at all.
+
 ## Not done
 
-- **Applying the README drafts.** Owner's call; paste-by-hand by request.
 - **The human launch checklist** from M26 — real phone, screen reader, print, reading
   the claims cold.
+- **Profile bio and pinned repositories.** Pinning needs a GraphQL mutation rather than
+  `gh repo edit`; not done without asking.
 - **Six Dependabot PRs** and three actions on deprecated Node 20.
-
-## Owner decisions needed
-
-1. Review the four drafts, then apply or amend.

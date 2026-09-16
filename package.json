@@ -2,26 +2,59 @@
   "name": "anish-runtime",
   "version": "0.1.0",
   "private": true,
+  "description": "ANISH // RUNTIME — executable professional identity (foundation)",
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@12.3.4",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:status": "node scripts/report-test-status.mjs",
+    "test:e2e": "playwright test",
+    "test:e2e:prod": "node scripts/run-e2e-prod.mjs",
+    "validate:scope": "node scripts/validate-scope.mjs",
+    "validate:evidence": "tsx scripts/validate-evidence.ts",
+    "freeze:check": "tsx scripts/freeze-evidence.ts --check",
+    "freeze:write": "tsx scripts/freeze-evidence.ts --write",
+    "freeze:ledger": "tsx scripts/freeze-evidence.ts --ledger",
+    "check:bundle": "node scripts/check-bundle-budget.mjs",
+    "ci": "pnpm validate:scope && pnpm validate:evidence && pnpm freeze:check && pnpm format:check && pnpm lint && pnpm typecheck && pnpm test:status && pnpm build && pnpm check:bundle",
+    "ci:full": "pnpm ci && pnpm test:e2e:prod"
   },
   "dependencies": {
     "next": "16.3.5",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "zod": "^4.6.4"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.1.1",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
+    "eslint-config-prettier": "^10.1.8",
+    "jsdom": "^30.0.1",
+    "prettier": "^3.9.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
-  },
-  "packageManager": "pnpm@12.3.4"
+    "tsx": "^4.20.5",
+    "typescript": "^5",
+    "vitest": "^5.0.0"
+  }
 }

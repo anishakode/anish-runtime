@@ -1,0 +1,16 @@
+node_modules
+.next
+out
+coverage
+playwright-report
+test-results
+pnpm-lock.yaml
+pnpm-workspace.yaml
+*.tsbuildinfo
+ANISH_RUNTIME_MASTER_HANDOFF.md
+AGENTS.md
+CLAUDE.md
+.cursor/
+.firecrawl/
+docs/testing/TEST-STATUS.md
+docs/testing/.vitest-last.json

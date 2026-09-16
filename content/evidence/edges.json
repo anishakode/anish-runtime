@@ -1,0 +1,279 @@
+[
+  {
+    "id": "edge.mlops-project-node",
+    "from": "proj.mlops-governance",
+    "to": "ev.mlops.project",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.mlops-psi",
+    "from": "proj.mlops-governance",
+    "to": "ev.mlops.psi",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.mlops-ks",
+    "from": "proj.mlops-governance",
+    "to": "ev.mlops.ks",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.mlops-drift",
+    "from": "proj.mlops-governance",
+    "to": "ev.mlops.drift",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.mlops-audit",
+    "from": "proj.mlops-governance",
+    "to": "ev.mlops.audit",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.mlops-policy",
+    "from": "proj.mlops-governance",
+    "to": "ev.mlops.policy",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.mlops-monitoring",
+    "from": "proj.mlops-governance",
+    "to": "ev.mlops.monitoring",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.mlops-lab-bound",
+    "from": "ev.mlops.runtime-lab",
+    "to": "proj.mlops-governance",
+    "type": "derived_from"
+  },
+  {
+    "id": "edge.mlops-lab-boundary",
+    "from": "ev.mlops.runtime-lab",
+    "to": "ev.mlops.project",
+    "type": "bounded_by"
+  },
+  {
+    "id": "edge.psi-part-drift",
+    "from": "ev.mlops.psi",
+    "to": "ev.mlops.drift",
+    "type": "part_of"
+  },
+  {
+    "id": "edge.ks-part-drift",
+    "from": "ev.mlops.ks",
+    "to": "ev.mlops.drift",
+    "type": "part_of"
+  },
+
+  {
+    "id": "edge.steward-project-node",
+    "from": "proj.steward-ai",
+    "to": "ev.steward.project",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.steward-fhir",
+    "from": "proj.steward-ai",
+    "to": "ev.steward.fhir",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.steward-mcp",
+    "from": "proj.steward-ai",
+    "to": "ev.steward.mcp",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.steward-a2a",
+    "from": "proj.steward-ai",
+    "to": "ev.steward.a2a",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.steward-safety",
+    "from": "ev.steward.project",
+    "to": "ev.steward.safety-boundary",
+    "type": "bounded_by"
+  },
+  {
+    "id": "edge.steward-runtime-lab",
+    "from": "proj.steward-ai",
+    "to": "ev.steward.runtime-lab",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.steward-lab-bounded",
+    "from": "ev.steward.runtime-lab",
+    "to": "ev.steward.safety-boundary",
+    "type": "bounded_by"
+  },
+
+  {
+    "id": "edge.malware-project-node",
+    "from": "proj.malware-pdf",
+    "to": "ev.malware.project",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.malware-report",
+    "from": "proj.malware-pdf",
+    "to": "ev.malware.report",
+    "type": "supported_by"
+  },
+  {
+    "id": "edge.malware-shap-limit",
+    "from": "ev.malware.project",
+    "to": "ev.malware.shap-limited",
+    "type": "bounded_by"
+  },
+  {
+    "id": "edge.malware-runtime-lab",
+    "from": "proj.malware-pdf",
+    "to": "ev.malware.runtime-lab",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.malware-lab-shap",
+    "from": "ev.malware.runtime-lab",
+    "to": "ev.malware.shap-limited",
+    "type": "bounded_by"
+  },
+
+  {
+    "id": "edge.boring-project",
+    "from": "proj.boring-ai",
+    "to": "ev.boring.project",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.boring-det",
+    "from": "proj.boring-ai",
+    "to": "ev.boring.deterministic",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.fraud-project",
+    "from": "proj.fraud-detection",
+    "to": "ev.fraud.project",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.feynn-project",
+    "from": "proj.feynn-ev",
+    "to": "ev.feynn.project",
+    "type": "demonstrates"
+  },
+
+  {
+    "id": "edge.archive-age",
+    "from": "proj.age-gender",
+    "to": "ev.archive.age-gender",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.archive-pdf",
+    "from": "proj.pdf-extract",
+    "to": "ev.archive.pdf-extract",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.archive-park",
+    "from": "proj.park-finder",
+    "to": "ev.archive.park-finder",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.archive-netflix",
+    "from": "proj.netflix-clone",
+    "to": "ev.archive.netflix",
+    "type": "demonstrates"
+  },
+
+  {
+    "id": "edge.cardstack-exp",
+    "from": "exp.cardstack",
+    "to": "ev.exp.cardstack",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.cardstack-api",
+    "from": "exp.cardstack",
+    "to": "ev.cardstack.api-defects",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.cardstack-audit",
+    "from": "exp.cardstack",
+    "to": "ev.cardstack.audit-failures",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.cardstack-incident",
+    "from": "exp.cardstack",
+    "to": "ev.cardstack.incident-speed",
+    "type": "demonstrates"
+  },
+  {
+    "id": "edge.cardstack-python",
+    "from": "exp.cardstack",
+    "to": "ev.skill.python",
+    "type": "uses_skill"
+  },
+  {
+    "id": "edge.cardstack-sql",
+    "from": "exp.cardstack",
+    "to": "ev.skill.sql",
+    "type": "uses_skill"
+  },
+  {
+    "id": "edge.cardstack-aws",
+    "from": "exp.cardstack",
+    "to": "ev.skill.aws",
+    "type": "uses_skill"
+  },
+  {
+    "id": "edge.cardstack-java",
+    "from": "exp.cardstack",
+    "to": "ev.skill.java-spring",
+    "type": "uses_skill"
+  },
+  {
+    "id": "edge.cardstack-rest",
+    "from": "exp.cardstack",
+    "to": "ev.skill.rest-apis",
+    "type": "uses_skill"
+  },
+
+  {
+    "id": "edge.mlops-uses-python",
+    "from": "proj.mlops-governance",
+    "to": "ev.skill.python",
+    "type": "uses_skill"
+  },
+  {
+    "id": "edge.steward-uses-python",
+    "from": "proj.steward-ai",
+    "to": "ev.skill.python",
+    "type": "uses_skill"
+  },
+
+  {
+    "id": "edge.identity-edu-msc",
+    "from": "ev.identity.anish-akode",
+    "to": "ev.edu.msc",
+    "type": "related_to"
+  },
+  {
+    "id": "edge.identity-edu-btech",
+    "from": "ev.identity.anish-akode",
+    "to": "ev.edu.btech",
+    "type": "related_to"
+  },
+  {
+    "id": "edge.identity-exp",
+    "from": "ev.identity.anish-akode",
+    "to": "ev.exp.cardstack",
+    "type": "related_to"
+  }
+]

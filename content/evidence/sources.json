@@ -1,0 +1,184 @@
+[
+  {
+    "id": "src.owner.cardstack-impact",
+    "type": "owner_confirmation",
+    "title": "Cardstack impact metrics (owner confirmation)",
+    "note": "Professional impact confirmed by Anish. Proprietary employer source code is not public."
+  },
+  {
+    "id": "src.resume.canonical",
+    "type": "resume",
+    "title": "Canonical résumé / profile documentation",
+    "note": "Education and positioning documented in canonical résumé/profile evidence."
+  },
+  {
+    "id": "src.mlops.repo",
+    "type": "github_repo",
+    "title": "MLOps Governance Dashboard repository",
+    "repo": "anishakode/MLOps-Governance-Dashboard",
+    "commitSha": "a2ba6fc45aaece5c3241569271bcca77124da2b4",
+    "url": "https://github.com/anishakode/MLOps-Governance-Dashboard/tree/a2ba6fc45aaece5c3241569271bcca77124da2b4"
+  },
+  {
+    "id": "src.mlops.drift-py",
+    "type": "github_file",
+    "title": "Drift / PSI utilities",
+    "repo": "anishakode/MLOps-Governance-Dashboard",
+    "path": "backend/app/utils/drift.py",
+    "commitSha": "a2ba6fc45aaece5c3241569271bcca77124da2b4",
+    "url": "https://github.com/anishakode/MLOps-Governance-Dashboard/blob/a2ba6fc45aaece5c3241569271bcca77124da2b4/backend/app/utils/drift.py"
+  },
+  {
+    "id": "src.mlops.stats-py",
+    "type": "github_file",
+    "title": "Stats / KS utilities",
+    "repo": "anishakode/MLOps-Governance-Dashboard",
+    "path": "backend/app/utils/stats.py",
+    "commitSha": "a2ba6fc45aaece5c3241569271bcca77124da2b4",
+    "url": "https://github.com/anishakode/MLOps-Governance-Dashboard/blob/a2ba6fc45aaece5c3241569271bcca77124da2b4/backend/app/utils/stats.py"
+  },
+  {
+    "id": "src.mlops.audit-sink",
+    "type": "github_file",
+    "title": "Audit sink utilities",
+    "repo": "anishakode/MLOps-Governance-Dashboard",
+    "path": "backend/app/utils/audit_sink.py",
+    "commitSha": "a2ba6fc45aaece5c3241569271bcca77124da2b4",
+    "url": "https://github.com/anishakode/MLOps-Governance-Dashboard/blob/a2ba6fc45aaece5c3241569271bcca77124da2b4/backend/app/utils/audit_sink.py"
+  },
+  {
+    "id": "src.mlops.policy",
+    "type": "github_file",
+    "title": "Policy utilities",
+    "repo": "anishakode/MLOps-Governance-Dashboard",
+    "path": "backend/app/utils/policy.py",
+    "commitSha": "a2ba6fc45aaece5c3241569271bcca77124da2b4",
+    "url": "https://github.com/anishakode/MLOps-Governance-Dashboard/blob/a2ba6fc45aaece5c3241569271bcca77124da2b4/backend/app/utils/policy.py"
+  },
+  {
+    "id": "src.steward.repo",
+    "type": "github_repo",
+    "title": "Steward_AI repository",
+    "repo": "anishakode/Steward_AI",
+    "commitSha": "c9a1d6cfd674d72576208863a5f4c694f9130e50",
+    "url": "https://github.com/anishakode/Steward_AI/tree/c9a1d6cfd674d72576208863a5f4c694f9130e50"
+  },
+  {
+    "id": "src.steward.mcp-server",
+    "type": "github_file",
+    "title": "Steward MCP server",
+    "repo": "anishakode/Steward_AI",
+    "path": "mcp-server/server.py",
+    "commitSha": "c9a1d6cfd674d72576208863a5f4c694f9130e50",
+    "url": "https://github.com/anishakode/Steward_AI/blob/c9a1d6cfd674d72576208863a5f4c694f9130e50/mcp-server/server.py"
+  },
+  {
+    "id": "src.steward.readme",
+    "type": "github_file",
+    "title": "Steward_AI README (boundaries + architecture)",
+    "repo": "anishakode/Steward_AI",
+    "path": "README.md",
+    "commitSha": "c9a1d6cfd674d72576208863a5f4c694f9130e50",
+    "url": "https://github.com/anishakode/Steward_AI/blob/c9a1d6cfd674d72576208863a5f4c694f9130e50/README.md"
+  },
+  {
+    "id": "src.malware.report",
+    "type": "report",
+    "title": "Explainable Machine Learning Models for Detecting PDF Malware (public PDF)",
+    "repo": "anishakode/Malware-Detection-Using-ML",
+    "path": "Explainable Machine Learning Models for Detecting PDF Malware.pdf",
+    "commitSha": "ca79ecc8a013e96d5514243603b174bf86e52ecd",
+    "url": "https://github.com/anishakode/Malware-Detection-Using-ML/blob/ca79ecc8a013e96d5514243603b174bf86e52ecd/Explainable%20Machine%20Learning%20Models%20for%20Detecting%20PDF%20Malware.pdf"
+  },
+  {
+    "id": "src.malware.repo",
+    "type": "github_repo",
+    "title": "Malware-Detection-Using-ML repository",
+    "repo": "anishakode/Malware-Detection-Using-ML",
+    "commitSha": "ca79ecc8a013e96d5514243603b174bf86e52ecd",
+    "url": "https://github.com/anishakode/Malware-Detection-Using-ML/tree/ca79ecc8a013e96d5514243603b174bf86e52ecd"
+  },
+  {
+    "id": "src.boring.repo",
+    "type": "github_repo",
+    "title": "Boring_AI repository",
+    "repo": "anishakode/Boring_AI",
+    "commitSha": "3ccb20543dad3af4ae814e1aecddc9b371398002",
+    "url": "https://github.com/anishakode/Boring_AI/tree/3ccb20543dad3af4ae814e1aecddc9b371398002"
+  },
+  {
+    "id": "src.boring.package",
+    "type": "github_file",
+    "title": "web3py v6→v7 codemod package",
+    "repo": "anishakode/Boring_AI",
+    "path": "packages/web3py-v6-v7",
+    "commitSha": "3ccb20543dad3af4ae814e1aecddc9b371398002",
+    "url": "https://github.com/anishakode/Boring_AI/tree/3ccb20543dad3af4ae814e1aecddc9b371398002/packages/web3py-v6-v7"
+  },
+  {
+    "id": "src.fraud.repo",
+    "type": "github_repo",
+    "title": "fraud_detection repository",
+    "repo": "anishakode/fraud_detection",
+    "commitSha": "55443af86f58480287073442979ab721b63940e8",
+    "url": "https://github.com/anishakode/fraud_detection/tree/55443af86f58480287073442979ab721b63940e8"
+  },
+  {
+    "id": "src.feynn.repo",
+    "type": "github_repo",
+    "title": "Feynn EV task repository",
+    "repo": "anishakode/feynn_labs_EV_task2",
+    "commitSha": "87c186c5feecd2648d5ab9c8c0cbac02c4562f78",
+    "url": "https://github.com/anishakode/feynn_labs_EV_task2/tree/87c186c5feecd2648d5ab9c8c0cbac02c4562f78"
+  },
+  {
+    "id": "src.age-gender.repo",
+    "type": "github_repo",
+    "title": "Age_Gender_Detector repository",
+    "repo": "anishakode/Age_Gender_Detector",
+    "commitSha": "480d7d4507bf750a81082b1ad6297d5fc1502ff6",
+    "url": "https://github.com/anishakode/Age_Gender_Detector/tree/480d7d4507bf750a81082b1ad6297d5fc1502ff6"
+  },
+  {
+    "id": "src.pdf-extract.repo",
+    "type": "github_repo",
+    "title": "pdf_text_extraction repository",
+    "repo": "anishakode/pdf_text_extraction",
+    "commitSha": "963ea55b43ac434185db294261f4b1294da84760",
+    "url": "https://github.com/anishakode/pdf_text_extraction/tree/963ea55b43ac434185db294261f4b1294da84760"
+  },
+  {
+    "id": "src.park-finder.repo",
+    "type": "github_repo",
+    "title": "park_finder repository",
+    "repo": "anishakode/park_finder",
+    "commitSha": "dacb5d7ff89fd31256cbaea8488b4e2daf56deed",
+    "url": "https://github.com/anishakode/park_finder/tree/dacb5d7ff89fd31256cbaea8488b4e2daf56deed"
+  },
+  {
+    "id": "src.netflix.repo",
+    "type": "github_repo",
+    "title": "netflix_clone repository",
+    "repo": "anishakode/netflix_clone",
+    "commitSha": "e127b5c3ea9a58e1706e25bcb185e223aeb6fb2f",
+    "url": "https://github.com/anishakode/netflix_clone/tree/e127b5c3ea9a58e1706e25bcb185e223aeb6fb2f"
+  },
+  {
+    "id": "src.portfolio.runtime-lab",
+    "type": "portfolio_runtime",
+    "title": "Portfolio MLOps Runtime Lab (future deterministic extension)",
+    "note": "PORTFOLIO_EXTENSION concept node — browser lab grounded in verified MLOps concepts; not claimed as original production runtime."
+  },
+  {
+    "id": "src.portfolio.steward-lab",
+    "type": "portfolio_runtime",
+    "title": "Portfolio Steward Agent Lab (deterministic extension)",
+    "note": "PORTFOLIO_EXTENSION — browser Steward lab grounded in public Steward_AI MCP/README evidence; synthetic context only; not live FHIR/Gemini/MCP."
+  },
+  {
+    "id": "src.portfolio.malware-lab",
+    "type": "portfolio_runtime",
+    "title": "Portfolio PDF Malware Explainability Lab (deterministic extension)",
+    "note": "PORTFOLIO_EXTENSION — browser explainability reconstruction grounded in the public malware report; no execution, no upload, not a live classifier."
+  }
+]

@@ -1,0 +1,371 @@
+[
+  {
+    "id": "ev.identity.anish-akode",
+    "title": "Anish Akode — public identity",
+    "kind": "identity",
+    "state": "RESUME_DOCUMENTED",
+    "sourceIds": ["src.resume.canonical"],
+    "aliases": ["anish", "anish akode", "profile"],
+    "summary": "Canonical public name, location, email, and positioning."
+  },
+  {
+    "id": "ev.edu.msc",
+    "title": "MSc Data Science — University of Hertfordshire (Distinction)",
+    "kind": "education",
+    "state": "RESUME_DOCUMENTED",
+    "educationId": "edu.msc-data-science",
+    "sourceIds": ["src.resume.canonical"],
+    "aliases": ["msc", "hertfordshire", "data science degree"]
+  },
+  {
+    "id": "ev.edu.btech",
+    "title": "BTech Computer Science — IIIT Tiruchirappalli",
+    "kind": "education",
+    "state": "RESUME_DOCUMENTED",
+    "educationId": "edu.btech-cs",
+    "sourceIds": ["src.resume.canonical"],
+    "aliases": ["btech", "iiit", "trichy"]
+  },
+  {
+    "id": "ev.exp.cardstack",
+    "title": "Junior Data & Cloud Engineer — Cardstack Consulting",
+    "kind": "experience",
+    "state": "OWNER_CONFIRMED_PROFESSIONAL",
+    "experienceId": "exp.cardstack",
+    "sourceIds": ["src.owner.cardstack-impact", "src.resume.canonical"],
+    "aliases": ["cardstack", "cloud engineer", "data engineer"]
+  },
+  {
+    "id": "ev.cardstack.api-defects",
+    "title": "Approximately 30% fewer API integration defects",
+    "kind": "metric",
+    "state": "OWNER_CONFIRMED_PROFESSIONAL",
+    "experienceId": "exp.cardstack",
+    "sourceIds": ["src.owner.cardstack-impact"],
+    "aliases": ["api defects", "integration defects"]
+  },
+  {
+    "id": "ev.cardstack.audit-failures",
+    "title": "Zero audit failures across six release cycles",
+    "kind": "metric",
+    "state": "OWNER_CONFIRMED_PROFESSIONAL",
+    "experienceId": "exp.cardstack",
+    "sourceIds": ["src.owner.cardstack-impact"],
+    "aliases": ["audit", "release cycles"]
+  },
+  {
+    "id": "ev.cardstack.incident-speed",
+    "title": "Approximately 40% faster incident investigation",
+    "kind": "metric",
+    "state": "OWNER_CONFIRMED_PROFESSIONAL",
+    "experienceId": "exp.cardstack",
+    "sourceIds": ["src.owner.cardstack-impact"],
+    "aliases": ["incident investigation", "mttr"]
+  },
+  {
+    "id": "ev.skill.python",
+    "title": "Python",
+    "kind": "skill",
+    "state": "OWNER_CONFIRMED_PROFESSIONAL",
+    "experienceId": "exp.cardstack",
+    "sourceIds": ["src.resume.canonical", "src.mlops.repo", "src.steward.repo"],
+    "aliases": ["python"]
+  },
+  {
+    "id": "ev.skill.sql",
+    "title": "SQL",
+    "kind": "skill",
+    "state": "OWNER_CONFIRMED_PROFESSIONAL",
+    "experienceId": "exp.cardstack",
+    "sourceIds": ["src.resume.canonical"],
+    "aliases": ["sql"]
+  },
+  {
+    "id": "ev.skill.aws",
+    "title": "AWS (EC2, S3, DynamoDB, SQS, SNS, CloudWatch)",
+    "kind": "skill",
+    "state": "OWNER_CONFIRMED_PROFESSIONAL",
+    "experienceId": "exp.cardstack",
+    "sourceIds": ["src.resume.canonical"],
+    "aliases": ["aws", "cloudwatch", "dynamodb", "s3"]
+  },
+  {
+    "id": "ev.skill.java-spring",
+    "title": "Java / Spring Boot",
+    "kind": "skill",
+    "state": "OWNER_CONFIRMED_PROFESSIONAL",
+    "experienceId": "exp.cardstack",
+    "sourceIds": ["src.resume.canonical"],
+    "aliases": ["java", "spring boot", "spring"]
+  },
+  {
+    "id": "ev.skill.rest-apis",
+    "title": "REST APIs",
+    "kind": "skill",
+    "state": "OWNER_CONFIRMED_PROFESSIONAL",
+    "experienceId": "exp.cardstack",
+    "sourceIds": ["src.resume.canonical"],
+    "aliases": ["rest", "apis"]
+  },
+  {
+    "id": "ev.mlops.project",
+    "title": "MLOps Governance Dashboard — flagship project",
+    "kind": "project",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.mlops-governance",
+    "sourceIds": ["src.mlops.repo"],
+    "aliases": ["mlops", "governance dashboard", "mlops governance"]
+  },
+  {
+    "id": "ev.mlops.psi",
+    "title": "Population Stability Index (PSI)",
+    "kind": "capability",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.mlops-governance",
+    "sourceIds": ["src.mlops.drift-py"],
+    "aliases": ["psi", "population stability", "drift psi"]
+  },
+  {
+    "id": "ev.mlops.ks",
+    "title": "Kolmogorov–Smirnov (KS) statistic",
+    "kind": "capability",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.mlops-governance",
+    "sourceIds": ["src.mlops.stats-py"],
+    "aliases": ["ks", "kolmogorov", "ks test"]
+  },
+  {
+    "id": "ev.mlops.drift",
+    "title": "Data drift monitoring",
+    "kind": "capability",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.mlops-governance",
+    "sourceIds": ["src.mlops.drift-py", "src.mlops.stats-py"],
+    "aliases": ["drift", "data drift", "distribution shift"]
+  },
+  {
+    "id": "ev.mlops.audit",
+    "title": "Audit event representation",
+    "kind": "capability",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.mlops-governance",
+    "sourceIds": ["src.mlops.audit-sink"],
+    "aliases": ["audit events", "audit sink"]
+  },
+  {
+    "id": "ev.mlops.policy",
+    "title": "Policy / governance checks",
+    "kind": "capability",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.mlops-governance",
+    "sourceIds": ["src.mlops.policy"],
+    "aliases": ["policy", "governance", "promotion gates"]
+  },
+  {
+    "id": "ev.mlops.monitoring",
+    "title": "Operational monitoring concepts",
+    "kind": "capability",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.mlops-governance",
+    "sourceIds": ["src.mlops.repo"],
+    "aliases": ["monitoring", "observability"]
+  },
+  {
+    "id": "ev.mlops.runtime-lab",
+    "title": "Browser MLOps Runtime Lab",
+    "kind": "boundary",
+    "state": "PORTFOLIO_EXTENSION",
+    "projectId": "proj.mlops-governance",
+    "sourceIds": ["src.portfolio.runtime-lab", "src.mlops.repo"],
+    "aliases": ["runtime lab", "break the system", "portfolio lab"],
+    "summary": "Deterministic portfolio simulation grounded in verified MLOps concepts — not the original production runtime."
+  },
+  {
+    "id": "ev.steward.project",
+    "title": "Steward_AI — flagship project",
+    "kind": "project",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.steward-ai",
+    "sourceIds": ["src.steward.repo", "src.steward.readme"],
+    "aliases": ["steward", "steward ai", "antibiotic stewardship"]
+  },
+  {
+    "id": "ev.steward.fhir",
+    "title": "FHIR context for stewardship workflows",
+    "kind": "capability",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.steward-ai",
+    "sourceIds": ["src.steward.repo", "src.steward.readme"],
+    "aliases": ["fhir", "fhir r4"]
+  },
+  {
+    "id": "ev.steward.mcp",
+    "title": "MCP tool server for stewardship",
+    "kind": "capability",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.steward-ai",
+    "sourceIds": ["src.steward.mcp-server"],
+    "aliases": ["mcp", "fastmcp", "tool server"]
+  },
+  {
+    "id": "ev.steward.a2a",
+    "title": "A2A / Google ADK agent orchestration",
+    "kind": "capability",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.steward-ai",
+    "sourceIds": ["src.steward.readme"],
+    "aliases": ["a2a", "adk", "google adk"]
+  },
+  {
+    "id": "ev.steward.safety-boundary",
+    "title": "Steward safety / prototype boundary",
+    "kind": "boundary",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.steward-ai",
+    "sourceIds": ["src.steward.readme"],
+    "aliases": ["not clinical", "hackathon", "disclaimer"],
+    "summary": "Research/hackathon prototype — not medical advice; not a production clinical system."
+  },
+  {
+    "id": "ev.steward.runtime-lab",
+    "title": "Browser Steward Agent Lab",
+    "kind": "boundary",
+    "state": "PORTFOLIO_EXTENSION",
+    "projectId": "proj.steward-ai",
+    "sourceIds": [
+      "src.portfolio.steward-lab",
+      "src.steward.mcp-server",
+      "src.steward.readme"
+    ],
+    "aliases": ["steward lab", "agent lab", "fhir tool workflow"],
+    "summary": "Deterministic portfolio simulation of stewardship tool states on synthetic FHIR-shaped context — not live FHIR, Gemini, or MCP production runtime."
+  },
+  {
+    "id": "ev.malware.project",
+    "title": "Explainable PDF Malware Detection — flagship",
+    "kind": "project",
+    "state": "PUBLIC_DOCUMENT_VERIFIED",
+    "projectId": "proj.malware-pdf",
+    "sourceIds": ["src.malware.report", "src.malware.repo"],
+    "aliases": ["malware", "pdf malware", "explainable malware"]
+  },
+  {
+    "id": "ev.malware.report",
+    "title": "Public malware explainability report",
+    "kind": "artifact",
+    "state": "PUBLIC_DOCUMENT_VERIFIED",
+    "projectId": "proj.malware-pdf",
+    "sourceIds": ["src.malware.report"],
+    "aliases": ["malware report", "pdf report"]
+  },
+  {
+    "id": "ev.malware.shap-limited",
+    "title": "Detailed SHAP / model internals",
+    "kind": "boundary",
+    "state": "LIMITED_EVIDENCE",
+    "projectId": "proj.malware-pdf",
+    "sourceIds": ["src.malware.report"],
+    "aliases": ["shap", "model explainability detail"],
+    "summary": "Detailed model/SHAP claims remain limited where direct public source verification is incomplete."
+  },
+  {
+    "id": "ev.malware.runtime-lab",
+    "title": "Browser PDF Malware Explainability Lab",
+    "kind": "boundary",
+    "state": "PORTFOLIO_EXTENSION",
+    "projectId": "proj.malware-pdf",
+    "sourceIds": ["src.portfolio.malware-lab", "src.malware.report", "src.malware.repo"],
+    "aliases": ["malware lab", "explainability lab", "pdf feature lab"],
+    "summary": "Deterministic static-feature explainability reconstruction grounded in the public report — no malware execution, no file upload, not a live classifier verdict."
+  },
+  {
+    "id": "ev.boring.project",
+    "title": "Boring_AI — web3.py codemod",
+    "kind": "project",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.boring-ai",
+    "sourceIds": ["src.boring.repo", "src.boring.package"],
+    "aliases": ["boring ai", "codemod", "web3.py migration"]
+  },
+  {
+    "id": "ev.boring.deterministic",
+    "title": "Deterministic JSSG codemod transforms",
+    "kind": "capability",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.boring-ai",
+    "sourceIds": ["src.boring.package"],
+    "aliases": ["jssg", "fixture tests", "deterministic migration"]
+  },
+  {
+    "id": "ev.fraud.project",
+    "title": "Fraud Detection project",
+    "kind": "project",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.fraud-detection",
+    "sourceIds": ["src.fraud.repo"],
+    "aliases": ["fraud", "fraud detection"]
+  },
+  {
+    "id": "ev.feynn.project",
+    "title": "Feynn EV Analysis",
+    "kind": "project",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.feynn-ev",
+    "sourceIds": ["src.feynn.repo"],
+    "aliases": ["feynn", "ev analysis", "ev market"]
+  },
+  {
+    "id": "ev.archive.age-gender",
+    "title": "Age / Gender Detector (archive)",
+    "kind": "project",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.age-gender",
+    "sourceIds": ["src.age-gender.repo"],
+    "aliases": ["age gender", "cv archive"]
+  },
+  {
+    "id": "ev.archive.pdf-extract",
+    "title": "PDF Text Extraction (archive)",
+    "kind": "project",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.pdf-extract",
+    "sourceIds": ["src.pdf-extract.repo"],
+    "aliases": ["pdf extraction archive"]
+  },
+  {
+    "id": "ev.archive.park-finder",
+    "title": "Park Finder (archive)",
+    "kind": "project",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.park-finder",
+    "sourceIds": ["src.park-finder.repo"],
+    "aliases": ["park finder"]
+  },
+  {
+    "id": "ev.archive.netflix",
+    "title": "Netflix Clone (archive)",
+    "kind": "project",
+    "state": "PUBLIC_CODE_VERIFIED",
+    "projectId": "proj.netflix-clone",
+    "sourceIds": ["src.netflix.repo"],
+    "aliases": ["netflix clone"]
+  },
+  {
+    "id": "ev.boundary.failure-museum-empty",
+    "title": "Failure Museum — artifact gate (may be empty)",
+    "kind": "boundary",
+    "state": "NOT_DEMONSTRATED",
+    "sourceIds": [],
+    "aliases": ["failure museum", "failures"],
+    "summary": "No artifact-grade failure exhibits published yet. Empty truthful museum preferred over fabricated stories."
+  },
+  {
+    "id": "ev.boundary.no-fit-scores",
+    "title": "No candidate fit scores / hiring recommendations",
+    "kind": "boundary",
+    "state": "NOT_DEMONSTRATED",
+    "sourceIds": [],
+    "aliases": ["fit score", "hiring score"],
+    "summary": "Portfolio constitution forbids fit percentages and hiring recommendations."
+  }
+]

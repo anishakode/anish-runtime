@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "profile": {
+    "name": "Anish Akode",
+    "location": "Manchester, UK",
+    "email": "anishakode3101@gmail.com",
+    "positioning": "AI · ML · Software Engineering",
+    "tagline": "An executable professional identity.",
+    "proposition": "I build intelligent systems from data to model to production.",
+    "links": {
+      "github": "https://github.com/anishakode",
+      "linkedin": "https://www.linkedin.com/in/anishakode"
+    }
+  },
+  "education": [
+    {
+      "id": "edu.msc-data-science",
+      "degree": "MSc Data Science",
+      "institution": "University of Hertfordshire",
+      "detail": "Distinction",
+      "start": "2023-09",
+      "end": "2026-02",
+      "evidenceState": "RESUME_DOCUMENTED"
+    },
+    {
+      "id": "edu.btech-cs",
+      "degree": "BTech Computer Science",
+      "institution": "Indian Institute of Information Technology Tiruchirappalli",
+      "detail": "CGPA 8.47/10",
+      "start": "2019",
+      "end": "2023",
+      "evidenceState": "RESUME_DOCUMENTED"
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp.cardstack",
+      "company": "Cardstack Consulting Limited",
+      "title": "Junior Data & Cloud Engineer",
+      "location": "Remote, UK",
+      "start": "2024-09",
+      "end": "2026-02",
+      "technologies": [
+        "Python",
+        "SQL",
+        "REST APIs",
+        "Java",
+        "Spring Boot",
+        "AWS",
+        "EC2",
+        "S3",
+        "DynamoDB",
+        "SQS",
+        "SNS",
+        "CloudWatch"
+      ],
+      "evidenceState": "OWNER_CONFIRMED_PROFESSIONAL",
+      "impactMetricIds": [
+        "ev.cardstack.api-defects",
+        "ev.cardstack.audit-failures",
+        "ev.cardstack.incident-speed"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj.mlops-governance",
+      "slug": "mlops-governance-dashboard",
+      "title": "MLOps Governance Dashboard",
+      "tier": "flagship",
+      "repo": "anishakode/MLOps-Governance-Dashboard",
+      "evidenceState": "PUBLIC_CODE_VERIFIED",
+      "summary": "Monitoring, drift (PSI/KS), data quality, audit events, and governance-oriented MLOps workflows.",
+      "themes": [
+        "monitoring",
+        "data drift",
+        "PSI",
+        "KS",
+        "data quality",
+        "audit",
+        "alerting",
+        "observability",
+        "MLOps"
+      ]
+    },
+    {
+      "id": "proj.steward-ai",
+      "slug": "steward-ai",
+      "title": "Steward_AI",
+      "tier": "flagship",
+      "repo": "anishakode/Steward_AI",
+      "evidenceState": "PUBLIC_CODE_VERIFIED",
+      "summary": "Healthcare AI stewardship prototype using FHIR context, MCP tools, and A2A/ADK agent concepts — research/hackathon framing, not a production clinical system.",
+      "themes": [
+        "FHIR",
+        "MCP",
+        "A2A",
+        "Google ADK",
+        "agent workflows",
+        "safety boundaries",
+        "hackathon"
+      ]
+    },
+    {
+      "id": "proj.malware-pdf",
+      "slug": "explainable-pdf-malware-detection",
+      "title": "Explainable PDF Malware Detection",
+      "tier": "flagship",
+      "repo": "anishakode/Malware-Detection-Using-ML",
+      "evidenceState": "PUBLIC_DOCUMENT_VERIFIED",
+      "summary": "Security ML / explainability study with a verified public project report. Not production malware infrastructure.",
+      "themes": ["malware detection", "explainability", "PDF", "security ML"]
+    },
+    {
+      "id": "proj.boring-ai",
+      "slug": "boring-ai",
+      "title": "Boring_AI",
+      "tier": "supporting",
+      "repo": "anishakode/Boring_AI",
+      "evidenceState": "PUBLIC_CODE_VERIFIED",
+      "summary": "Test-backed codemod workflow for mechanical web3.py v6 → v7 migrations with optional AI follow-up.",
+      "themes": ["codemod", "web3.py", "deterministic transforms", "CI"]
+    },
+    {
+      "id": "proj.fraud-detection",
+      "slug": "fraud-detection",
+      "title": "Fraud Detection",
+      "tier": "supporting",
+      "repo": "anishakode/fraud_detection",
+      "evidenceState": "PUBLIC_CODE_VERIFIED",
+      "summary": "ML fraud-detection project with public artifacts.",
+      "themes": ["fraud detection", "machine learning"]
+    },
+    {
+      "id": "proj.feynn-ev",
+      "slug": "feynn-ev-analysis",
+      "title": "Feynn EV Analysis",
+      "tier": "supporting",
+      "repo": "anishakode/feynn_labs_EV_task2",
+      "evidenceState": "PUBLIC_CODE_VERIFIED",
+      "summary": "Applied EV market-data analysis using public notebooks/data.",
+      "themes": ["EV market", "data analysis", "notebooks"]
+    },
+    {
+      "id": "proj.age-gender",
+      "slug": "age-gender-detector",
+      "title": "Age / Gender Detector",
+      "tier": "archive",
+      "repo": "anishakode/Age_Gender_Detector",
+      "evidenceState": "PUBLIC_CODE_VERIFIED",
+      "summary": "Earlier computer-vision experiment — evolution evidence, not a flagship interaction.",
+      "themes": ["computer vision"]
+    },
+    {
+      "id": "proj.pdf-extract",
+      "slug": "pdf-text-extraction",
+      "title": "PDF Text Extraction",
+      "tier": "archive",
+      "repo": "anishakode/pdf_text_extraction",
+      "evidenceState": "PUBLIC_CODE_VERIFIED",
+      "summary": "PDF data extraction experiment — archive/evolution evidence.",
+      "themes": ["PDF", "extraction"]
+    },
+    {
+      "id": "proj.park-finder",
+      "slug": "park-finder",
+      "title": "Park Finder",
+      "tier": "archive",
+      "repo": "anishakode/park_finder",
+      "evidenceState": "PUBLIC_CODE_VERIFIED",
+      "summary": "Android park locator using public park and maps APIs — archive evidence.",
+      "themes": ["Android", "maps"]
+    },
+    {
+      "id": "proj.netflix-clone",
+      "slug": "netflix-clone",
+      "title": "Netflix Clone",
+      "tier": "archive",
+      "repo": "anishakode/netflix_clone",
+      "evidenceState": "PUBLIC_CODE_VERIFIED",
+      "summary": "Early full-stack clone project — archive/evolution evidence.",
+      "themes": ["Java", "clone"]
+    }
+  ],
+  "sources": [],
+  "nodes": [],
+  "edges": [],
+  "exclusions": {
+    "emails": ["anishakode2002@gmail.com"],
+    "profiles": ["sricons-conflict"],
+    "notes": [
+      "Obsolete email excluded from public corpus.",
+      "Conflicting Sricons profile must not be introduced.",
+      "Cardstack impact metrics are OWNER_CONFIRMED_PROFESSIONAL only — proprietary code is not public.",
+      "Steward_AI is a research/hackathon prototype, not a production clinical system.",
+      "Browser MLOps Runtime Lab is PORTFOLIO_EXTENSION, not the original production runtime.",
+      "Browser Steward Agent Lab is PORTFOLIO_EXTENSION — synthetic context only; not live FHIR/Gemini/MCP; withholds treatment advice.",
+      "Browser PDF Malware Explainability Lab is PORTFOLIO_EXTENSION — static reconstruction only; no execution/upload; not a security verdict.",
+      "Malware X-Ray/report structure is not production malware infrastructure.",
+      "Failure Museum may remain empty until artifact-grade exhibits exist."
+    ]
+  }
+}

@@ -4,7 +4,10 @@ Copy to apply by hand after launch. Every line is drawn from the frozen corpus �
 want different wording, change it here first, then check it does not contradict
 `docs/evidence/CLAIM-LEDGER.md`.
 
-`<origin>` = the live URL from the runbook.
+Live origin: **https://anish-runtime.vercel.app** — verified 38/38 by `pnpm smoke:live`.
+
+Already applied: the `anish-runtime` repository's description, homepage, and topics. The
+rest below is by hand — profile, pins, the four flagship repositories, and LinkedIn.
 
 ---
 
@@ -13,10 +16,10 @@ want different wording, change it here first, then check it does not contradict
 **Bio** (160 characters):
 
 > AI · ML · Software Engineering. I build intelligent systems from data to model to
-> production. Evidence-first portfolio: `<origin>`
+> production. Evidence-first portfolio: `https://anish-runtime.vercel.app`
 
 **Location:** Manchester, UK
-**Website:** `<origin>`
+**Website:** `https://anish-runtime.vercel.app`
 
 **Pinned repositories** — flagships only, archive noise unpinned:
 
@@ -34,7 +37,7 @@ want different wording, change it here first, then check it does not contradict
 | `Malware-Detection-Using-ML` | Explainability study for PDF malware detection, with a public project report. Not production security infrastructure.      | `machine-learning` `explainability` `shap` `security-ml` `pdf`             |
 | `Boring_AI`                  | Test-backed codemod workflow for mechanical web3.py v6 → v7 migrations, with optional AI follow-up.                        | `codemod` `web3py` `migration` `deterministic` `ci`                        |
 
-Set each repository's **homepage** to `<origin>/work/<slug>`.
+Set each repository's **homepage** to `https://anish-runtime.vercel.app/work/<slug>`.
 
 ## Flagship README minimum
 
@@ -52,7 +55,7 @@ central claim that the evidence is inspectable.
 
 ## LinkedIn
 
-**Featured link:** `<origin>` — titled "ANISH // RUNTIME — evidence-first engineering
+**Featured link:** `https://anish-runtime.vercel.app` — titled "ANISH // RUNTIME — evidence-first engineering
 portfolio".
 
 **Headline** (keep consistent with the frozen positioning):

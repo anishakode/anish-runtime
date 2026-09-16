@@ -1,6 +1,6 @@
 # M26 — Launch
 
-**Status:** Built (local scope complete) — awaiting owner deploy, then lock
+**Status:** Built and **deployed** — https://anish-runtime.vercel.app — awaiting owner lock
 **Contract:** Handoff §45 · ADR [`0028-launch.md`](../adr/0028-launch.md)
 **Owner decisions:** Vercel as host · origin decided at deploy time · start with everything doable locally
 
@@ -86,12 +86,13 @@ explains the build-time trap in place rather than in a doc nobody opens at 2am.
 
 ## Validation
 
-| Gate                        | Result                                                                                                                                                                               |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `pnpm ci`                   | **Pass** — scope, evidence, freeze (96 claims, `42f8efd8bc5c2aa7`, OWNER_CONFIRMED), format, lint, typecheck, build, bundle budget (24 routes, 1 server-only module verified absent) |
-| Unit                        | **461 passed / 0 failed**                                                                                                                                                            |
-| E2e vs production build     | **142 passed** (chromium desktop + mobile)                                                                                                                                           |
-| `pnpm smoke:live` rehearsal | 38/38 with the origin set; 5 named failures without it                                                                                                                               |
+| Gate                                               | Result                                                                                                                                                                               |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `pnpm ci`                                          | **Pass** — scope, evidence, freeze (96 claims, `42f8efd8bc5c2aa7`, OWNER_CONFIRMED), format, lint, typecheck, build, bundle budget (24 routes, 1 server-only module verified absent) |
+| Unit                                               | **461 passed / 0 failed**                                                                                                                                                            |
+| E2e vs production build                            | **142 passed** (chromium desktop + mobile)                                                                                                                                           |
+| `pnpm smoke:live` rehearsal                        | 38/38 with the origin set; 5 named failures without it                                                                                                                               |
+| `pnpm smoke:live https://anish-runtime.vercel.app` | **38/38 against the live origin**                                                                                                                                                    |
 
 New coverage: 3 unit tests for the card, 2 production e2e tests (the PNG is decoded and its
 IHDR width/height read, so a broken or placeholder image fails), and the smoke script itself.
@@ -109,13 +110,34 @@ types are generated on demand rather than inherited from a previous run, and the
 hazard disappears for every future contributor and every fresh clone. Verified by deleting
 `.next` and running the full gate from cold.
 
-## What is not done, and cannot be done here
+## The deploy
 
-The deploy. Pushing to a remote, creating the Vercel project, and setting the origin need
-the owner's accounts. The runbook is the handoff for that, and M26 should only be locked
-after `pnpm smoke:live` passes against the real origin — not against `next start`.
+Repository: [anishakode/anish-runtime](https://github.com/anishakode/anish-runtime),
+public, `main`, GitHub Actions green. Origin: **https://anish-runtime.vercel.app**, with
+`NEXT_PUBLIC_SITE_URL` set during the Vercel import so the first production build already
+carried it — the failure this milestone was designed around never happened.
+
+The live smoke passes 38/38. Worth singling out two results that had never been exercised
+before a real deploy: **HSTS** is served (`max-age=63072000; includeSubDomains; preload`),
+because it is emitted only for an https origin, and the **social card** renders as a real
+PNG at an absolute URL on the origin with counts matching the graph — 10 projects, 40
+evidence nodes, 23 sources.
+
+Repository description, homepage, and topics are applied. The rest of
+`PUBLIC-PRESENCE.md` — profile, pins, the four flagship repositories, LinkedIn — is by
+hand.
+
+## What is not done
+
+- The human checklist in `LAUNCH-CHECKLIST.md`: real phone, screen reader, print, and
+  reading the claims cold. A script should not pretend to make those calls.
+- Six Dependabot PRs opened on push. All show red, but all branched from before the
+  typegen fix, so they are failing on that and not on any incompatibility. They include a
+  TypeScript major; they are post-launch work, not launch-week work.
+- Three GitHub Actions still target the deprecated Node 20 (a warning, not a failure).
+  Dependabot PRs 1–3 are the fix.
 
 ## Owner decision
 
-Ready for the deploy step. After it is live and the smoke run is green, lock M26 and I will
-run the cumulative M0–M26 audit.
+The site is live and every automated gate is green. Ready for lock and the cumulative
+M0–M26 audit.

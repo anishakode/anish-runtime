@@ -32,6 +32,6 @@ Canonical product contracts: `ANISH_RUNTIME_MASTER_HANDOFF.md`.
 | M24 Production Hardening                | Locked | Security, reliability, perf, a11y, discoverability   |
 | M25 Evidence Freeze                     | Locked | 96 claims frozen, owner-confirmed, enforced in CI    |
 | M26 Launch                              | Locked | Live at anish-runtime.vercel.app; smoke 38/38        |
-| M27 Proof Trail Integrity               | Built  | verify:sources 18/18; 4 flagship READMEs applied     |
+| M27 Proof Trail Integrity               | Locked | verify:sources 18/18; 4 flagship READMEs applied     |
 
 Workflow: Research → Proposal → Owner Approval → Implement → Validate → Report → Owner Lock → Cumulative audit → Next.

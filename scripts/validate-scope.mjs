@@ -111,6 +111,7 @@ const REQUIRED = [
   "docs/presence/README-steward-ai-patch.md",
   "docs/adr/0029-proof-trail-integrity.md",
   "docs/milestones/M27-REPORT.md",
+  "docs/milestones/M27-LOCK-AUDIT.md",
   "src/lib/freeze/claims.ts",
   "src/lib/freeze/strength.ts",
   "src/lib/freeze/verify.ts",

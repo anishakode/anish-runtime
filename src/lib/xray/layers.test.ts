@@ -53,30 +53,65 @@ describe("Project X-Ray layers (M11)", () => {
     );
   });
 
-  it("never claims a state stronger than the graph nodes behind its sources", () => {
+  it("carries the exact state of the graph node it represents", () => {
     // The states in this file are hand-authored, so without this they could be
-    // upgraded and every other test would still pass. Bind them to the corpus:
-    // a component may be more cautious than its evidence, never bolder.
-    const graph = getGraph();
+    // upgraded and every other test would still pass.
+    //
+    // Binding is by explicit `nodeId`, not by shared sources. `src.mlops.repo`
+    // backs both `ev.mlops.project` (PUBLIC_CODE_VERIFIED) and
+    // `ev.mlops.runtime-lab` (PORTFOLIO_EXTENSION), so a source-overlap rule is
+    // ambiguous: taking the strongest backing node lets the lab be promoted to
+    // code-verified, and taking the weakest wrongly demotes the repo surface.
+    // Exact equality against the declared node is the only unambiguous rule.
+    const nodeById = new Map(getGraph().nodes.map((node) => [node.id, node]));
     const components = MLOPS_XRAY_LAYERS.flatMap((layer) => layer.components);
-    expect(components.length).toBeGreaterThan(0);
+    expect(components).toHaveLength(7);
 
     for (const component of components) {
-      const backing = graph.nodes.filter((node) =>
-        node.sourceIds.some((id) => component.sourceIds.includes(id)),
-      );
+      const node = nodeById.get(component.nodeId);
       expect(
-        backing.length,
-        `${component.id} cites no graph-backed source`,
-      ).toBeGreaterThan(0);
+        node,
+        `${component.id} cites unknown node ${component.nodeId}`,
+      ).toBeDefined();
+      expect(
+        component.evidenceState,
+        `${component.id} claims ${component.evidenceState} but ${component.nodeId} is ${node!.state}`,
+      ).toBe(node!.state);
+    }
+  });
 
-      const strongestAvailable = Math.min(
-        ...backing.map((node) => EVIDENCE_STRENGTH[node.state]),
-      );
+  it("keeps the boundary component at the weakest state in the layer set", () => {
+    // Guards the specific upgrade that matters: the browser lab quietly
+    // becoming code-verified. Asserted on its own so the intent survives even
+    // if the corpus grows.
+    const lab = findXrayComponent(MLOPS_XRAY_LAYERS, "cmp.mlops.runtime-lab");
+    expect(lab?.evidenceState).toBe("PORTFOLIO_EXTENSION");
+
+    const others = MLOPS_XRAY_LAYERS.flatMap((layer) => layer.components).filter(
+      (component) => component.id !== "cmp.mlops.runtime-lab",
+    );
+    for (const component of others) {
       expect(
         EVIDENCE_STRENGTH[component.evidenceState],
-        `${component.id} claims ${component.evidenceState}, stronger than anything its sources support`,
-      ).toBeGreaterThanOrEqual(strongestAvailable);
+        `${component.id} should not be weaker than the honesty boundary`,
+      ).toBeLessThan(EVIDENCE_STRENGTH.PORTFOLIO_EXTENSION);
+    }
+  });
+
+  it("declares a node whose sources overlap the component's own", () => {
+    // Stops a component being pointed at a conveniently-stated but unrelated
+    // node to satisfy the binding above.
+    const nodeById = new Map(getGraph().nodes.map((node) => [node.id, node]));
+
+    for (const layer of MLOPS_XRAY_LAYERS) {
+      for (const component of layer.components) {
+        const node = nodeById.get(component.nodeId)!;
+        const shared = node.sourceIds.filter((id) => component.sourceIds.includes(id));
+        expect(
+          shared.length,
+          `${component.id} and ${component.nodeId} cite no source in common`,
+        ).toBeGreaterThan(0);
+      }
     }
   });
 });

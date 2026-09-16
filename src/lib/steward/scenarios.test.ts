@@ -67,7 +67,9 @@ describe("steward scenarios (M12)", () => {
   it("fails closed on invalid tool input with error states", () => {
     const result = runStewardScenario("invalid_tool_input");
     const counts = toolStateCounts(result);
-    expect(counts.error).toBeGreaterThanOrEqual(1);
+    // Exactly two tools error on invalid input; a soft bound would not notice
+    // one of them silently starting to succeed.
+    expect(counts.error).toBe(2);
     expect(result.taskPreview).toBeNull();
     expect(counts.complete).toBe(0);
   });

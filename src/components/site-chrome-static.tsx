@@ -58,7 +58,7 @@ export function SiteFooter() {
             Ending signal
           </Link>
           <p className="instrument-label text-xs tracking-wide">
-            Editorial Lab · locked through M26
+            Editorial Lab · locked through M27
           </p>
         </div>
       </div>

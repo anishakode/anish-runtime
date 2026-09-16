@@ -42,13 +42,24 @@ describe("mlops lab session (M6)", () => {
     const session = createLabSession(1, 50);
     const rows = histogramTableRows(session);
     expect(rows).toHaveLength(session.referenceHistogram.bins.length);
-    expect(rows[0]).toEqual(
-      expect.objectContaining({
-        index: 0,
-        referenceCount: expect.any(Number),
-        currentCount: expect.any(Number),
-      }),
-    );
+    // Seeded, so the exact counts are knowable. `expect.any(Number)` here would
+    // have survived the histogram binning bug M26 found.
+    expect(rows.map((row) => [row.index, row.referenceCount, row.currentCount])).toEqual([
+      [0, 1, 1],
+      [1, 1, 1],
+      [2, 1, 1],
+      [3, 10, 10],
+      [4, 4, 4],
+      [5, 9, 9],
+      [6, 8, 8],
+      [7, 10, 10],
+      [8, 3, 3],
+      [9, 3, 3],
+    ]);
+    // A fresh session has not drifted, so reference and current must agree bin
+    // for bin, and the counts must account for every sample.
+    expect(rows.reduce((sum, row) => sum + row.referenceCount, 0)).toBe(50);
+    expect(rows.reduce((sum, row) => sum + row.currentCount, 0)).toBe(50);
   });
 
   it("rejects invalid session inputs", () => {

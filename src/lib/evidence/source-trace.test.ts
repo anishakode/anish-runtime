@@ -7,6 +7,7 @@ import {
   psiLabSourceTrace,
   resolveSourceTrace,
   stewardMcpLabSourceTrace,
+  stewardSafetyLabSourceTrace,
   toTraceSourceView,
 } from "./source-trace";
 import { MLOPS_SOURCE_TRACE } from "@/lib/mlops/evidence";
@@ -86,6 +87,25 @@ describe("lab source traces", () => {
     expect(mcp.sources[0]?.commitSha).toBe(fromGraph.sources[0]?.commitSha);
     expect(mcp.sources[0]?.path).toBe(STEWARD_SOURCE_TRACE.mcpSourcePath);
     expect(mcp.sources[0]?.path).toBe(fromGraph.sources[0]?.path);
+  });
+
+  it("Steward safety lab trace matches Evidence Graph fingerprints", () => {
+    // Hand-built like the others, and previously the only lab trace with no
+    // parity test — a drift between the README path here and the graph source
+    // would have gone unnoticed.
+    const graph = getGraph();
+    const safety = stewardSafetyLabSourceTrace();
+    const fromGraph = resolveSourceTrace(
+      { claimLabel: safety.claimLabel, sourceIds: [STEWARD_SOURCE_TRACE.readmeSourceId] },
+      graph,
+    );
+
+    expect(safety.sources[0]?.commitSha).toBe("c9a1d6cfd674d72576208863a5f4c694f9130e50");
+    expect(safety.sources[0]?.commitSha).toBe(fromGraph.sources[0]?.commitSha);
+    expect(safety.sources[0]?.path).toBe(STEWARD_SOURCE_TRACE.readmeSourcePath);
+    expect(safety.sources[0]?.path).toBe(fromGraph.sources[0]?.path);
+    expect(safety.sources[0]?.pinned).toBe(true);
+    expect(safety.sources[0]?.url).toContain(safety.sources[0]!.commitSha!);
   });
 
   it("Malware report and SHAP lab traces match Evidence Graph fingerprints", () => {

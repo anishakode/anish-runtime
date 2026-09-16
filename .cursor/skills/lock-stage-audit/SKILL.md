@@ -316,7 +316,20 @@ Do **not** start the next milestone’s implementation until this audit is repor
 - [ ] `pnpm freeze:check` still gates the deployed commit; corpus changes go through change control even during launch week
 - [ ] ADR 0028; OG unit coverage + production e2e for the card + the live smoke script
 
-### M27+ (when locked)
+### M27 — Proof Trail Integrity
+
+- [ ] `pnpm verify:sources` passes; every cited URL resolves and the exempt list is still only owner confirmation / résumé / portfolio runtime
+- [ ] Every pinned GitHub URL contains the commit it claims — asserted against the real corpus, not just fixtures
+- [ ] A moved path, a renamed repository, and an unreachable host all fail; a thrown network error is never treated as a pass
+- [ ] `verify:sources` stays out of `pnpm ci` (network flakiness must not fail a correct build) but runs on a schedule
+- [ ] The scheduled workflow opens one `provenance` issue, not one per week, and tells the reader to re-pin through change control or drop the claim — never to quietly repoint the link
+- [ ] Flagship READMEs state their own evidence boundary and claim nothing stronger than the frozen corpus allows
+- [ ] The malware repository's README still says it holds the report and no model code; MLOps still discloses its single smoke-test file and its unwired dependencies
+- [ ] Repository description / topics / homepage match `PUBLIC-PRESENCE.md`, which matches the corpus
+- [ ] Every link in every flagship README resolves
+- [ ] ADR 0029; source-verification unit coverage for all failure modes
+
+### M28+ (when locked)
 
 For each later locked milestone, add checks from that milestone’s report + handoff contract.
 

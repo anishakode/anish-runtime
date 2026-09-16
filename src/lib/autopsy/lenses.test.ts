@@ -50,6 +50,22 @@ describe("autopsy lenses (M10)", () => {
     }
   });
 
+  it("pins every decision state, so none can be upgraded silently", () => {
+    // These states are hand-authored and render straight into a badge. The
+    // Steward and malware bundles pin theirs; MLOps was the omission.
+    const bundle = buildMlopsAutopsyBundle(getGraph());
+
+    expect(
+      bundle.decisions.map((decision) => [decision.id, decision.evidenceState]),
+    ).toEqual([
+      // Both detectors exist in the pinned public source files.
+      ["dec.mlops.dual-detectors", "PUBLIC_CODE_VERIFIED"],
+      ["dec.mlops.audit-policy-split", "PUBLIC_CODE_VERIFIED"],
+      // The browser lab is not the production runtime, and must never claim to be.
+      ["dec.mlops.lab-boundary", "PORTFOLIO_EXTENSION"],
+    ]);
+  });
+
   it("keeps FAILURES empty and NOT_DEMONSTRATED (no fabricated exhibits)", () => {
     const bundle = buildMlopsAutopsyBundle(getGraph());
     expect(bundle.failures.empty).toBe(true);

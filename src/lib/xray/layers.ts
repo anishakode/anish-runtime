@@ -7,6 +7,16 @@ export type XrayComponentDef = {
   id: string;
   label: string;
   responsibility: string;
+  /**
+   * The Evidence Graph node this component represents. `evidenceState` below
+   * must equal that node's state, and a test enforces it.
+   *
+   * Declaring the node explicitly rather than inferring it from shared sources
+   * is deliberate: `src.mlops.repo` backs both a code-verified node and the
+   * PORTFOLIO_EXTENSION runtime-lab node, so source overlap alone cannot say
+   * which state a component is entitled to claim.
+   */
+  nodeId: string;
   evidenceState: EvidenceState;
   sourceIds: readonly string[];
   relatedComponentIds: readonly string[];
@@ -53,6 +63,7 @@ export const MLOPS_XRAY_LAYERS: readonly XrayLayerDef[] = [
     components: [
       {
         id: "cmp.mlops.runtime-lab",
+        nodeId: "ev.mlops.runtime-lab",
         label: "Browser Runtime Lab",
         responsibility:
           "Deterministic local PSI/KS lab labeled PORTFOLIO_EXTENSION — not the historical production runtime.",
@@ -62,6 +73,7 @@ export const MLOPS_XRAY_LAYERS: readonly XrayLayerDef[] = [
       },
       {
         id: "cmp.mlops.repo-surface",
+        nodeId: "ev.mlops.project",
         label: "Public repository surface",
         responsibility:
           "SHA-pinned public MLOps Governance Dashboard repository as the code-verified project root.",
@@ -79,6 +91,7 @@ export const MLOPS_XRAY_LAYERS: readonly XrayLayerDef[] = [
     components: [
       {
         id: "cmp.mlops.monitoring",
+        nodeId: "ev.mlops.monitoring",
         label: "Operational monitoring concepts",
         responsibility:
           "Observability language and monitoring framing from the public project evidence.",
@@ -95,6 +108,7 @@ export const MLOPS_XRAY_LAYERS: readonly XrayLayerDef[] = [
     components: [
       {
         id: "cmp.mlops.drift",
+        nodeId: "ev.mlops.psi",
         label: "Drift monitoring (PSI utilities)",
         responsibility:
           "Population Stability Index and related drift helpers in backend/app/utils/drift.py.",
@@ -104,6 +118,7 @@ export const MLOPS_XRAY_LAYERS: readonly XrayLayerDef[] = [
       },
       {
         id: "cmp.mlops.ks",
+        nodeId: "ev.mlops.ks",
         label: "KS statistic utilities",
         responsibility:
           "Kolmogorov–Smirnov helpers in backend/app/utils/stats.py for distribution comparison.",
@@ -120,6 +135,7 @@ export const MLOPS_XRAY_LAYERS: readonly XrayLayerDef[] = [
     components: [
       {
         id: "cmp.mlops.audit",
+        nodeId: "ev.mlops.audit",
         label: "Audit sink",
         responsibility: "Audit event representation in backend/app/utils/audit_sink.py.",
         evidenceState: "PUBLIC_CODE_VERIFIED",
@@ -128,6 +144,7 @@ export const MLOPS_XRAY_LAYERS: readonly XrayLayerDef[] = [
       },
       {
         id: "cmp.mlops.policy",
+        nodeId: "ev.mlops.policy",
         label: "Policy checks",
         responsibility: "Policy / governance checks in backend/app/utils/policy.py.",
         evidenceState: "PUBLIC_CODE_VERIFIED",

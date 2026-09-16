@@ -199,7 +199,7 @@ test.describe("M2 utility portfolio — strict recruiter edges", () => {
 
   test("footer reflects locked milestone stage", async ({ page }) => {
     await page.goto("/");
-    await expect(page.getByText(/locked through M26/i)).toBeVisible();
+    await expect(page.getByText(/locked through M27/i)).toBeVisible();
   });
 
   test("Signal Recompile requires consent after distinct ML lean", async ({ page }) => {

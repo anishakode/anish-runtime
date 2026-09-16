@@ -59,14 +59,29 @@ Worth recording a wrong turn: I first wrote a blanket "no decision may claim
 That claim is honest — both detectors really are in the pinned source files — so the
 blanket rule was wrong, not the data. Exact pinning of all three is the correct guard.
 
-### The printed CV drops evidence qualifiers (owner decision)
+### The printed CV drops evidence qualifiers — reviewed, owner accepted
 
 `src/app/cv/page.tsx:94-96` wraps the role `EvidenceBadge` in `no-print`, while the impact
-metrics themselves print. So a printed CV reads "Approximately 30% fewer API integration
-defects" with no `OWNER_CONFIRMED_PROFESSIONAL` label and none of the source note that
-`/experience` does show. The PDF is the artefact most likely to circulate detached from
-the site, which makes it the worst place to lose the qualifier. Left for the owner
-because how the CV should print is a product decision, not a correctness one.
+metrics themselves print. A printed CV therefore reads "Approximately 30% fewer API
+integration defects" with no `OWNER_CONFIRMED_PROFESSIONAL` label and without the source
+note `/experience` shows.
+
+**Owner decision: leave as is.** A CV is a conventional document and the site carries the
+qualifiers. Recording it here as a known, deliberate position rather than an oversight,
+with the reasoning that supports it:
+
+- All three Cardstack metrics are self-hedged in the corpus itself — "**Approximately**
+  30% fewer API integration defects", "**Approximately** 40% faster incident
+  investigation", "Zero audit failures across six release cycles". The printed text is
+  not stated as a measured, audited figure.
+- `/experience` renders the full source note ("Professional impact confirmed by Anish.
+  Proprietary employer source code is not public."), and the CV page links back to the
+  live origin.
+- `/evidence.json` publishes the `OWNER_CONFIRMED_PROFESSIONAL` state, so the machine-
+  readable claim carries the qualifier even when the PDF does not.
+
+Revisit if the CV is ever circulated as the primary artefact rather than a companion to
+the site.
 
 ## LOW — all fixed
 

@@ -1,0 +1,84 @@
+import { describe, expect, it } from "vitest";
+import { getGraph } from "@/lib/evidence/queries";
+import { buildMlopsArchitectureViews } from "./build-views";
+import {
+  ARCHITECTURE_STAGE_COUNT,
+  architectureStageAt,
+  clampArchitectureIndex,
+  MLOPS_ARCHITECTURE_STAGES,
+  nextArchitectureIndex,
+  previousArchitectureIndex,
+  revealedArchitectureStages,
+} from "./stages";
+
+describe("architecture stages (M9)", () => {
+  it("defines exactly five ordered handoff stages", () => {
+    expect(ARCHITECTURE_STAGE_COUNT).toBe(5);
+    expect(MLOPS_ARCHITECTURE_STAGES.map((s) => s.id)).toEqual([
+      "system-boundary",
+      "lifecycle-context",
+      "observability",
+      "detection",
+      "governance-loop",
+    ]);
+    expect(MLOPS_ARCHITECTURE_STAGES.every((s, i) => s.index === i)).toBe(true);
+  });
+
+  it("clamps scrubber indices and supports prev/next bounds", () => {
+    expect(clampArchitectureIndex(-3)).toBe(0);
+    expect(clampArchitectureIndex(99)).toBe(4);
+    expect(clampArchitectureIndex(2.9)).toBe(2);
+    expect(previousArchitectureIndex(0)).toBe(0);
+    expect(nextArchitectureIndex(4)).toBe(4);
+    expect(nextArchitectureIndex(1)).toBe(2);
+    expect(previousArchitectureIndex(1)).toBe(0);
+  });
+
+  it("reveals stages cumulatively", () => {
+    expect(revealedArchitectureStages(0).map((s) => s.id)).toEqual(["system-boundary"]);
+    expect(revealedArchitectureStages(2).map((s) => s.id)).toEqual([
+      "system-boundary",
+      "lifecycle-context",
+      "observability",
+    ]);
+    expect(revealedArchitectureStages(4)).toHaveLength(5);
+  });
+
+  it("architectureStageAt throws only via clamp (always defined)", () => {
+    expect(architectureStageAt(3).title).toBe("Detection");
+  });
+
+  it("builds views whose sources exist in the Evidence Graph", () => {
+    const graph = getGraph();
+    const views = buildMlopsArchitectureViews(graph);
+    expect(views).toHaveLength(5);
+    for (const view of views) {
+      expect(view.sources.length).toBeGreaterThan(0);
+      for (const source of view.sources) {
+        expect(graph.sources.some((s) => s.id === source.id)).toBe(true);
+      }
+    }
+    const detection = views.find((v) => v.id === "detection");
+    expect(detection?.sources.map((s) => s.path)).toEqual(
+      expect.arrayContaining([
+        "backend/app/utils/drift.py",
+        "backend/app/utils/stats.py",
+      ]),
+    );
+    const governance = views.find((v) => v.id === "governance-loop");
+    expect(governance?.sources.some((s) => s.path?.includes("audit_sink.py"))).toBe(true);
+    expect(governance?.sources.some((s) => s.path?.includes("policy.py"))).toBe(true);
+  });
+
+  it("keeps system-boundary as portfolio simulation with PORTFOLIO_EXTENSION framing", () => {
+    const boundary = architectureStageAt(0);
+    expect(boundary.reality).toBe("PORTFOLIO_SIMULATION");
+    expect(boundary.summary).toMatch(/PORTFOLIO_EXTENSION|not the exact historical/i);
+  });
+
+  it("does not invent Grafana or production telemetry copy", () => {
+    const text = MLOPS_ARCHITECTURE_STAGES.map((s) => s.summary).join(" ");
+    expect(text).toMatch(/does not invent Grafana/i);
+    expect(text).not.toMatch(/\buptime\b|\bfps\b/i);
+  });
+});

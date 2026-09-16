@@ -88,12 +88,21 @@ The freeze digest is unchanged, as expected — M27 adds no claims and edits no 
 - `src/lib/sources/verify.test.ts` — 10 cases covering reachability, both pin-integrity
   branches, and the exemption list.
 
+## Applied by the owner
+
+**Repository metadata** — all four flagships now carry a description, a homepage
+pointing at their portfolio page, and topics (6/6/5/5), verified after the change.
+
+**Weekly verification** — `.github/workflows/verify-sources.yml` runs `verify:sources`
+on Mondays at 08:00 UTC and on demand. On failure it opens a `provenance`-labelled
+issue, and it checks for an existing open one first so a persistent breakage does not
+stack a new issue every week. The issue text says to re-pin through change control or
+remove the claim, rather than to quietly drop the link — the link was supporting a
+claim, and deleting it silently would leave the claim unsupported.
+
 ## Not done
 
-- **Applying the drafts.** Owner's call; they are paste-by-hand by request.
-- **Scheduling `verify:sources`.** It runs on demand today. A weekly GitHub Action is
-  the obvious follow-up, but scheduling it should be a deliberate decision, not a
-  default.
+- **Applying the README drafts.** Owner's call; paste-by-hand by request.
 - **The human launch checklist** from M26 — real phone, screen reader, print, reading
   the claims cold.
 - **Six Dependabot PRs** and three actions on deprecated Node 20.
@@ -101,5 +110,3 @@ The freeze digest is unchanged, as expected — M27 adds no claims and edits no 
 ## Owner decisions needed
 
 1. Review the four drafts, then apply or amend.
-2. Whether to run the metadata commands now.
-3. Whether `verify:sources` should run on a schedule.

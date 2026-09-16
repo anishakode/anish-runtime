@@ -103,6 +103,7 @@ const REQUIRED = [
   "src/lib/sources/verify.ts",
   "src/lib/sources/verify.test.ts",
   "scripts/verify-sources.ts",
+  ".github/workflows/verify-sources.yml",
   "docs/presence/README.md",
   "docs/presence/README-mlops-governance-dashboard.md",
   "docs/presence/README-malware-detection.md",

@@ -17,9 +17,28 @@ describe("Interview page (M21)", () => {
     ).toBeInTheDocument();
   });
 
-  it("does not promise answers or scores in the page framing", () => {
+  it("states the answer-key boundary before any question set exists", () => {
     render(<InterviewPage />);
-    expect(screen.queryByText(/answer key/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/score/i)).not.toBeInTheDocument();
+    // The boundary is a refusal, not a promise, so it belongs on the page from
+    // the first paint — a visitor who never builds a set should still read it.
+    const answerKey = screen.getByLabelText(/Answer key/i);
+    expect(answerKey).toHaveTextContent("Not generated.");
+    expect(answerKey).toHaveTextContent(
+      "It will not manufacture Anish's interview answer.",
+    );
+  });
+
+  it("promises no answer, score, or ranking in the page framing", () => {
+    render(<InterviewPage />);
+    for (const forbidden of [
+      /model answer/i,
+      /candidate score/i,
+      /fit score/i,
+      /hiring score/i,
+      /culture fit/i,
+      /ranking/i,
+    ]) {
+      expect(screen.queryByText(forbidden), String(forbidden)).not.toBeInTheDocument();
+    }
   });
 });

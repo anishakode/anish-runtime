@@ -50,15 +50,32 @@ describe("classifyRequirement (M20)", () => {
   const documents = buildSearchIndex(getGraph());
 
   it("never upgrades semantic-only matches to VERIFIED", () => {
-    // Force a query unlikely to exact-match but may semantic-hit
+    // Phrased to miss every exact title and alias, so the only way through is
+    // similarity. Asserting the path first means this test fails loudly if the
+    // corpus ever starts matching it deterministically, instead of quietly
+    // asserting nothing about semantic classification.
     const req = {
       id: "req-sem",
       text: "systems that watch model drift and explain pdf risk signals",
       source: "line" as const,
     };
     const result = classifyRequirement(req, documents);
-    if (result.matchPath === "semantic") {
-      expect(result.classification).not.toBe("VERIFIED");
+    expect(result.matchPath).toBe("semantic");
+    expect(result.classification).toBe("LIMITED");
+  });
+
+  it("caps every semantic match at LIMITED, not just the one case", () => {
+    const semantic = [
+      "systems that watch model drift and explain pdf risk signals",
+      "data quality checks and governance workflows",
+    ]
+      .map((text) =>
+        classifyRequirement({ id: text, text, source: "line" as const }, documents),
+      )
+      .filter((r) => r.matchPath === "semantic");
+
+    expect(semantic.length).toBeGreaterThan(0);
+    for (const result of semantic) {
       expect(result.classification).toBe("LIMITED");
     }
   });

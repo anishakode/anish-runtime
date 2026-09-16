@@ -54,4 +54,28 @@ describe("M3 visual contracts", () => {
   it("does not introduce purple/neon-style hex accents in token sheet", () => {
     expect(globalsCss.toLowerCase()).not.toMatch(/#7c3aed|#a855f7|#8b5cf6|neon/);
   });
+
+  it("references no custom property it never defines", () => {
+    // An undefined var() does not error — the whole declaration is dropped, so
+    // a typo silently removes styling instead of failing loudly. This is the
+    // only thing that notices.
+    const defined = new Set(
+      [...globalsCss.matchAll(/(--[a-z0-9-]+)\s*:/gi)].map((m) => m[1]),
+    );
+    // next/font injects its variables on <html> rather than into this sheet,
+    // so read the real names from the layout instead of hardcoding them.
+    const layout = readFileSync(join(process.cwd(), "src/app/layout.tsx"), "utf8");
+    const external = new Set(
+      [...layout.matchAll(/variable:\s*"(--[a-z0-9-]+)"/gi)].map((m) => m[1]),
+    );
+    expect(external.size).toBeGreaterThan(0);
+
+    const referenced = [...globalsCss.matchAll(/var\((--[a-z0-9-]+)/gi)].map((m) => m[1]);
+    expect(referenced.length).toBeGreaterThan(0);
+
+    const missing = [...new Set(referenced)].filter(
+      (name) => !defined.has(name) && !external.has(name),
+    );
+    expect(missing, `undefined custom properties: ${missing.join(", ")}`).toEqual([]);
+  });
 });

@@ -81,4 +81,27 @@ describe("architecture stages (M9)", () => {
     expect(text).toMatch(/does not invent Grafana/i);
     expect(text).not.toMatch(/\buptime\b|\bfps\b/i);
   });
+
+  it("only calls a stage code-verified when every node it cites is", () => {
+    // `reality` is hand-authored per stage. Bind it to the corpus so a stage
+    // cannot be promoted from simulation to code-verified without the nodes
+    // behind it actually being code-verified.
+    const nodeById = new Map(getGraph().nodes.map((node) => [node.id, node]));
+
+    for (const stage of MLOPS_ARCHITECTURE_STAGES) {
+      expect(stage.nodeIds.length, `${stage.id} cites no nodes`).toBeGreaterThan(0);
+
+      const states = stage.nodeIds.map((id) => {
+        const node = nodeById.get(id);
+        expect(node, `${stage.id} cites unknown node ${id}`).toBeDefined();
+        return node!.state;
+      });
+
+      if (stage.reality === "PUBLIC_CODE_VERIFIED") {
+        expect(states, `${stage.id} claims PUBLIC_CODE_VERIFIED`).toEqual(
+          states.map(() => "PUBLIC_CODE_VERIFIED"),
+        );
+      }
+    }
+  });
 });

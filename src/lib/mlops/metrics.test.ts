@@ -76,4 +76,37 @@ describe("mlops histogram (M5)", () => {
   it("rejects invalid binCount", () => {
     expect(() => buildHistogram([1], 0)).toThrow(/binCount/);
   });
+
+  it("clamps out-of-range values to the nearest edge, in both directions", () => {
+    const edges = [-3, -1.8, -0.6, 0.6, 1.8, 3];
+
+    // Below the reference floor belongs in the first bin. Putting it in the
+    // last bin would report drift in the opposite direction to reality.
+    expect(histogramWithEdges([-99], edges).bins.map((b) => b.count)).toEqual([
+      1, 0, 0, 0, 0,
+    ]);
+    expect(histogramWithEdges([99], edges).bins.map((b) => b.count)).toEqual([
+      0, 0, 0, 0, 1,
+    ]);
+    expect(histogramWithEdges([-99, 99], edges).bins.map((b) => b.count)).toEqual([
+      1, 0, 0, 0, 1,
+    ]);
+  });
+
+  it("bins identically to buildHistogram over the same edges", () => {
+    // The two binning paths must not disagree: PSI compares a reference built
+    // by one against a current built by the other.
+    const values = [-5, -3, -1.2, 0, 0.6, 2.9, 3, 7];
+    const reference = buildHistogram(values, 5, -3, 3);
+    const aligned = histogramWithEdges(values, reference.edges);
+    expect(aligned.bins.map((b) => b.count)).toEqual(reference.bins.map((b) => b.count));
+  });
+
+  it("puts an edge value in the bin it opens, not the one it closes", () => {
+    const edges = [0, 1, 2];
+    expect(histogramWithEdges([0], edges).bins.map((b) => b.count)).toEqual([1, 0]);
+    expect(histogramWithEdges([1], edges).bins.map((b) => b.count)).toEqual([0, 1]);
+    // The top edge is inclusive only because there is no bin above it.
+    expect(histogramWithEdges([2], edges).bins.map((b) => b.count)).toEqual([0, 1]);
+  });
 });

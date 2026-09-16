@@ -31,6 +31,6 @@ Canonical product contracts: `ANISH_RUNTIME_MASTER_HANDOFF.md`.
 | M23 Ending Signal                       | Locked | Session path replay; density honesty; no profiling   |
 | M24 Production Hardening                | Locked | Security, reliability, perf, a11y, discoverability   |
 | M25 Evidence Freeze                     | Locked | 96 claims frozen, owner-confirmed, enforced in CI    |
-| M26 Launch                              | Built  | Deployed: anish-runtime.vercel.app; smoke 38/38      |
+| M26 Launch                              | Locked | Live at anish-runtime.vercel.app; smoke 38/38        |
 
 Workflow: Research → Proposal → Owner Approval → Implement → Validate → Report → Owner Lock → Cumulative audit → Next.

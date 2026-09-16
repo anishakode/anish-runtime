@@ -348,7 +348,7 @@ body {
   position: absolute;
   inset: 0;
   border: 0;
-  background: color-mix(in srgb, var(--ink) 28%, transparent);
+  background: color-mix(in srgb, var(--on-surface) 28%, transparent);
   cursor: pointer;
   pointer-events: auto;
 }
@@ -364,7 +364,7 @@ body {
   border-left: 1px solid var(--stroke);
   padding: 1.25rem 1.25rem 2rem;
   pointer-events: auto;
-  box-shadow: -12px 0 32px color-mix(in srgb, var(--ink) 8%, transparent);
+  box-shadow: -12px 0 32px color-mix(in srgb, var(--on-surface) 8%, transparent);
 }
 
 .source-trace-line {

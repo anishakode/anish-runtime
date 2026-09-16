@@ -99,6 +99,7 @@ const REQUIRED = [
   "docs/launch/LAUNCH-CHECKLIST.md",
   "docs/launch/PUBLIC-PRESENCE.md",
   "docs/adr/0028-launch.md",
+  "docs/milestones/M26-LOCK-AUDIT.md",
   "src/lib/freeze/claims.ts",
   "src/lib/freeze/strength.ts",
   "src/lib/freeze/verify.ts",

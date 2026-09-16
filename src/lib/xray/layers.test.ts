@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { getGraph } from "@/lib/evidence/queries";
+import { EVIDENCE_STRENGTH } from "@/lib/freeze/strength";
 import { buildMlopsXrayLayers, mlopsXrayCopyMentionsInventedInfra } from "./build-views";
 import { findXrayComponent, MLOPS_XRAY_LAYERS, relatedLabelsFor } from "./layers";
 
@@ -50,5 +51,32 @@ describe("Project X-Ray layers (M11)", () => {
     expect(relatedLabelsFor(views, "cmp.mlops.drift")).toEqual(
       expect.arrayContaining([expect.stringMatching(/KS/i)]),
     );
+  });
+
+  it("never claims a state stronger than the graph nodes behind its sources", () => {
+    // The states in this file are hand-authored, so without this they could be
+    // upgraded and every other test would still pass. Bind them to the corpus:
+    // a component may be more cautious than its evidence, never bolder.
+    const graph = getGraph();
+    const components = MLOPS_XRAY_LAYERS.flatMap((layer) => layer.components);
+    expect(components.length).toBeGreaterThan(0);
+
+    for (const component of components) {
+      const backing = graph.nodes.filter((node) =>
+        node.sourceIds.some((id) => component.sourceIds.includes(id)),
+      );
+      expect(
+        backing.length,
+        `${component.id} cites no graph-backed source`,
+      ).toBeGreaterThan(0);
+
+      const strongestAvailable = Math.min(
+        ...backing.map((node) => EVIDENCE_STRENGTH[node.state]),
+      );
+      expect(
+        EVIDENCE_STRENGTH[component.evidenceState],
+        `${component.id} claims ${component.evidenceState}, stronger than anything its sources support`,
+      ).toBeGreaterThanOrEqual(strongestAvailable);
+    }
   });
 });

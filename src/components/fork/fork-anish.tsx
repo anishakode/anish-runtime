@@ -48,7 +48,10 @@ export function ForkAnish({ documents }: ForkAnishProps) {
     setError(null);
     const result = forkFromJobDescription(text, documents);
     setBranch(result);
-    session?.recordItem("route:experience", `Forked role/${result.roleSlug}`);
+    // The reason string is shown back to the visitor in the Recompile WHY?
+    // panel, so it stays free of anything derived from the pasted text — a
+    // role slug is still their input.
+    session?.recordItem("route:experience", "Forked a role against the evidence graph");
     // Counts only — the pasted job description never reaches the trace.
     runtimeTrace?.record({
       action: "FORK_BRANCH",

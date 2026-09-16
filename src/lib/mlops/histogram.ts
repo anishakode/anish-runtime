@@ -73,16 +73,15 @@ export function histogramWithEdges(values: number[], edges: number[]): Histogram
   const binCount = edges.length - 1;
   const counts = Array.from({ length: binCount }, () => 0);
   for (const value of values) {
-    let idx = 0;
-    if (value >= edges[binCount]) {
-      idx = binCount - 1;
-    } else {
-      for (let i = 0; i < binCount; i += 1) {
-        if (value >= edges[i] && value < edges[i + 1]) {
-          idx = i;
-          break;
-        }
-        if (i === binCount - 1) idx = i;
+    // Clamps both ways, like buildHistogram. The search is "first bin this
+    // value falls under", so anything below edges[0] lands in bin 0 rather
+    // than falling through to the top bin — which would read as drift in the
+    // opposite direction to reality.
+    let idx = binCount - 1;
+    for (let i = 0; i < binCount; i += 1) {
+      if (value < edges[i + 1]) {
+        idx = i;
+        break;
       }
     }
     counts[idx] += 1;

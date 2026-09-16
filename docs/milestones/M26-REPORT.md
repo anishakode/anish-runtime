@@ -1,6 +1,6 @@
 # M26 — Launch
 
-**Status:** Built and **deployed** — https://anish-runtime.vercel.app — awaiting owner lock
+**Status:** **Locked** by the owner — live at https://anish-runtime.vercel.app
 **Contract:** Handoff §45 · ADR [`0028-launch.md`](../adr/0028-launch.md)
 **Owner decisions:** Vercel as host · origin decided at deploy time · start with everything doable locally
 
@@ -139,5 +139,15 @@ hand.
 
 ## Owner decision
 
-The site is live and every automated gate is green. Ready for lock and the cumulative
-M0–M26 audit.
+**Locked.** The cumulative M0–M26 audit is in
+[`M26-LOCK-AUDIT.md`](./M26-LOCK-AUDIT.md) — the first audit in this project able to check
+the contracts against a real deployed origin rather than a local build.
+
+## Audit addendum (M26 lock)
+
+The cumulative M0-M26 audit found and fixed six defects. See
+[`M26-LOCK-AUDIT.md`](./M26-LOCK-AUDIT.md) for the detail. The two that mattered most
+were three test assertions that could never fail, and a histogram binning bug that made the
+MLOps lab report drift in the wrong direction for values below the reference floor.
+
+Unit tests moved 461 to 470 as a result.

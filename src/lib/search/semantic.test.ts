@@ -94,12 +94,15 @@ describe("retrieveEvidence orchestration (M16)", () => {
       documents,
     );
     expect(weak.semanticAttempted).toBe(true);
-    // Either semantic appended or empty after attempt — never invents new states.
-    if (weak.semantic.length > 0) {
-      expect(weak.status).toBe("semantic_appended");
-      expect(
-        weak.semantic.every((h) => h.evidenceState === h.document.evidenceState),
-      ).toBe(true);
+    // Assert the appended path unconditionally. Guarding this behind "if there
+    // were any hits" would let a silent retrieval regression pass as success.
+    expect(weak.deterministic).toEqual([]);
+    expect(weak.semantic.length).toBeGreaterThan(0);
+    expect(weak.status).toBe("semantic_appended");
+
+    // Similarity ranks; it never rewrites the state it ranked.
+    for (const hit of weak.semantic) {
+      expect(hit.evidenceState).toBe(hit.document.evidenceState);
     }
   });
 

@@ -149,23 +149,29 @@ export function InterviewMyWork({ catalog }: InterviewMyWorkProps) {
               {set.reason}
             </p>
           )}
-
-          <div className="border border-[var(--stroke)] p-4" aria-label="Answer key">
-            {ANSWER_KEY_NOTICE.map((line, index) => (
-              <p
-                key={line}
-                className={
-                  index === 0
-                    ? "instrument-label text-xs tracking-wide"
-                    : "mt-1 text-sm text-[var(--muted)]"
-                }
-              >
-                {line}
-              </p>
-            ))}
-          </div>
         </section>
       ) : null}
+
+      {/*
+       * Outside the `set` guard on purpose: the boundary is a standing claim
+       * about what this surface will never produce, so it has to be readable
+       * before a set is built and after one is cleared — not only alongside
+       * questions.
+       */}
+      <div className="border border-[var(--stroke)] p-4" aria-label="Answer key">
+        {ANSWER_KEY_NOTICE.map((line, index) => (
+          <p
+            key={line}
+            className={
+              index === 0
+                ? "instrument-label text-xs tracking-wide"
+                : "mt-1 text-sm text-[var(--muted)]"
+            }
+          >
+            {line}
+          </p>
+        ))}
+      </div>
     </div>
   );
 }

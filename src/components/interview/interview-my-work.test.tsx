@@ -90,16 +90,27 @@ describe("InterviewMyWork (M21)", () => {
         <Harness />
       </SessionRuntimeProvider>,
     );
+
+    function expectBoundary(stage: string) {
+      const answerKey = screen.getByLabelText(/Answer key/i);
+      expect(answerKey, stage).toHaveTextContent("Not generated.");
+      expect(answerKey, stage).toHaveTextContent(
+        "It will not manufacture Anish's interview answer.",
+      );
+    }
+
+    // "Always" has to mean before a set exists, not only beside questions.
+    expectBoundary("before any set is built");
+
     await user.click(screen.getByRole("button", { name: /Seed trail/i }));
     await user.click(screen.getByRole("button", { name: /BUILD QUESTION SET/i }));
+    expectBoundary("with a generated set");
 
-    const answerKey = screen.getByLabelText(/Answer key/i);
-    expect(answerKey).toHaveTextContent("Not generated.");
-    expect(answerKey).toHaveTextContent(
-      "It will not manufacture Anish's interview answer.",
-    );
     expect(screen.queryByText(/fit score/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/candidate score/i)).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole("button", { name: /Clear set/i }));
+    expectBoundary("after the set is cleared");
   });
 
   it("clears the set on demand", async () => {

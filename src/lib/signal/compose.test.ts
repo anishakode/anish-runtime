@@ -41,7 +41,7 @@ describe("ui_plan validation (M18)", () => {
         } as never,
       ],
     });
-    // strict schema should already reject; assert catches if cast through
+    // The strict schema is the first line of defence.
     const validated = validateUiPlan({
       version: 1,
       layout: "stack",
@@ -54,7 +54,12 @@ describe("ui_plan validation (M18)", () => {
       ],
     });
     expect(validated.ok).toBe(false);
-    void result;
+
+    // The guard is the second, for a plan cast past the schema. Assert it by
+    // name: if it ever stops refusing "title", this must fail rather than pass
+    // on the schema's behalf.
+    expect(result.ok).toBe(false);
+    expect(result.ok === false && result.error).toContain("title");
   });
 
   it("rejects Comparison with fewer than two evidence ids", () => {

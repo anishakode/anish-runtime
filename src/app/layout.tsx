@@ -38,7 +38,8 @@ export const metadata: Metadata = {
     ...(site === "" ? {} : { url: site }),
   },
   twitter: {
-    card: "summary",
+    // A 1200×630 card exists from M26, so the large format is the honest declaration.
+    card: "summary_large_image",
     title: `${profile.name} — ${profile.tagline}`,
     description,
   },

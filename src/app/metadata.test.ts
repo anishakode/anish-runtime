@@ -50,7 +50,7 @@ describe("root metadata (M24)", () => {
     const { profile } = getGraph();
     expect(rootMetadata.description).toContain(profile.tagline);
     expect(rootMetadata.openGraph?.title).toContain(profile.name);
-    expect(rootMetadata.twitter).toMatchObject({ card: "summary" });
+    expect(rootMetadata.twitter).toMatchObject({ card: "summary_large_image" });
   });
 
   it("declares the single light colour scheme it actually ships", () => {

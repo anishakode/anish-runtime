@@ -6,7 +6,7 @@ This repository is a from-scratch rebuild guided by `ANISH_RUNTIME_MASTER_HANDOF
 
 ## Current milestone
 
-**Next:** M26 — Launch (awaiting approval)
+**Building:** M26 — Launch (local scope complete; deploy pending)
 
 Locked: M0 · M1 · M2 · M3 · M3.5 · M4 · M5 · M6 · M7 · M8 · M9 · M10 · M11 · M12 · M13 ·
 M14 · M15 · M16 · M17 · M18 · M19 · M20 · M21 · M22 · M23 · M24 · M25.
@@ -17,6 +17,12 @@ the public corpus: 96 claims are owner-confirmed and enforced by `pnpm freeze:ch
 changing what this portfolio claims requires a recorded change-control entry. Every claim
 and its evidence is listed in [`docs/evidence/CLAIM-LEDGER.md`](docs/evidence/CLAIM-LEDGER.md);
 status per milestone lives in `docs/planning/milestones.md`.
+
+M26 prepares the deploy: a social card generated from the graph, a live smoke script that
+proves a deployed origin matches what CI passed, and the runbook in
+[`docs/launch/`](docs/launch/LAUNCH-RUNBOOK.md). The origin is a **build-time** input —
+`NEXT_PUBLIC_SITE_URL` must be set before the production build or the site ships relative
+canonicals and a card pointing at localhost. `pnpm smoke:live` is what catches that.
 
 ## Prerequisites
 
@@ -38,7 +44,10 @@ pnpm test:e2e:prod   # e2e against a production build — the only run that asse
 pnpm validate:scope
 pnpm validate:evidence
 pnpm check:bundle    # gzip first-load JS per route; fails on regression
-pnpm run ci          # scope · evidence · format · lint · typecheck · unit · build · bundle
+pnpm freeze:check    # frozen public claims still match the graph
+pnpm smoke:live https://origin   # verify a deployed origin (headers, canonicals, card,
+                                 # indexing, recruiter path in raw HTML, AI fallbacks)
+pnpm run ci          # scope · evidence · freeze · format · lint · typecheck · unit · build · bundle
 pnpm run ci:full     # the above plus production e2e
 ```
 

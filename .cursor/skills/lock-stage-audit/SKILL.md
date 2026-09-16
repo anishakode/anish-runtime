@@ -302,7 +302,21 @@ Do **not** start the next milestone’s implementation until this audit is repor
 - [ ] Generated freeze output is Prettier-clean, so re-freezing cannot break `format:check`
 - [ ] ADR 0027; freeze unit coverage including every rejection path
 
-### M26+ (when locked)
+### M26 — Launch
+
+- [ ] `pnpm smoke:live <origin>` passes fully against the live origin, not just locally
+- [ ] Deployed origin is https with HSTS, and the production CSP matches what M24 defined
+- [ ] `NEXT_PUBLIC_SITE_URL` set **before** the deployed build; canonicals, sitemap, and card URLs are absolute and no `localhost` survives anywhere in the served HTML
+- [ ] Social card renders as a real 1200×630 PNG, and every word on it comes from the graph — no vocabulary the corpus cannot back
+- [ ] Recruiter path verified on the live origin in raw HTML, and on a real phone
+- [ ] Session-shaped routes still noindex live; robots and sitemap agree with the indexing policy
+- [ ] Signal still refuses cross-origin callers in production, and every AI surface degrades to deterministic evidence
+- [ ] No analytics, no third-party connect host — the integrity manifest's zero-tracking claim is still literally true
+- [ ] Public presence (profile, pins, repository metadata, LinkedIn) says nothing the frozen corpus does not
+- [ ] `pnpm freeze:check` still gates the deployed commit; corpus changes go through change control even during launch week
+- [ ] ADR 0028; OG unit coverage + production e2e for the card + the live smoke script
+
+### M27+ (when locked)
 
 For each later locked milestone, add checks from that milestone’s report + handoff contract.
 

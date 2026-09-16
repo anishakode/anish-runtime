@@ -237,6 +237,36 @@ test.describe("machine-readable surfaces", () => {
   });
 });
 
+test.describe("social preview (M26)", () => {
+  test("the card renders as a real 1200x630 PNG", async ({ request }) => {
+    const response = await request.get("/opengraph-image");
+    expect(response.status()).toBe(200);
+    expect(response.headers()["content-type"]).toContain("image/png");
+
+    const body = await response.body();
+    expect(body.byteLength).toBeGreaterThan(5_000);
+    // PNG magic number, then the IHDR width/height fields.
+    expect(body.subarray(0, 4).toString("hex")).toBe("89504e47");
+    expect(body.readUInt32BE(16)).toBe(1200);
+    expect(body.readUInt32BE(20)).toBe(630);
+  });
+
+  test("the page advertises the card with its dimensions", async ({ page }) => {
+    await page.goto("/");
+    const image = page.locator('meta[property="og:image"]');
+    await expect(image).toHaveCount(1);
+    await expect(image).toHaveAttribute("content", /opengraph-image/);
+    await expect(page.locator('meta[property="og:image:width"]')).toHaveAttribute(
+      "content",
+      "1200",
+    );
+    await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
+      "content",
+      "summary_large_image",
+    );
+  });
+});
+
 test.describe("production hardening", () => {
   test.skip(!isProd, "header and CSP assertions need the production server");
 

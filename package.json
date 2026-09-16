@@ -27,6 +27,7 @@
     "freeze:write": "tsx scripts/freeze-evidence.ts --write",
     "freeze:ledger": "tsx scripts/freeze-evidence.ts --ledger",
     "check:bundle": "node scripts/check-bundle-budget.mjs",
+    "smoke:live": "node scripts/live-smoke.mjs",
     "ci": "pnpm validate:scope && pnpm validate:evidence && pnpm freeze:check && pnpm format:check && pnpm lint && pnpm typecheck && pnpm test:status && pnpm build && pnpm check:bundle",
     "ci:full": "pnpm ci && pnpm test:e2e:prod"
   },

@@ -16,73 +16,56 @@
       "kind": "education",
       "statement": "BTech Computer Science, Indian Institute of Information Technology Tiruchirappalli (2019–2023) — CGPA 8.47/10",
       "evidenceState": "RESUME_DOCUMENTED",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "0a1afa988d16324c"
     },
     "education:edu.msc-data-science": {
       "kind": "education",
       "statement": "MSc Data Science, University of Hertfordshire (2023-09–2026-02) — Distinction",
       "evidenceState": "RESUME_DOCUMENTED",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "b517633904a7ff95"
     },
     "evidence_node:ev.archive.age-gender": {
       "kind": "evidence_node",
       "statement": "Age / Gender Detector (archive)",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.age-gender.repo"
-      ],
+      "evidence": ["src.age-gender.repo"],
       "digest": "2dc2ff3de4685e9c"
     },
     "evidence_node:ev.archive.netflix": {
       "kind": "evidence_node",
       "statement": "Netflix Clone (archive)",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.netflix.repo"
-      ],
+      "evidence": ["src.netflix.repo"],
       "digest": "b75266c80d676c26"
     },
     "evidence_node:ev.archive.park-finder": {
       "kind": "evidence_node",
       "statement": "Park Finder (archive)",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.park-finder.repo"
-      ],
+      "evidence": ["src.park-finder.repo"],
       "digest": "c07f424f3069b114"
     },
     "evidence_node:ev.archive.pdf-extract": {
       "kind": "evidence_node",
       "statement": "PDF Text Extraction (archive)",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.pdf-extract.repo"
-      ],
+      "evidence": ["src.pdf-extract.repo"],
       "digest": "2c587c6cf561fcb3"
     },
     "evidence_node:ev.boring.deterministic": {
       "kind": "evidence_node",
       "statement": "Deterministic JSSG codemod transforms",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.boring.package"
-      ],
+      "evidence": ["src.boring.package"],
       "digest": "1180305a6eb2d26c"
     },
     "evidence_node:ev.boring.project": {
       "kind": "evidence_node",
       "statement": "Boring_AI — web3.py codemod",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.boring.package",
-        "src.boring.repo"
-      ],
+      "evidence": ["src.boring.package", "src.boring.repo"],
       "digest": "16d27f0ca509ea3e"
     },
     "evidence_node:ev.boundary.failure-museum-empty": {
@@ -103,253 +86,189 @@
       "kind": "evidence_node",
       "statement": "BTech Computer Science — IIIT Tiruchirappalli",
       "evidenceState": "RESUME_DOCUMENTED",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "b6f24043a42b6c4f"
     },
     "evidence_node:ev.edu.msc": {
       "kind": "evidence_node",
       "statement": "MSc Data Science — University of Hertfordshire (Distinction)",
       "evidenceState": "RESUME_DOCUMENTED",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "131f031f6d052969"
     },
     "evidence_node:ev.exp.cardstack": {
       "kind": "evidence_node",
       "statement": "Junior Data & Cloud Engineer — Cardstack Consulting",
       "evidenceState": "OWNER_CONFIRMED_PROFESSIONAL",
-      "evidence": [
-        "src.owner.cardstack-impact",
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.owner.cardstack-impact", "src.resume.canonical"],
       "digest": "374a4968501db994"
     },
     "evidence_node:ev.feynn.project": {
       "kind": "evidence_node",
       "statement": "Feynn EV Analysis",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.feynn.repo"
-      ],
+      "evidence": ["src.feynn.repo"],
       "digest": "1058ff6a706ad558"
     },
     "evidence_node:ev.fraud.project": {
       "kind": "evidence_node",
       "statement": "Fraud Detection project",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.fraud.repo"
-      ],
+      "evidence": ["src.fraud.repo"],
       "digest": "1da360398d85c70f"
     },
     "evidence_node:ev.identity.anish-akode": {
       "kind": "evidence_node",
       "statement": "Anish Akode — public identity",
       "evidenceState": "RESUME_DOCUMENTED",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "5c037623c03453e7"
     },
     "evidence_node:ev.malware.project": {
       "kind": "evidence_node",
       "statement": "Explainable PDF Malware Detection — flagship",
       "evidenceState": "PUBLIC_DOCUMENT_VERIFIED",
-      "evidence": [
-        "src.malware.repo",
-        "src.malware.report"
-      ],
+      "evidence": ["src.malware.repo", "src.malware.report"],
       "digest": "2e0b597048d13cc5"
     },
     "evidence_node:ev.malware.report": {
       "kind": "evidence_node",
       "statement": "Public malware explainability report",
       "evidenceState": "PUBLIC_DOCUMENT_VERIFIED",
-      "evidence": [
-        "src.malware.report"
-      ],
+      "evidence": ["src.malware.report"],
       "digest": "0b399ce03830f5fa"
     },
     "evidence_node:ev.malware.runtime-lab": {
       "kind": "evidence_node",
       "statement": "Browser PDF Malware Explainability Lab",
       "evidenceState": "PORTFOLIO_EXTENSION",
-      "evidence": [
-        "src.malware.repo",
-        "src.malware.report",
-        "src.portfolio.malware-lab"
-      ],
+      "evidence": ["src.malware.repo", "src.malware.report", "src.portfolio.malware-lab"],
       "digest": "ad2838a28d67eee3"
     },
     "evidence_node:ev.malware.shap-limited": {
       "kind": "evidence_node",
       "statement": "Detailed SHAP / model internals",
       "evidenceState": "LIMITED_EVIDENCE",
-      "evidence": [
-        "src.malware.report"
-      ],
+      "evidence": ["src.malware.report"],
       "digest": "f9f0b002206ade09"
     },
     "evidence_node:ev.mlops.audit": {
       "kind": "evidence_node",
       "statement": "Audit event representation",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.mlops.audit-sink"
-      ],
+      "evidence": ["src.mlops.audit-sink"],
       "digest": "1bde66cdbb7f2313"
     },
     "evidence_node:ev.mlops.drift": {
       "kind": "evidence_node",
       "statement": "Data drift monitoring",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.mlops.drift-py",
-        "src.mlops.stats-py"
-      ],
+      "evidence": ["src.mlops.drift-py", "src.mlops.stats-py"],
       "digest": "00ef50366fc110b6"
     },
     "evidence_node:ev.mlops.ks": {
       "kind": "evidence_node",
       "statement": "Kolmogorov–Smirnov (KS) statistic",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.mlops.stats-py"
-      ],
+      "evidence": ["src.mlops.stats-py"],
       "digest": "b09aa6a92506facb"
     },
     "evidence_node:ev.mlops.monitoring": {
       "kind": "evidence_node",
       "statement": "Operational monitoring concepts",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.mlops.repo"
-      ],
+      "evidence": ["src.mlops.repo"],
       "digest": "b7f103636305bb5b"
     },
     "evidence_node:ev.mlops.policy": {
       "kind": "evidence_node",
       "statement": "Policy / governance checks",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.mlops.policy"
-      ],
+      "evidence": ["src.mlops.policy"],
       "digest": "68004aea1ec8efda"
     },
     "evidence_node:ev.mlops.project": {
       "kind": "evidence_node",
       "statement": "MLOps Governance Dashboard — flagship project",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.mlops.repo"
-      ],
+      "evidence": ["src.mlops.repo"],
       "digest": "7e3636deb337aded"
     },
     "evidence_node:ev.mlops.psi": {
       "kind": "evidence_node",
       "statement": "Population Stability Index (PSI)",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.mlops.drift-py"
-      ],
+      "evidence": ["src.mlops.drift-py"],
       "digest": "b0f4b27f938f56be"
     },
     "evidence_node:ev.mlops.runtime-lab": {
       "kind": "evidence_node",
       "statement": "Browser MLOps Runtime Lab",
       "evidenceState": "PORTFOLIO_EXTENSION",
-      "evidence": [
-        "src.mlops.repo",
-        "src.portfolio.runtime-lab"
-      ],
+      "evidence": ["src.mlops.repo", "src.portfolio.runtime-lab"],
       "digest": "94dc23825c2e936d"
     },
     "evidence_node:ev.skill.aws": {
       "kind": "evidence_node",
       "statement": "AWS (EC2, S3, DynamoDB, SQS, SNS, CloudWatch)",
       "evidenceState": "OWNER_CONFIRMED_PROFESSIONAL",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "0b5064680f0d03e3"
     },
     "evidence_node:ev.skill.java-spring": {
       "kind": "evidence_node",
       "statement": "Java / Spring Boot",
       "evidenceState": "OWNER_CONFIRMED_PROFESSIONAL",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "0d10e76d366ab90b"
     },
     "evidence_node:ev.skill.python": {
       "kind": "evidence_node",
       "statement": "Python",
       "evidenceState": "OWNER_CONFIRMED_PROFESSIONAL",
-      "evidence": [
-        "src.mlops.repo",
-        "src.resume.canonical",
-        "src.steward.repo"
-      ],
+      "evidence": ["src.mlops.repo", "src.resume.canonical", "src.steward.repo"],
       "digest": "6aa74fc458ddb335"
     },
     "evidence_node:ev.skill.rest-apis": {
       "kind": "evidence_node",
       "statement": "REST APIs",
       "evidenceState": "OWNER_CONFIRMED_PROFESSIONAL",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "e87b9e3dc2b488ff"
     },
     "evidence_node:ev.skill.sql": {
       "kind": "evidence_node",
       "statement": "SQL",
       "evidenceState": "OWNER_CONFIRMED_PROFESSIONAL",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "f5b48a68b9773c48"
     },
     "evidence_node:ev.steward.a2a": {
       "kind": "evidence_node",
       "statement": "A2A / Google ADK agent orchestration",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.steward.readme"
-      ],
+      "evidence": ["src.steward.readme"],
       "digest": "e58ee27f99b27271"
     },
     "evidence_node:ev.steward.fhir": {
       "kind": "evidence_node",
       "statement": "FHIR context for stewardship workflows",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.steward.readme",
-        "src.steward.repo"
-      ],
+      "evidence": ["src.steward.readme", "src.steward.repo"],
       "digest": "c990edfa317bff52"
     },
     "evidence_node:ev.steward.mcp": {
       "kind": "evidence_node",
       "statement": "MCP tool server for stewardship",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.steward.mcp-server"
-      ],
+      "evidence": ["src.steward.mcp-server"],
       "digest": "f8f8aa3171473d31"
     },
     "evidence_node:ev.steward.project": {
       "kind": "evidence_node",
       "statement": "Steward_AI — flagship project",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.steward.readme",
-        "src.steward.repo"
-      ],
+      "evidence": ["src.steward.readme", "src.steward.repo"],
       "digest": "ea3e94c6d0d35087"
     },
     "evidence_node:ev.steward.runtime-lab": {
@@ -367,9 +286,7 @@
       "kind": "evidence_node",
       "statement": "Steward safety / prototype boundary",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.steward.readme"
-      ],
+      "evidence": ["src.steward.readme"],
       "digest": "a2bb1792faa8e654"
     },
     "exclusion:email.anishakode2002@gmail.com": {
@@ -453,156 +370,119 @@
       "kind": "experience",
       "statement": "Junior Data & Cloud Engineer at Cardstack Consulting Limited (2024-09–2026-02), 12 technologies",
       "evidenceState": "OWNER_CONFIRMED_PROFESSIONAL",
-      "evidence": [
-        "src.owner.cardstack-impact",
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.owner.cardstack-impact", "src.resume.canonical"],
       "digest": "f48bbcbd7c662469"
     },
     "identity:email": {
       "kind": "identity",
       "statement": "email is \"anishakode3101@gmail.com\"",
       "evidenceState": "RESUME_DOCUMENTED",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "f679d16622e521bb"
     },
     "identity:github": {
       "kind": "identity",
       "statement": "github is \"https://github.com/anishakode\"",
       "evidenceState": "RESUME_DOCUMENTED",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "7e31dba18946421d"
     },
     "identity:linkedin": {
       "kind": "identity",
       "statement": "linkedin is \"https://www.linkedin.com/in/anishakode\"",
       "evidenceState": "RESUME_DOCUMENTED",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "cb52afea522487bc"
     },
     "identity:location": {
       "kind": "identity",
       "statement": "location is \"Manchester, UK\"",
       "evidenceState": "RESUME_DOCUMENTED",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "5e792ec6bccdc00c"
     },
     "identity:name": {
       "kind": "identity",
       "statement": "name is \"Anish Akode\"",
       "evidenceState": "RESUME_DOCUMENTED",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "6c297364c1d8aa0f"
     },
     "identity:positioning": {
       "kind": "identity",
       "statement": "positioning is \"AI · ML · Software Engineering\"",
       "evidenceState": "RESUME_DOCUMENTED",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "c87e5d2d4c7d0d95"
     },
     "identity:proposition": {
       "kind": "identity",
       "statement": "proposition is \"I build intelligent systems from data to model to production.\"",
       "evidenceState": "RESUME_DOCUMENTED",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "6c51ed719758325b"
     },
     "identity:tagline": {
       "kind": "identity",
       "statement": "tagline is \"An executable professional identity.\"",
       "evidenceState": "RESUME_DOCUMENTED",
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "6b559688e7f35b54"
     },
     "impact_metric:ev.cardstack.api-defects": {
       "kind": "impact_metric",
       "statement": "Approximately 30% fewer API integration defects",
       "evidenceState": "OWNER_CONFIRMED_PROFESSIONAL",
-      "evidence": [
-        "src.owner.cardstack-impact"
-      ],
+      "evidence": ["src.owner.cardstack-impact"],
       "digest": "b6da7d416d638849"
     },
     "impact_metric:ev.cardstack.audit-failures": {
       "kind": "impact_metric",
       "statement": "Zero audit failures across six release cycles",
       "evidenceState": "OWNER_CONFIRMED_PROFESSIONAL",
-      "evidence": [
-        "src.owner.cardstack-impact"
-      ],
+      "evidence": ["src.owner.cardstack-impact"],
       "digest": "f9f022b4b647cd19"
     },
     "impact_metric:ev.cardstack.incident-speed": {
       "kind": "impact_metric",
       "statement": "Approximately 40% faster incident investigation",
       "evidenceState": "OWNER_CONFIRMED_PROFESSIONAL",
-      "evidence": [
-        "src.owner.cardstack-impact"
-      ],
+      "evidence": ["src.owner.cardstack-impact"],
       "digest": "e826ae09944fcab0"
     },
     "project:proj.age-gender": {
       "kind": "project",
       "statement": "Age / Gender Detector (archive) — Earlier computer-vision experiment — evolution evidence, not a flagship interaction.",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.age-gender.repo"
-      ],
+      "evidence": ["src.age-gender.repo"],
       "digest": "0c8ca1c058921868"
     },
     "project:proj.boring-ai": {
       "kind": "project",
       "statement": "Boring_AI (supporting) — Test-backed codemod workflow for mechanical web3.py v6 → v7 migrations with optional AI follow-up.",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.boring.package",
-        "src.boring.repo"
-      ],
+      "evidence": ["src.boring.package", "src.boring.repo"],
       "digest": "e518400df524fdd6"
     },
     "project:proj.feynn-ev": {
       "kind": "project",
       "statement": "Feynn EV Analysis (supporting) — Applied EV market-data analysis using public notebooks/data.",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.feynn.repo"
-      ],
+      "evidence": ["src.feynn.repo"],
       "digest": "c73c44b2a29a54dd"
     },
     "project:proj.fraud-detection": {
       "kind": "project",
       "statement": "Fraud Detection (supporting) — ML fraud-detection project with public artifacts.",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.fraud.repo"
-      ],
+      "evidence": ["src.fraud.repo"],
       "digest": "1a24b214232ebb75"
     },
     "project:proj.malware-pdf": {
       "kind": "project",
       "statement": "Explainable PDF Malware Detection (flagship) — Security ML / explainability study with a verified public project report. Not production malware infrastructure.",
       "evidenceState": "PUBLIC_DOCUMENT_VERIFIED",
-      "evidence": [
-        "src.malware.repo",
-        "src.malware.report"
-      ],
+      "evidence": ["src.malware.repo", "src.malware.report"],
       "digest": "4b2e2bc584b65160"
     },
     "project:proj.mlops-governance": {
@@ -622,245 +502,189 @@
       "kind": "project",
       "statement": "Netflix Clone (archive) — Early full-stack clone project — archive/evolution evidence.",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.netflix.repo"
-      ],
+      "evidence": ["src.netflix.repo"],
       "digest": "e10749f29d30b884"
     },
     "project:proj.park-finder": {
       "kind": "project",
       "statement": "Park Finder (archive) — Android park locator using public park and maps APIs — archive evidence.",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.park-finder.repo"
-      ],
+      "evidence": ["src.park-finder.repo"],
       "digest": "60c20c91c1abc66c"
     },
     "project:proj.pdf-extract": {
       "kind": "project",
       "statement": "PDF Text Extraction (archive) — PDF data extraction experiment — archive/evolution evidence.",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.pdf-extract.repo"
-      ],
+      "evidence": ["src.pdf-extract.repo"],
       "digest": "e2983544d519bb14"
     },
     "project:proj.steward-ai": {
       "kind": "project",
       "statement": "Steward_AI (flagship) — Healthcare AI stewardship prototype using FHIR context, MCP tools, and A2A/ADK agent concepts — research/hackathon framing, not a production clinical system.",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": [
-        "src.steward.mcp-server",
-        "src.steward.readme",
-        "src.steward.repo"
-      ],
+      "evidence": ["src.steward.mcp-server", "src.steward.readme", "src.steward.repo"],
       "digest": "f852d8da9ba70014"
     },
     "source:src.age-gender.repo": {
       "kind": "source",
       "statement": "github_repo: Age_Gender_Detector repository @ 480d7d4507bf750a81082b1ad6297d5fc1502ff6",
       "evidenceState": null,
-      "evidence": [
-        "src.age-gender.repo"
-      ],
+      "evidence": ["src.age-gender.repo"],
       "digest": "f8482091fea4a6ca"
     },
     "source:src.boring.package": {
       "kind": "source",
       "statement": "github_file: web3py v6→v7 codemod package @ 3ccb20543dad3af4ae814e1aecddc9b371398002",
       "evidenceState": null,
-      "evidence": [
-        "src.boring.package"
-      ],
+      "evidence": ["src.boring.package"],
       "digest": "4083b7d5b9e5ea7d"
     },
     "source:src.boring.repo": {
       "kind": "source",
       "statement": "github_repo: Boring_AI repository @ 3ccb20543dad3af4ae814e1aecddc9b371398002",
       "evidenceState": null,
-      "evidence": [
-        "src.boring.repo"
-      ],
+      "evidence": ["src.boring.repo"],
       "digest": "e8352e2b6d4f7c97"
     },
     "source:src.feynn.repo": {
       "kind": "source",
       "statement": "github_repo: Feynn EV task repository @ 87c186c5feecd2648d5ab9c8c0cbac02c4562f78",
       "evidenceState": null,
-      "evidence": [
-        "src.feynn.repo"
-      ],
+      "evidence": ["src.feynn.repo"],
       "digest": "a6ad82e9df0036f2"
     },
     "source:src.fraud.repo": {
       "kind": "source",
       "statement": "github_repo: fraud_detection repository @ 55443af86f58480287073442979ab721b63940e8",
       "evidenceState": null,
-      "evidence": [
-        "src.fraud.repo"
-      ],
+      "evidence": ["src.fraud.repo"],
       "digest": "c651fd03ee59913c"
     },
     "source:src.malware.repo": {
       "kind": "source",
       "statement": "github_repo: Malware-Detection-Using-ML repository @ ca79ecc8a013e96d5514243603b174bf86e52ecd",
       "evidenceState": null,
-      "evidence": [
-        "src.malware.repo"
-      ],
+      "evidence": ["src.malware.repo"],
       "digest": "addfbdf4a26222ab"
     },
     "source:src.malware.report": {
       "kind": "source",
       "statement": "report: Explainable Machine Learning Models for Detecting PDF Malware (public PDF) @ ca79ecc8a013e96d5514243603b174bf86e52ecd",
       "evidenceState": null,
-      "evidence": [
-        "src.malware.report"
-      ],
+      "evidence": ["src.malware.report"],
       "digest": "0d48bb421d04d1b3"
     },
     "source:src.mlops.audit-sink": {
       "kind": "source",
       "statement": "github_file: Audit sink utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4",
       "evidenceState": null,
-      "evidence": [
-        "src.mlops.audit-sink"
-      ],
+      "evidence": ["src.mlops.audit-sink"],
       "digest": "b3fd3d850142d1ce"
     },
     "source:src.mlops.drift-py": {
       "kind": "source",
       "statement": "github_file: Drift / PSI utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4",
       "evidenceState": null,
-      "evidence": [
-        "src.mlops.drift-py"
-      ],
+      "evidence": ["src.mlops.drift-py"],
       "digest": "d0a879b45f7e1e3f"
     },
     "source:src.mlops.policy": {
       "kind": "source",
       "statement": "github_file: Policy utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4",
       "evidenceState": null,
-      "evidence": [
-        "src.mlops.policy"
-      ],
+      "evidence": ["src.mlops.policy"],
       "digest": "17f6088fe547c47d"
     },
     "source:src.mlops.repo": {
       "kind": "source",
       "statement": "github_repo: MLOps Governance Dashboard repository @ a2ba6fc45aaece5c3241569271bcca77124da2b4",
       "evidenceState": null,
-      "evidence": [
-        "src.mlops.repo"
-      ],
+      "evidence": ["src.mlops.repo"],
       "digest": "daaa9e334bf4c971"
     },
     "source:src.mlops.stats-py": {
       "kind": "source",
       "statement": "github_file: Stats / KS utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4",
       "evidenceState": null,
-      "evidence": [
-        "src.mlops.stats-py"
-      ],
+      "evidence": ["src.mlops.stats-py"],
       "digest": "96579846a3f1b005"
     },
     "source:src.netflix.repo": {
       "kind": "source",
       "statement": "github_repo: netflix_clone repository @ e127b5c3ea9a58e1706e25bcb185e223aeb6fb2f",
       "evidenceState": null,
-      "evidence": [
-        "src.netflix.repo"
-      ],
+      "evidence": ["src.netflix.repo"],
       "digest": "0ae210fb82f34369"
     },
     "source:src.owner.cardstack-impact": {
       "kind": "source",
       "statement": "owner_confirmation: Cardstack impact metrics (owner confirmation) (no commit pin)",
       "evidenceState": null,
-      "evidence": [
-        "src.owner.cardstack-impact"
-      ],
+      "evidence": ["src.owner.cardstack-impact"],
       "digest": "dbc8619a99c16e44"
     },
     "source:src.park-finder.repo": {
       "kind": "source",
       "statement": "github_repo: park_finder repository @ dacb5d7ff89fd31256cbaea8488b4e2daf56deed",
       "evidenceState": null,
-      "evidence": [
-        "src.park-finder.repo"
-      ],
+      "evidence": ["src.park-finder.repo"],
       "digest": "2bd9057370a6d592"
     },
     "source:src.pdf-extract.repo": {
       "kind": "source",
       "statement": "github_repo: pdf_text_extraction repository @ 963ea55b43ac434185db294261f4b1294da84760",
       "evidenceState": null,
-      "evidence": [
-        "src.pdf-extract.repo"
-      ],
+      "evidence": ["src.pdf-extract.repo"],
       "digest": "fa9d06f95551bbe3"
     },
     "source:src.portfolio.malware-lab": {
       "kind": "source",
       "statement": "portfolio_runtime: Portfolio PDF Malware Explainability Lab (deterministic extension) (no commit pin)",
       "evidenceState": null,
-      "evidence": [
-        "src.portfolio.malware-lab"
-      ],
+      "evidence": ["src.portfolio.malware-lab"],
       "digest": "c7b8e1af3da5d055"
     },
     "source:src.portfolio.runtime-lab": {
       "kind": "source",
       "statement": "portfolio_runtime: Portfolio MLOps Runtime Lab (future deterministic extension) (no commit pin)",
       "evidenceState": null,
-      "evidence": [
-        "src.portfolio.runtime-lab"
-      ],
+      "evidence": ["src.portfolio.runtime-lab"],
       "digest": "9cd25433e0eb66df"
     },
     "source:src.portfolio.steward-lab": {
       "kind": "source",
       "statement": "portfolio_runtime: Portfolio Steward Agent Lab (deterministic extension) (no commit pin)",
       "evidenceState": null,
-      "evidence": [
-        "src.portfolio.steward-lab"
-      ],
+      "evidence": ["src.portfolio.steward-lab"],
       "digest": "626d42c27ab3c40f"
     },
     "source:src.resume.canonical": {
       "kind": "source",
       "statement": "resume: Canonical résumé / profile documentation (no commit pin)",
       "evidenceState": null,
-      "evidence": [
-        "src.resume.canonical"
-      ],
+      "evidence": ["src.resume.canonical"],
       "digest": "597214ba9f977e91"
     },
     "source:src.steward.mcp-server": {
       "kind": "source",
       "statement": "github_file: Steward MCP server @ c9a1d6cfd674d72576208863a5f4c694f9130e50",
       "evidenceState": null,
-      "evidence": [
-        "src.steward.mcp-server"
-      ],
+      "evidence": ["src.steward.mcp-server"],
       "digest": "a060de8cbc6024dd"
     },
     "source:src.steward.readme": {
       "kind": "source",
       "statement": "github_file: Steward_AI README (boundaries + architecture) @ c9a1d6cfd674d72576208863a5f4c694f9130e50",
       "evidenceState": null,
-      "evidence": [
-        "src.steward.readme"
-      ],
+      "evidence": ["src.steward.readme"],
       "digest": "e20c6618a96e6b15"
     },
     "source:src.steward.repo": {
       "kind": "source",
       "statement": "github_repo: Steward_AI repository @ c9a1d6cfd674d72576208863a5f4c694f9130e50",
       "evidenceState": null,
-      "evidence": [
-        "src.steward.repo"
-      ],
+      "evidence": ["src.steward.repo"],
       "digest": "3c3ba41d86d3d378"
     }
   },

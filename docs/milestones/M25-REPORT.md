@@ -101,5 +101,16 @@ Confirming is a deliberate act: `pnpm freeze:write --confirmed`.
 - **Freezing CV and project copy rendered outside the graph.** All public copy already
   derives from the graph; if that ever stops being true, the freeze must extend to it.
 
-**Ask:** Confirm the 25 owner-only claims (or correct them first), decide on committing
-the repository, then lock M25?
+## Owner actions taken (2026-09-16)
+
+- **Facts confirmed.** All 25 owner-only claims were confirmed as written. The manifest
+  is now `OWNER_CONFIRMED` at the same digest `42f8efd8bc5c2aa7` — confirming changed the
+  status, not a single claim.
+- **Repository committed.** M0–M24 is now in git as six reviewed commits (tooling, docs
+  and skills, evidence corpus and freeze, scripts, application source, e2e suite) plus a
+  README correction. The working tree is clean, and change control finally has history to
+  anchor to.
+- `freeze:write` now formats its output through Prettier, so re-freezing can no longer
+  leave the repository failing `pnpm format:check`.
+
+**Ask:** Lock M25?

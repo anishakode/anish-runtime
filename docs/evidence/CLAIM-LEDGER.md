@@ -21,173 +21,173 @@ verifiable.
 
 These are the facts no validator can check. They are frozen as written; correcting one is a change-control entry, not a silent edit.
 
-| Claim | State |
-|---|---|
-| BTech Computer Science, Indian Institute of Information Technology Tiruchirappalli (2019–2023) — CGPA 8.47/10 | RESUME_DOCUMENTED |
-| MSc Data Science, University of Hertfordshire (2023-09–2026-02) — Distinction | RESUME_DOCUMENTED |
-| Failure Museum — artifact gate (may be empty) | NOT_DEMONSTRATED |
-| No candidate fit scores / hiring recommendations | NOT_DEMONSTRATED |
-| BTech Computer Science — IIIT Tiruchirappalli | RESUME_DOCUMENTED |
-| MSc Data Science — University of Hertfordshire (Distinction) | RESUME_DOCUMENTED |
-| Junior Data & Cloud Engineer — Cardstack Consulting | OWNER_CONFIRMED_PROFESSIONAL |
-| Anish Akode — public identity | RESUME_DOCUMENTED |
-| AWS (EC2, S3, DynamoDB, SQS, SNS, CloudWatch) | OWNER_CONFIRMED_PROFESSIONAL |
-| Java / Spring Boot | OWNER_CONFIRMED_PROFESSIONAL |
-| Python | OWNER_CONFIRMED_PROFESSIONAL |
-| REST APIs | OWNER_CONFIRMED_PROFESSIONAL |
-| SQL | OWNER_CONFIRMED_PROFESSIONAL |
-| Junior Data & Cloud Engineer at Cardstack Consulting Limited (2024-09–2026-02), 12 technologies | OWNER_CONFIRMED_PROFESSIONAL |
-| email is "anishakode3101@gmail.com" | RESUME_DOCUMENTED |
-| github is "https://github.com/anishakode" | RESUME_DOCUMENTED |
-| linkedin is "https://www.linkedin.com/in/anishakode" | RESUME_DOCUMENTED |
-| location is "Manchester, UK" | RESUME_DOCUMENTED |
-| name is "Anish Akode" | RESUME_DOCUMENTED |
-| positioning is "AI · ML · Software Engineering" | RESUME_DOCUMENTED |
-| proposition is "I build intelligent systems from data to model to production." | RESUME_DOCUMENTED |
-| tagline is "An executable professional identity." | RESUME_DOCUMENTED |
-| Approximately 30% fewer API integration defects | OWNER_CONFIRMED_PROFESSIONAL |
-| Zero audit failures across six release cycles | OWNER_CONFIRMED_PROFESSIONAL |
-| Approximately 40% faster incident investigation | OWNER_CONFIRMED_PROFESSIONAL |
+| Claim                                                                                                         | State                        |
+| ------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| BTech Computer Science, Indian Institute of Information Technology Tiruchirappalli (2019–2023) — CGPA 8.47/10 | RESUME_DOCUMENTED            |
+| MSc Data Science, University of Hertfordshire (2023-09–2026-02) — Distinction                                 | RESUME_DOCUMENTED            |
+| Failure Museum — artifact gate (may be empty)                                                                 | NOT_DEMONSTRATED             |
+| No candidate fit scores / hiring recommendations                                                              | NOT_DEMONSTRATED             |
+| BTech Computer Science — IIIT Tiruchirappalli                                                                 | RESUME_DOCUMENTED            |
+| MSc Data Science — University of Hertfordshire (Distinction)                                                  | RESUME_DOCUMENTED            |
+| Junior Data & Cloud Engineer — Cardstack Consulting                                                           | OWNER_CONFIRMED_PROFESSIONAL |
+| Anish Akode — public identity                                                                                 | RESUME_DOCUMENTED            |
+| AWS (EC2, S3, DynamoDB, SQS, SNS, CloudWatch)                                                                 | OWNER_CONFIRMED_PROFESSIONAL |
+| Java / Spring Boot                                                                                            | OWNER_CONFIRMED_PROFESSIONAL |
+| Python                                                                                                        | OWNER_CONFIRMED_PROFESSIONAL |
+| REST APIs                                                                                                     | OWNER_CONFIRMED_PROFESSIONAL |
+| SQL                                                                                                           | OWNER_CONFIRMED_PROFESSIONAL |
+| Junior Data & Cloud Engineer at Cardstack Consulting Limited (2024-09–2026-02), 12 technologies               | OWNER_CONFIRMED_PROFESSIONAL |
+| email is "anishakode3101@gmail.com"                                                                           | RESUME_DOCUMENTED            |
+| github is "https://github.com/anishakode"                                                                     | RESUME_DOCUMENTED            |
+| linkedin is "https://www.linkedin.com/in/anishakode"                                                          | RESUME_DOCUMENTED            |
+| location is "Manchester, UK"                                                                                  | RESUME_DOCUMENTED            |
+| name is "Anish Akode"                                                                                         | RESUME_DOCUMENTED            |
+| positioning is "AI · ML · Software Engineering"                                                               | RESUME_DOCUMENTED            |
+| proposition is "I build intelligent systems from data to model to production."                                | RESUME_DOCUMENTED            |
+| tagline is "An executable professional identity."                                                             | RESUME_DOCUMENTED            |
+| Approximately 30% fewer API integration defects                                                               | OWNER_CONFIRMED_PROFESSIONAL |
+| Zero audit failures across six release cycles                                                                 | OWNER_CONFIRMED_PROFESSIONAL |
+| Approximately 40% faster incident investigation                                                               | OWNER_CONFIRMED_PROFESSIONAL |
 
 ## All claims by kind
 
 ### corpus (1)
 
-| Claim | State | Where is the evidence? |
-|---|---|---|
-| 10 projects · 40 nodes · 45 edges · 23 sources | — | **owner's word only** |
+| Claim                                          | State | Where is the evidence? |
+| ---------------------------------------------- | ----- | ---------------------- |
+| 10 projects · 40 nodes · 45 edges · 23 sources | —     | **owner's word only**  |
 
 ### education (2)
 
-| Claim | State | Where is the evidence? |
-|---|---|---|
+| Claim                                                                                                         | State             | Where is the evidence? |
+| ------------------------------------------------------------------------------------------------------------- | ----------------- | ---------------------- |
 | BTech Computer Science, Indian Institute of Information Technology Tiruchirappalli (2019–2023) — CGPA 8.47/10 | RESUME_DOCUMENTED | `src.resume.canonical` |
-| MSc Data Science, University of Hertfordshire (2023-09–2026-02) — Distinction | RESUME_DOCUMENTED | `src.resume.canonical` |
+| MSc Data Science, University of Hertfordshire (2023-09–2026-02) — Distinction                                 | RESUME_DOCUMENTED | `src.resume.canonical` |
 
 ### evidence_node (37)
 
-| Claim | State | Where is the evidence? |
-|---|---|---|
-| Age / Gender Detector (archive) | PUBLIC_CODE_VERIFIED | `src.age-gender.repo` |
-| Netflix Clone (archive) | PUBLIC_CODE_VERIFIED | `src.netflix.repo` |
-| Park Finder (archive) | PUBLIC_CODE_VERIFIED | `src.park-finder.repo` |
-| PDF Text Extraction (archive) | PUBLIC_CODE_VERIFIED | `src.pdf-extract.repo` |
-| Deterministic JSSG codemod transforms | PUBLIC_CODE_VERIFIED | `src.boring.package` |
-| Boring_AI — web3.py codemod | PUBLIC_CODE_VERIFIED | `src.boring.package`<br>`src.boring.repo` |
-| Failure Museum — artifact gate (may be empty) | NOT_DEMONSTRATED | **owner's word only** |
-| No candidate fit scores / hiring recommendations | NOT_DEMONSTRATED | **owner's word only** |
-| BTech Computer Science — IIIT Tiruchirappalli | RESUME_DOCUMENTED | `src.resume.canonical` |
-| MSc Data Science — University of Hertfordshire (Distinction) | RESUME_DOCUMENTED | `src.resume.canonical` |
-| Junior Data & Cloud Engineer — Cardstack Consulting | OWNER_CONFIRMED_PROFESSIONAL | `src.owner.cardstack-impact`<br>`src.resume.canonical` |
-| Feynn EV Analysis | PUBLIC_CODE_VERIFIED | `src.feynn.repo` |
-| Fraud Detection project | PUBLIC_CODE_VERIFIED | `src.fraud.repo` |
-| Anish Akode — public identity | RESUME_DOCUMENTED | `src.resume.canonical` |
-| Explainable PDF Malware Detection — flagship | PUBLIC_DOCUMENT_VERIFIED | `src.malware.repo`<br>`src.malware.report` |
-| Public malware explainability report | PUBLIC_DOCUMENT_VERIFIED | `src.malware.report` |
-| Browser PDF Malware Explainability Lab | PORTFOLIO_EXTENSION | `src.malware.repo`<br>`src.malware.report`<br>`src.portfolio.malware-lab` |
-| Detailed SHAP / model internals | LIMITED_EVIDENCE | `src.malware.report` |
-| Audit event representation | PUBLIC_CODE_VERIFIED | `src.mlops.audit-sink` |
-| Data drift monitoring | PUBLIC_CODE_VERIFIED | `src.mlops.drift-py`<br>`src.mlops.stats-py` |
-| Kolmogorov–Smirnov (KS) statistic | PUBLIC_CODE_VERIFIED | `src.mlops.stats-py` |
-| Operational monitoring concepts | PUBLIC_CODE_VERIFIED | `src.mlops.repo` |
-| Policy / governance checks | PUBLIC_CODE_VERIFIED | `src.mlops.policy` |
-| MLOps Governance Dashboard — flagship project | PUBLIC_CODE_VERIFIED | `src.mlops.repo` |
-| Population Stability Index (PSI) | PUBLIC_CODE_VERIFIED | `src.mlops.drift-py` |
-| Browser MLOps Runtime Lab | PORTFOLIO_EXTENSION | `src.mlops.repo`<br>`src.portfolio.runtime-lab` |
-| AWS (EC2, S3, DynamoDB, SQS, SNS, CloudWatch) | OWNER_CONFIRMED_PROFESSIONAL | `src.resume.canonical` |
-| Java / Spring Boot | OWNER_CONFIRMED_PROFESSIONAL | `src.resume.canonical` |
-| Python | OWNER_CONFIRMED_PROFESSIONAL | `src.mlops.repo`<br>`src.resume.canonical`<br>`src.steward.repo` |
-| REST APIs | OWNER_CONFIRMED_PROFESSIONAL | `src.resume.canonical` |
-| SQL | OWNER_CONFIRMED_PROFESSIONAL | `src.resume.canonical` |
-| A2A / Google ADK agent orchestration | PUBLIC_CODE_VERIFIED | `src.steward.readme` |
-| FHIR context for stewardship workflows | PUBLIC_CODE_VERIFIED | `src.steward.readme`<br>`src.steward.repo` |
-| MCP tool server for stewardship | PUBLIC_CODE_VERIFIED | `src.steward.mcp-server` |
-| Steward_AI — flagship project | PUBLIC_CODE_VERIFIED | `src.steward.readme`<br>`src.steward.repo` |
-| Browser Steward Agent Lab | PORTFOLIO_EXTENSION | `src.portfolio.steward-lab`<br>`src.steward.mcp-server`<br>`src.steward.readme` |
-| Steward safety / prototype boundary | PUBLIC_CODE_VERIFIED | `src.steward.readme` |
+| Claim                                                        | State                        | Where is the evidence?                                                          |
+| ------------------------------------------------------------ | ---------------------------- | ------------------------------------------------------------------------------- |
+| Age / Gender Detector (archive)                              | PUBLIC_CODE_VERIFIED         | `src.age-gender.repo`                                                           |
+| Netflix Clone (archive)                                      | PUBLIC_CODE_VERIFIED         | `src.netflix.repo`                                                              |
+| Park Finder (archive)                                        | PUBLIC_CODE_VERIFIED         | `src.park-finder.repo`                                                          |
+| PDF Text Extraction (archive)                                | PUBLIC_CODE_VERIFIED         | `src.pdf-extract.repo`                                                          |
+| Deterministic JSSG codemod transforms                        | PUBLIC_CODE_VERIFIED         | `src.boring.package`                                                            |
+| Boring_AI — web3.py codemod                                  | PUBLIC_CODE_VERIFIED         | `src.boring.package`<br>`src.boring.repo`                                       |
+| Failure Museum — artifact gate (may be empty)                | NOT_DEMONSTRATED             | **owner's word only**                                                           |
+| No candidate fit scores / hiring recommendations             | NOT_DEMONSTRATED             | **owner's word only**                                                           |
+| BTech Computer Science — IIIT Tiruchirappalli                | RESUME_DOCUMENTED            | `src.resume.canonical`                                                          |
+| MSc Data Science — University of Hertfordshire (Distinction) | RESUME_DOCUMENTED            | `src.resume.canonical`                                                          |
+| Junior Data & Cloud Engineer — Cardstack Consulting          | OWNER_CONFIRMED_PROFESSIONAL | `src.owner.cardstack-impact`<br>`src.resume.canonical`                          |
+| Feynn EV Analysis                                            | PUBLIC_CODE_VERIFIED         | `src.feynn.repo`                                                                |
+| Fraud Detection project                                      | PUBLIC_CODE_VERIFIED         | `src.fraud.repo`                                                                |
+| Anish Akode — public identity                                | RESUME_DOCUMENTED            | `src.resume.canonical`                                                          |
+| Explainable PDF Malware Detection — flagship                 | PUBLIC_DOCUMENT_VERIFIED     | `src.malware.repo`<br>`src.malware.report`                                      |
+| Public malware explainability report                         | PUBLIC_DOCUMENT_VERIFIED     | `src.malware.report`                                                            |
+| Browser PDF Malware Explainability Lab                       | PORTFOLIO_EXTENSION          | `src.malware.repo`<br>`src.malware.report`<br>`src.portfolio.malware-lab`       |
+| Detailed SHAP / model internals                              | LIMITED_EVIDENCE             | `src.malware.report`                                                            |
+| Audit event representation                                   | PUBLIC_CODE_VERIFIED         | `src.mlops.audit-sink`                                                          |
+| Data drift monitoring                                        | PUBLIC_CODE_VERIFIED         | `src.mlops.drift-py`<br>`src.mlops.stats-py`                                    |
+| Kolmogorov–Smirnov (KS) statistic                            | PUBLIC_CODE_VERIFIED         | `src.mlops.stats-py`                                                            |
+| Operational monitoring concepts                              | PUBLIC_CODE_VERIFIED         | `src.mlops.repo`                                                                |
+| Policy / governance checks                                   | PUBLIC_CODE_VERIFIED         | `src.mlops.policy`                                                              |
+| MLOps Governance Dashboard — flagship project                | PUBLIC_CODE_VERIFIED         | `src.mlops.repo`                                                                |
+| Population Stability Index (PSI)                             | PUBLIC_CODE_VERIFIED         | `src.mlops.drift-py`                                                            |
+| Browser MLOps Runtime Lab                                    | PORTFOLIO_EXTENSION          | `src.mlops.repo`<br>`src.portfolio.runtime-lab`                                 |
+| AWS (EC2, S3, DynamoDB, SQS, SNS, CloudWatch)                | OWNER_CONFIRMED_PROFESSIONAL | `src.resume.canonical`                                                          |
+| Java / Spring Boot                                           | OWNER_CONFIRMED_PROFESSIONAL | `src.resume.canonical`                                                          |
+| Python                                                       | OWNER_CONFIRMED_PROFESSIONAL | `src.mlops.repo`<br>`src.resume.canonical`<br>`src.steward.repo`                |
+| REST APIs                                                    | OWNER_CONFIRMED_PROFESSIONAL | `src.resume.canonical`                                                          |
+| SQL                                                          | OWNER_CONFIRMED_PROFESSIONAL | `src.resume.canonical`                                                          |
+| A2A / Google ADK agent orchestration                         | PUBLIC_CODE_VERIFIED         | `src.steward.readme`                                                            |
+| FHIR context for stewardship workflows                       | PUBLIC_CODE_VERIFIED         | `src.steward.readme`<br>`src.steward.repo`                                      |
+| MCP tool server for stewardship                              | PUBLIC_CODE_VERIFIED         | `src.steward.mcp-server`                                                        |
+| Steward_AI — flagship project                                | PUBLIC_CODE_VERIFIED         | `src.steward.readme`<br>`src.steward.repo`                                      |
+| Browser Steward Agent Lab                                    | PORTFOLIO_EXTENSION          | `src.portfolio.steward-lab`<br>`src.steward.mcp-server`<br>`src.steward.readme` |
+| Steward safety / prototype boundary                          | PUBLIC_CODE_VERIFIED         | `src.steward.readme`                                                            |
 
 ### exclusion (11)
 
-| Claim | State | Where is the evidence? |
-|---|---|---|
-| anishakode2002@gmail.com is excluded from the public corpus | — | **owner's word only** |
-| Obsolete email excluded from public corpus. | — | **owner's word only** |
-| Conflicting Sricons profile must not be introduced. | — | **owner's word only** |
-| Cardstack impact metrics are OWNER_CONFIRMED_PROFESSIONAL only — proprietary code is not public. | — | **owner's word only** |
-| Steward_AI is a research/hackathon prototype, not a production clinical system. | — | **owner's word only** |
-| Browser MLOps Runtime Lab is PORTFOLIO_EXTENSION, not the original production runtime. | — | **owner's word only** |
-| Browser Steward Agent Lab is PORTFOLIO_EXTENSION — synthetic context only; not live FHIR/Gemini/MCP; withholds treatment advice. | — | **owner's word only** |
-| Browser PDF Malware Explainability Lab is PORTFOLIO_EXTENSION — static reconstruction only; no execution/upload; not a security verdict. | — | **owner's word only** |
-| Malware X-Ray/report structure is not production malware infrastructure. | — | **owner's word only** |
-| Failure Museum may remain empty until artifact-grade exhibits exist. | — | **owner's word only** |
-| profile "sricons-conflict" must not be introduced | — | **owner's word only** |
+| Claim                                                                                                                                    | State | Where is the evidence? |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ----- | ---------------------- |
+| anishakode2002@gmail.com is excluded from the public corpus                                                                              | —     | **owner's word only**  |
+| Obsolete email excluded from public corpus.                                                                                              | —     | **owner's word only**  |
+| Conflicting Sricons profile must not be introduced.                                                                                      | —     | **owner's word only**  |
+| Cardstack impact metrics are OWNER_CONFIRMED_PROFESSIONAL only — proprietary code is not public.                                         | —     | **owner's word only**  |
+| Steward_AI is a research/hackathon prototype, not a production clinical system.                                                          | —     | **owner's word only**  |
+| Browser MLOps Runtime Lab is PORTFOLIO_EXTENSION, not the original production runtime.                                                   | —     | **owner's word only**  |
+| Browser Steward Agent Lab is PORTFOLIO_EXTENSION — synthetic context only; not live FHIR/Gemini/MCP; withholds treatment advice.         | —     | **owner's word only**  |
+| Browser PDF Malware Explainability Lab is PORTFOLIO_EXTENSION — static reconstruction only; no execution/upload; not a security verdict. | —     | **owner's word only**  |
+| Malware X-Ray/report structure is not production malware infrastructure.                                                                 | —     | **owner's word only**  |
+| Failure Museum may remain empty until artifact-grade exhibits exist.                                                                     | —     | **owner's word only**  |
+| profile "sricons-conflict" must not be introduced                                                                                        | —     | **owner's word only**  |
 
 ### experience (1)
 
-| Claim | State | Where is the evidence? |
-|---|---|---|
+| Claim                                                                                           | State                        | Where is the evidence?                                 |
+| ----------------------------------------------------------------------------------------------- | ---------------------------- | ------------------------------------------------------ |
 | Junior Data & Cloud Engineer at Cardstack Consulting Limited (2024-09–2026-02), 12 technologies | OWNER_CONFIRMED_PROFESSIONAL | `src.owner.cardstack-impact`<br>`src.resume.canonical` |
 
 ### identity (8)
 
-| Claim | State | Where is the evidence? |
-|---|---|---|
-| email is "anishakode3101@gmail.com" | RESUME_DOCUMENTED | `src.resume.canonical` |
-| github is "https://github.com/anishakode" | RESUME_DOCUMENTED | `src.resume.canonical` |
-| linkedin is "https://www.linkedin.com/in/anishakode" | RESUME_DOCUMENTED | `src.resume.canonical` |
-| location is "Manchester, UK" | RESUME_DOCUMENTED | `src.resume.canonical` |
-| name is "Anish Akode" | RESUME_DOCUMENTED | `src.resume.canonical` |
-| positioning is "AI · ML · Software Engineering" | RESUME_DOCUMENTED | `src.resume.canonical` |
+| Claim                                                                          | State             | Where is the evidence? |
+| ------------------------------------------------------------------------------ | ----------------- | ---------------------- |
+| email is "anishakode3101@gmail.com"                                            | RESUME_DOCUMENTED | `src.resume.canonical` |
+| github is "https://github.com/anishakode"                                      | RESUME_DOCUMENTED | `src.resume.canonical` |
+| linkedin is "https://www.linkedin.com/in/anishakode"                           | RESUME_DOCUMENTED | `src.resume.canonical` |
+| location is "Manchester, UK"                                                   | RESUME_DOCUMENTED | `src.resume.canonical` |
+| name is "Anish Akode"                                                          | RESUME_DOCUMENTED | `src.resume.canonical` |
+| positioning is "AI · ML · Software Engineering"                                | RESUME_DOCUMENTED | `src.resume.canonical` |
 | proposition is "I build intelligent systems from data to model to production." | RESUME_DOCUMENTED | `src.resume.canonical` |
-| tagline is "An executable professional identity." | RESUME_DOCUMENTED | `src.resume.canonical` |
+| tagline is "An executable professional identity."                              | RESUME_DOCUMENTED | `src.resume.canonical` |
 
 ### impact_metric (3)
 
-| Claim | State | Where is the evidence? |
-|---|---|---|
+| Claim                                           | State                        | Where is the evidence?       |
+| ----------------------------------------------- | ---------------------------- | ---------------------------- |
 | Approximately 30% fewer API integration defects | OWNER_CONFIRMED_PROFESSIONAL | `src.owner.cardstack-impact` |
-| Zero audit failures across six release cycles | OWNER_CONFIRMED_PROFESSIONAL | `src.owner.cardstack-impact` |
+| Zero audit failures across six release cycles   | OWNER_CONFIRMED_PROFESSIONAL | `src.owner.cardstack-impact` |
 | Approximately 40% faster incident investigation | OWNER_CONFIRMED_PROFESSIONAL | `src.owner.cardstack-impact` |
 
 ### project (10)
 
-| Claim | State | Where is the evidence? |
-|---|---|---|
-| Age / Gender Detector (archive) — Earlier computer-vision experiment — evolution evidence, not a flagship interaction. | PUBLIC_CODE_VERIFIED | `src.age-gender.repo` |
-| Boring_AI (supporting) — Test-backed codemod workflow for mechanical web3.py v6 → v7 migrations with optional AI follow-up. | PUBLIC_CODE_VERIFIED | `src.boring.package`<br>`src.boring.repo` |
-| Feynn EV Analysis (supporting) — Applied EV market-data analysis using public notebooks/data. | PUBLIC_CODE_VERIFIED | `src.feynn.repo` |
-| Fraud Detection (supporting) — ML fraud-detection project with public artifacts. | PUBLIC_CODE_VERIFIED | `src.fraud.repo` |
-| Explainable PDF Malware Detection (flagship) — Security ML / explainability study with a verified public project report. Not production malware infrastructure. | PUBLIC_DOCUMENT_VERIFIED | `src.malware.repo`<br>`src.malware.report` |
-| MLOps Governance Dashboard (flagship) — Monitoring, drift (PSI/KS), data quality, audit events, and governance-oriented MLOps workflows. | PUBLIC_CODE_VERIFIED | `src.mlops.audit-sink`<br>`src.mlops.drift-py`<br>`src.mlops.policy`<br>`src.mlops.repo`<br>`src.mlops.stats-py` |
-| Netflix Clone (archive) — Early full-stack clone project — archive/evolution evidence. | PUBLIC_CODE_VERIFIED | `src.netflix.repo` |
-| Park Finder (archive) — Android park locator using public park and maps APIs — archive evidence. | PUBLIC_CODE_VERIFIED | `src.park-finder.repo` |
-| PDF Text Extraction (archive) — PDF data extraction experiment — archive/evolution evidence. | PUBLIC_CODE_VERIFIED | `src.pdf-extract.repo` |
-| Steward_AI (flagship) — Healthcare AI stewardship prototype using FHIR context, MCP tools, and A2A/ADK agent concepts — research/hackathon framing, not a production clinical system. | PUBLIC_CODE_VERIFIED | `src.steward.mcp-server`<br>`src.steward.readme`<br>`src.steward.repo` |
+| Claim                                                                                                                                                                                 | State                    | Where is the evidence?                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| Age / Gender Detector (archive) — Earlier computer-vision experiment — evolution evidence, not a flagship interaction.                                                                | PUBLIC_CODE_VERIFIED     | `src.age-gender.repo`                                                                                            |
+| Boring_AI (supporting) — Test-backed codemod workflow for mechanical web3.py v6 → v7 migrations with optional AI follow-up.                                                           | PUBLIC_CODE_VERIFIED     | `src.boring.package`<br>`src.boring.repo`                                                                        |
+| Feynn EV Analysis (supporting) — Applied EV market-data analysis using public notebooks/data.                                                                                         | PUBLIC_CODE_VERIFIED     | `src.feynn.repo`                                                                                                 |
+| Fraud Detection (supporting) — ML fraud-detection project with public artifacts.                                                                                                      | PUBLIC_CODE_VERIFIED     | `src.fraud.repo`                                                                                                 |
+| Explainable PDF Malware Detection (flagship) — Security ML / explainability study with a verified public project report. Not production malware infrastructure.                       | PUBLIC_DOCUMENT_VERIFIED | `src.malware.repo`<br>`src.malware.report`                                                                       |
+| MLOps Governance Dashboard (flagship) — Monitoring, drift (PSI/KS), data quality, audit events, and governance-oriented MLOps workflows.                                              | PUBLIC_CODE_VERIFIED     | `src.mlops.audit-sink`<br>`src.mlops.drift-py`<br>`src.mlops.policy`<br>`src.mlops.repo`<br>`src.mlops.stats-py` |
+| Netflix Clone (archive) — Early full-stack clone project — archive/evolution evidence.                                                                                                | PUBLIC_CODE_VERIFIED     | `src.netflix.repo`                                                                                               |
+| Park Finder (archive) — Android park locator using public park and maps APIs — archive evidence.                                                                                      | PUBLIC_CODE_VERIFIED     | `src.park-finder.repo`                                                                                           |
+| PDF Text Extraction (archive) — PDF data extraction experiment — archive/evolution evidence.                                                                                          | PUBLIC_CODE_VERIFIED     | `src.pdf-extract.repo`                                                                                           |
+| Steward_AI (flagship) — Healthcare AI stewardship prototype using FHIR context, MCP tools, and A2A/ADK agent concepts — research/hackathon framing, not a production clinical system. | PUBLIC_CODE_VERIFIED     | `src.steward.mcp-server`<br>`src.steward.readme`<br>`src.steward.repo`                                           |
 
 ### source (23)
 
-| Claim | State | Where is the evidence? |
-|---|---|---|
-| github_repo: Age_Gender_Detector repository @ 480d7d4507bf750a81082b1ad6297d5fc1502ff6 | — | `src.age-gender.repo` |
-| github_file: web3py v6→v7 codemod package @ 3ccb20543dad3af4ae814e1aecddc9b371398002 | — | `src.boring.package` |
-| github_repo: Boring_AI repository @ 3ccb20543dad3af4ae814e1aecddc9b371398002 | — | `src.boring.repo` |
-| github_repo: Feynn EV task repository @ 87c186c5feecd2648d5ab9c8c0cbac02c4562f78 | — | `src.feynn.repo` |
-| github_repo: fraud_detection repository @ 55443af86f58480287073442979ab721b63940e8 | — | `src.fraud.repo` |
-| github_repo: Malware-Detection-Using-ML repository @ ca79ecc8a013e96d5514243603b174bf86e52ecd | — | `src.malware.repo` |
-| report: Explainable Machine Learning Models for Detecting PDF Malware (public PDF) @ ca79ecc8a013e96d5514243603b174bf86e52ecd | — | `src.malware.report` |
-| github_file: Audit sink utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4 | — | `src.mlops.audit-sink` |
-| github_file: Drift / PSI utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4 | — | `src.mlops.drift-py` |
-| github_file: Policy utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4 | — | `src.mlops.policy` |
-| github_repo: MLOps Governance Dashboard repository @ a2ba6fc45aaece5c3241569271bcca77124da2b4 | — | `src.mlops.repo` |
-| github_file: Stats / KS utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4 | — | `src.mlops.stats-py` |
-| github_repo: netflix_clone repository @ e127b5c3ea9a58e1706e25bcb185e223aeb6fb2f | — | `src.netflix.repo` |
-| owner_confirmation: Cardstack impact metrics (owner confirmation) (no commit pin) | — | `src.owner.cardstack-impact` |
-| github_repo: park_finder repository @ dacb5d7ff89fd31256cbaea8488b4e2daf56deed | — | `src.park-finder.repo` |
-| github_repo: pdf_text_extraction repository @ 963ea55b43ac434185db294261f4b1294da84760 | — | `src.pdf-extract.repo` |
-| portfolio_runtime: Portfolio PDF Malware Explainability Lab (deterministic extension) (no commit pin) | — | `src.portfolio.malware-lab` |
-| portfolio_runtime: Portfolio MLOps Runtime Lab (future deterministic extension) (no commit pin) | — | `src.portfolio.runtime-lab` |
-| portfolio_runtime: Portfolio Steward Agent Lab (deterministic extension) (no commit pin) | — | `src.portfolio.steward-lab` |
-| resume: Canonical résumé / profile documentation (no commit pin) | — | `src.resume.canonical` |
-| github_file: Steward MCP server @ c9a1d6cfd674d72576208863a5f4c694f9130e50 | — | `src.steward.mcp-server` |
-| github_file: Steward_AI README (boundaries + architecture) @ c9a1d6cfd674d72576208863a5f4c694f9130e50 | — | `src.steward.readme` |
-| github_repo: Steward_AI repository @ c9a1d6cfd674d72576208863a5f4c694f9130e50 | — | `src.steward.repo` |
+| Claim                                                                                                                         | State | Where is the evidence?       |
+| ----------------------------------------------------------------------------------------------------------------------------- | ----- | ---------------------------- |
+| github_repo: Age_Gender_Detector repository @ 480d7d4507bf750a81082b1ad6297d5fc1502ff6                                        | —     | `src.age-gender.repo`        |
+| github_file: web3py v6→v7 codemod package @ 3ccb20543dad3af4ae814e1aecddc9b371398002                                          | —     | `src.boring.package`         |
+| github_repo: Boring_AI repository @ 3ccb20543dad3af4ae814e1aecddc9b371398002                                                  | —     | `src.boring.repo`            |
+| github_repo: Feynn EV task repository @ 87c186c5feecd2648d5ab9c8c0cbac02c4562f78                                              | —     | `src.feynn.repo`             |
+| github_repo: fraud_detection repository @ 55443af86f58480287073442979ab721b63940e8                                            | —     | `src.fraud.repo`             |
+| github_repo: Malware-Detection-Using-ML repository @ ca79ecc8a013e96d5514243603b174bf86e52ecd                                 | —     | `src.malware.repo`           |
+| report: Explainable Machine Learning Models for Detecting PDF Malware (public PDF) @ ca79ecc8a013e96d5514243603b174bf86e52ecd | —     | `src.malware.report`         |
+| github_file: Audit sink utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4                                                  | —     | `src.mlops.audit-sink`       |
+| github_file: Drift / PSI utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4                                                 | —     | `src.mlops.drift-py`         |
+| github_file: Policy utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4                                                      | —     | `src.mlops.policy`           |
+| github_repo: MLOps Governance Dashboard repository @ a2ba6fc45aaece5c3241569271bcca77124da2b4                                 | —     | `src.mlops.repo`             |
+| github_file: Stats / KS utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4                                                  | —     | `src.mlops.stats-py`         |
+| github_repo: netflix_clone repository @ e127b5c3ea9a58e1706e25bcb185e223aeb6fb2f                                              | —     | `src.netflix.repo`           |
+| owner_confirmation: Cardstack impact metrics (owner confirmation) (no commit pin)                                             | —     | `src.owner.cardstack-impact` |
+| github_repo: park_finder repository @ dacb5d7ff89fd31256cbaea8488b4e2daf56deed                                                | —     | `src.park-finder.repo`       |
+| github_repo: pdf_text_extraction repository @ 963ea55b43ac434185db294261f4b1294da84760                                        | —     | `src.pdf-extract.repo`       |
+| portfolio_runtime: Portfolio PDF Malware Explainability Lab (deterministic extension) (no commit pin)                         | —     | `src.portfolio.malware-lab`  |
+| portfolio_runtime: Portfolio MLOps Runtime Lab (future deterministic extension) (no commit pin)                               | —     | `src.portfolio.runtime-lab`  |
+| portfolio_runtime: Portfolio Steward Agent Lab (deterministic extension) (no commit pin)                                      | —     | `src.portfolio.steward-lab`  |
+| resume: Canonical résumé / profile documentation (no commit pin)                                                              | —     | `src.resume.canonical`       |
+| github_file: Steward MCP server @ c9a1d6cfd674d72576208863a5f4c694f9130e50                                                    | —     | `src.steward.mcp-server`     |
+| github_file: Steward_AI README (boundaries + architecture) @ c9a1d6cfd674d72576208863a5f4c694f9130e50                         | —     | `src.steward.readme`         |
+| github_repo: Steward_AI repository @ c9a1d6cfd674d72576208863a5f4c694f9130e50                                                 | —     | `src.steward.repo`           |

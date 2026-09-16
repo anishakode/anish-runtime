@@ -11,6 +11,7 @@
 
 import { writeFileSync, existsSync, readFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { format, resolveConfig } from "prettier";
 import { loadEvidenceGraph } from "../src/lib/evidence/load-graph";
 import {
   assertStrengthCoversAllStates,
@@ -26,6 +27,17 @@ import {
 const FREEZE_PATH = join(process.cwd(), "content", "evidence", "freeze.json");
 const LEDGER_PATH = join(process.cwd(), "docs", "evidence", "CLAIM-LEDGER.md");
 
+/**
+ * Generated files are formatted on the way out. Without this, every `freeze:write`
+ * leaves the repository failing `pnpm format:check` — a trap for the one person who
+ * runs the command rarely and under the most pressure.
+ */
+async function writeFormatted(path: string, content: string) {
+  const config = await resolveConfig(path);
+  mkdirSync(dirname(path), { recursive: true });
+  writeFileSync(path, await format(content, { ...config, filepath: path }), "utf8");
+}
+
 function readManifest(): FreezeManifest {
   if (!existsSync(FREEZE_PATH)) {
     console.error(`No freeze manifest at ${FREEZE_PATH} — run \`pnpm freeze:write\`.`);
@@ -34,7 +46,7 @@ function readManifest(): FreezeManifest {
   return JSON.parse(readFileSync(FREEZE_PATH, "utf8")) as FreezeManifest;
 }
 
-function writeManifest(claims: Claim[], status: FreezeStatus) {
+async function writeManifest(claims: Claim[], status: FreezeStatus) {
   const previous = existsSync(FREEZE_PATH)
     ? (JSON.parse(readFileSync(FREEZE_PATH, "utf8")) as FreezeManifest)
     : null;
@@ -46,7 +58,7 @@ function writeManifest(claims: Claim[], status: FreezeStatus) {
   // Re-freezing must not erase the history of what was changed and why.
   manifest.changeControl = previous?.changeControl ?? [];
 
-  writeFileSync(FREEZE_PATH, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
+  await writeFormatted(FREEZE_PATH, JSON.stringify(manifest, null, 2));
   console.log(
     `Froze ${claims.length} claims (${manifest.corpusDigest}) with status ${status}.`,
   );
@@ -63,7 +75,7 @@ function escapePipes(value: string): string {
   return value.replace(/\|/g, "\\|");
 }
 
-function writeLedger(claims: Claim[], manifest: FreezeManifest) {
+async function writeLedger(claims: Claim[], manifest: FreezeManifest) {
   const byKind = new Map<string, Claim[]>();
   for (const claim of claims) {
     byKind.set(claim.kind, [...(byKind.get(claim.kind) ?? []), claim]);
@@ -120,12 +132,11 @@ ${table([
 ${sections.join("\n\n")}
 `;
 
-  mkdirSync(dirname(LEDGER_PATH), { recursive: true });
-  writeFileSync(LEDGER_PATH, body, "utf8");
+  await writeFormatted(LEDGER_PATH, body);
   console.log(`Wrote ${LEDGER_PATH} (${claims.length} claims).`);
 }
 
-function main() {
+async function main() {
   assertStrengthCoversAllStates();
 
   const graph = loadEvidenceGraph();
@@ -145,13 +156,13 @@ function main() {
     const status = process.argv.includes("--confirmed")
       ? "OWNER_CONFIRMED"
       : "PENDING_OWNER_CONFIRMATION";
-    writeManifest(claims, status);
-    writeLedger(claims, readManifest());
+    await writeManifest(claims, status);
+    await writeLedger(claims, readManifest());
     return;
   }
 
   if (mode === "--ledger") {
-    writeLedger(claims, readManifest());
+    await writeLedger(claims, readManifest());
     return;
   }
 
@@ -178,4 +189,7 @@ function main() {
   );
 }
 
-main();
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

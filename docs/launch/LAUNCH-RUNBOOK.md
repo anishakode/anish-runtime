@@ -12,7 +12,7 @@ time and was deliberately left unset until then.
 
 ```bash
 pnpm run ci          # scope · evidence · freeze · format · lint · typecheck · unit · build · bundle
-pnpm test:e2e:prod   # 138 tests against a production build
+pnpm test:e2e:prod   # 142 tests against a production build
 ```
 
 Both must be green on the commit you intend to deploy. Nothing below fixes a red build.

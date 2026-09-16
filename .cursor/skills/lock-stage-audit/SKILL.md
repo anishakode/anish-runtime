@@ -288,7 +288,21 @@ Do **not** start the next milestone’s implementation until this audit is repor
 - [ ] CI installs frozen and runs e2e against `next start`
 - [ ] ADR 0026; unit + API + security + SEO + metadata + error-boundary + production e2e coverage
 
-### M25+ (when locked)
+### M25 — Evidence Freeze
+
+- [ ] `pnpm freeze:check` passes and runs inside `pnpm ci` and GitHub Actions
+- [ ] Claim projection still covers identity, education, experience, impact metrics, projects, nodes, sources, exclusions, and corpus counts
+- [ ] Manifest status is honest (`OWNER_CONFIRMED` only after the owner confirmed the facts no validator can check)
+- [ ] A changed, removed, added, or strengthened claim fails the build with the claim named
+- [ ] Strengthening requires a change-control entry naming the exact transition plus at least one new source; a reason alone is refused
+- [ ] Weakening is permitted but still recorded
+- [ ] `docs/evidence/CLAIM-LEDGER.md` regenerated, not hand-edited, and marks owner's-word-only claims as such
+- [ ] Every GitHub-backed source still carries a commit pin; unpinned sources are only owner/résumé/portfolio-runtime
+- [ ] No evidence state has strengthened against what the milestone reports documented
+- [ ] Generated freeze output is Prettier-clean, so re-freezing cannot break `format:check`
+- [ ] ADR 0027; freeze unit coverage including every rejection path
+
+### M26+ (when locked)
 
 For each later locked milestone, add checks from that milestone’s report + handoff contract.
 

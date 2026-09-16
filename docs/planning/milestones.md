@@ -30,7 +30,7 @@ Canonical product contracts: `ANISH_RUNTIME_MASTER_HANDOFF.md`.
 | M22 Under the Surface + Runtime Trace   | Locked      | Five layers, reality labels, bounded safe trace      |
 | M23 Ending Signal                       | Locked      | Session path replay; density honesty; no profiling   |
 | M24 Production Hardening                | Locked      | Security, reliability, perf, a11y, discoverability   |
-| M25 Evidence Freeze                     | Built       | 96 claims frozen + enforced; owner confirmation due  |
+| M25 Evidence Freeze                     | Locked      | 96 claims frozen, owner-confirmed, enforced in CI    |
 | M26 Launch                              | Not started | Per handoff §45; approval-gated                      |
 
 Workflow: Research → Proposal → Owner Approval → Implement → Validate → Report → Owner Lock → Cumulative audit → Next.

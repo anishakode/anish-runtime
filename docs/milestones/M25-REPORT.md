@@ -114,3 +114,6 @@ Confirming is a deliberate act: `pnpm freeze:write --confirmed`.
   leave the repository failing `pnpm format:check`.
 
 **Ask:** Lock M25?
+
+**Owner decision (2026-09-16): LOCKED.** Pushing to a remote deferred to M26 launch.
+Cumulative audit: `M25-LOCK-AUDIT.md`.

@@ -6,14 +6,17 @@ This repository is a from-scratch rebuild guided by `ANISH_RUNTIME_MASTER_HANDOF
 
 ## Current milestone
 
-**Next:** M25 — Evidence Freeze (awaiting approval)
+**Next:** M26 — Launch (awaiting approval)
 
 Locked: M0 · M1 · M2 · M3 · M3.5 · M4 · M5 · M6 · M7 · M8 · M9 · M10 · M11 · M12 · M13 ·
-M14 · M15 · M16 · M17 · M18 · M19 · M20 · M21 · M22 · M23 · M24.
+M14 · M15 · M16 · M17 · M18 · M19 · M20 · M21 · M22 · M23 · M24 · M25.
 
-M24 closes the V1 feature arc: security headers and CSP, API request bounds, fault
-boundaries, bundle budgets, an accessibility audit, and the indexing policy. Status per
-milestone lives in `docs/planning/milestones.md`.
+M24 closed the V1 feature arc — security headers and CSP, API request bounds, fault
+boundaries, bundle budgets, an accessibility audit, and the indexing policy. M25 froze
+the public corpus: 96 claims are owner-confirmed and enforced by `pnpm freeze:check`, so
+changing what this portfolio claims requires a recorded change-control entry. Every claim
+and its evidence is listed in [`docs/evidence/CLAIM-LEDGER.md`](docs/evidence/CLAIM-LEDGER.md);
+status per milestone lives in `docs/planning/milestones.md`.
 
 ## Prerequisites
 

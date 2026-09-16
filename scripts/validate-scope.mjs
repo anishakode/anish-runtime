@@ -90,6 +90,9 @@ const REQUIRED = [
   "src/app/global-error.tsx",
   "src/components/runtime-fault.tsx",
   "src/components/site-chrome-static.tsx",
+  // Binds the footer's locked-milestone marker to the milestones table, after
+  // it drifted behind a lock twice (M24 and M27 audits).
+  "src/components/site-chrome.test.tsx",
   "scripts/check-bundle-budget.mjs",
   "e2e/production.spec.ts",
   "src/app/opengraph-image.tsx",

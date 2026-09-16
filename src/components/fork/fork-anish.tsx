@@ -6,8 +6,6 @@ import { EvidenceBadge } from "@/components/evidence-badge";
 import { FORK_HONESTY_LINE, forkFromJobDescription, type ForkBranch } from "@/lib/fork";
 import type { SearchDocument } from "@/lib/search";
 import { useRuntimeTraceOptional } from "@/components/runtime-trace/runtime-trace-context";
-import { useSessionRuntimeOptional } from "@/components/session/session-runtime-context";
-
 const SAMPLE_JD = `MLOps Engineer
 Role: MLOps Engineer
 
@@ -24,7 +22,6 @@ type ForkAnishProps = {
 };
 
 export function ForkAnish({ documents }: ForkAnishProps) {
-  const session = useSessionRuntimeOptional();
   const runtimeTrace = useRuntimeTraceOptional();
   const [jd, setJd] = useState("");
   const [branch, setBranch] = useState<ForkBranch | null>(null);
@@ -48,10 +45,12 @@ export function ForkAnish({ documents }: ForkAnishProps) {
     setError(null);
     const result = forkFromJobDescription(text, documents);
     setBranch(result);
-    // The reason string is shown back to the visitor in the Recompile WHY?
-    // panel, so it stays free of anything derived from the pasted text — a
-    // role slug is still their input.
-    session?.recordItem("route:experience", "Forked a role against the evidence graph");
+    // No session item is recorded here on purpose. Forking is not a visit to a
+    // route and reveals no topic interest, so manufacturing one would inflate
+    // the M19 Recompile heuristic and render on /ending as a journey node the
+    // visitor never opened — on the same page that publishes
+    // "fabricated interactions: 0". The fork is recorded below as a runtime
+    // action, which is what actually happened.
     // Counts only — the pasted job description never reaches the trace.
     runtimeTrace?.record({
       action: "FORK_BRANCH",

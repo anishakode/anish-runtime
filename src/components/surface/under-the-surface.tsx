@@ -118,7 +118,7 @@ export function UnderTheSurface() {
                         </div>
                         <p className="mt-1 text-sm text-[var(--muted)]">{sub.detail}</p>
                         <p className="mt-1 font-mono text-xs text-[var(--muted)]">
-                          {sub.path}
+                          {sub.path ?? "no code in this deployment"}
                         </p>
                       </li>
                     ))}

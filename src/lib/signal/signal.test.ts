@@ -74,7 +74,9 @@ describe("Signal tool session + allowlist (M17)", () => {
     if (!search.ok) return;
     const data = search.data as { results: { id: string }[] };
     const first = data.results[0]?.id;
-    expect(first).toBeTruthy();
+    // Pinning the actual top hit means a ranking regression fails here instead
+    // of sliding through a truthiness check.
+    expect(first).toBe("node:ev.exp.cardstack");
     const tooFew = compareEvidenceTool([first!], ctx);
     expect(tooFew.ok).toBe(false);
     if (!tooFew.ok) {
@@ -135,15 +137,23 @@ describe("interpretWithSignal orchestrator (M17)", () => {
   it("does not invent evidence ids outside the search index", () => {
     const result = interpretWithSignal("mlops drift", documents);
     const indexIds = new Set(documents.map((d) => `${d.kind}:${d.id}`));
+
+    // Without this, a regression that returned no evidence at all would make
+    // the loop below iterate zero times and pass.
+    expect(result.evidenceIds.length).toBeGreaterThan(0);
     for (const id of result.evidenceIds) {
-      expect(indexIds.has(id)).toBe(true);
+      expect(indexIds.has(id), `${id} is not in the search index`).toBe(true);
     }
   });
 
   it("tool trace stays within the allowlist", () => {
     const result = interpretWithSignal("malware", documents);
+
+    // Same reason: an orchestrator that stopped calling tools would otherwise
+    // satisfy a test named for the allowlist.
+    expect(result.toolTrace.length).toBeGreaterThan(0);
     for (const step of result.toolTrace) {
-      expect(SIGNAL_TOOL_NAMES).toContain(step.tool);
+      expect(SIGNAL_TOOL_NAMES, `${step.tool} is not allowlisted`).toContain(step.tool);
     }
   });
 });

@@ -66,6 +66,26 @@ describe("evaluateSessionSignal (M19)", () => {
     }
   });
 
+  it("fires at exactly the 60% threshold, not just above it", () => {
+    // 3 of 5 distinct items is exactly MIN_LEADING_SHARE. The comparison is
+    // `share < MIN_LEADING_SHARE`, so the boundary must count as detected —
+    // flipping it to `<=` would break here and nowhere else.
+    const events = [
+      event("lab:mlops", "ML_ENGINEERING"),
+      event("project:proj.mlops-governance", "ML_ENGINEERING"),
+      event("project:proj.malware-pdf", "ML_ENGINEERING"),
+      event("lab:steward", "AI_ENGINEERING"),
+      event("project:proj.park-finder", "SOFTWARE_CLOUD"),
+    ];
+    const result = evaluateSessionSignal(events);
+    expect(result.detected).toBe(true);
+    if (result.detected) {
+      expect(result.share).toBe(MIN_LEADING_SHARE);
+      expect(result.leading).toBe("ML_ENGINEERING");
+      expect(result.supportingCount).toBe(3);
+    }
+  });
+
   it("rejects a balanced split without a 60% winner", () => {
     const events = [
       event("lab:mlops", "ML_ENGINEERING"),

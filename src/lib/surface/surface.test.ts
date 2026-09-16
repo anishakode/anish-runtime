@@ -44,11 +44,40 @@ describe("Under the Surface layers (M22)", () => {
   });
 
   it("points every subsystem at a path that exists in this repository", () => {
-    for (const layer of SURFACE_LAYERS) {
-      for (const sub of layer.subsystems) {
-        expect(existsSync(sub.path), `${sub.id} → ${sub.path}`).toBe(true);
-      }
+    const withPath = SURFACE_LAYERS.flatMap((l) => l.subsystems).filter(
+      (sub) => sub.path !== null,
+    );
+    expect(withPath.length).toBeGreaterThan(0);
+
+    for (const sub of withPath) {
+      expect(existsSync(sub.path!), `${sub.id} → ${sub.path}`).toBe(true);
     }
+  });
+
+  it("claims no path for a subsystem with no code here, rather than borrowing one", () => {
+    // An existence check alone cannot tell a real path from a plausible
+    // stand-in, so an unconfigured provider pointing at a neighbouring file
+    // would read as precise while describing a different subsystem.
+    const pathless = SURFACE_LAYERS.flatMap((l) => l.subsystems).filter(
+      (sub) => sub.path === null,
+    );
+    expect(pathless.map((sub) => sub.id)).toEqual(["sub.llm"]);
+
+    // Only an optional provider may be pathless. Anything claiming to run in
+    // this deployment has to be checkable against code.
+    for (const sub of pathless) {
+      expect(sub.reality, `${sub.id} is pathless but claims to run here`).toBe(
+        "OPTIONAL_PROVIDER",
+      );
+    }
+  });
+
+  it("gives no two subsystems the same path", () => {
+    // How the stand-in was spotted: sub.llm carried sub.composer's file.
+    const paths = SURFACE_LAYERS.flatMap((l) => l.subsystems)
+      .map((sub) => sub.path)
+      .filter((path): path is string => path !== null);
+    expect(paths.length).toBe(new Set(paths).size);
   });
 
   it("never presents a lab as real production runtime", () => {

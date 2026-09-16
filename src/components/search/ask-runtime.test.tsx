@@ -50,14 +50,17 @@ describe("AskRuntime (M15–M17)", () => {
       screen.getByLabelText(/Search evidence/i),
       "systems that watch model drift and explain pdf risk signals",
     );
-    const semantic = screen.queryByRole("heading", {
-      name: /Semantic relevance \(not proof\)/i,
-    });
-    if (semantic) {
-      expect(screen.getByText(/similarity never upgrades proof/i)).toBeInTheDocument();
-    } else {
-      expect(screen.getByText(/No canonical evidence matched/i)).toBeInTheDocument();
-    }
+    // Deterministic for this query: retrieval returns 0 deterministic and 8
+    // semantic hits with status "semantic_appended". The old if/else here let
+    // the gap notice satisfy a test named for the semantic section, so a
+    // semantic layer that stopped returning anything would still report green.
+    expect(
+      await screen.findByRole("heading", {
+        name: /Semantic relevance \(not proof\)/i,
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByText(/similarity never upgrades proof/i)).toBeInTheDocument();
+    expect(screen.queryByText(/No canonical evidence matched/i)).not.toBeInTheDocument();
   });
 
   it("shows a gap notice when nothing matches", async () => {

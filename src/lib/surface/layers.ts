@@ -46,8 +46,16 @@ export type SurfaceSubsystem = {
   name: string;
   reality: RealityLabel;
   detail: string;
-  /** Path in this repository — the claim is checkable against the code that served the page. */
-  path: string;
+  /**
+   * Path in this repository — the claim is checkable against the code that
+   * served the page.
+   *
+   * `null` when the subsystem has no code here at all, which is the honest
+   * answer for an unconfigured optional provider. Borrowing a neighbouring
+   * file's path would pass an existence check while describing a different
+   * subsystem, leaving the map precise-looking and wrong.
+   */
+  path: string | null;
   milestone: string;
 };
 
@@ -149,7 +157,9 @@ export const SURFACE_LAYERS: readonly SurfaceLayer[] = [
         reality: "OPTIONAL_PROVIDER",
         detail:
           "Not configured in this deployment. Signal runs its deterministic planner instead, and says so rather than faking model output.",
-        path: "src/lib/signal/compose.ts",
+        // No code here to point at. This previously carried the composer's path,
+        // which existed but belonged to a different subsystem.
+        path: null,
         milestone: "M17–M18",
       },
     ],

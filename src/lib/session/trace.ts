@@ -109,6 +109,11 @@ export function evaluateSessionSignal(
 
   const leading = shares[0]!;
   const second = shares[1];
+  // Defensive only, and deliberately kept: past the check above there are at
+  // least MIN_MEANINGFUL_INTERACTIONS (4) distinct items across the three
+  // SESSION_CATEGORIES, so by pigeonhole the leading bucket already holds 2.
+  // This branch therefore states the rule rather than enforcing it today, and
+  // would start enforcing it if either constant moved.
   if (leading.count < MIN_DISTINCT_SUPPORTING) {
     return {
       detected: false,

@@ -6,10 +6,10 @@ This repository is a from-scratch rebuild guided by `ANISH_RUNTIME_MASTER_HANDOF
 
 ## Current milestone
 
-**Live:** https://anish-runtime.vercel.app — M26 locked.
+**Live:** https://anish-runtime.vercel.app — M27 locked.
 
 Locked: M0 · M1 · M2 · M3 · M3.5 · M4 · M5 · M6 · M7 · M8 · M9 · M10 · M11 · M12 · M13 ·
-M14 · M15 · M16 · M17 · M18 · M19 · M20 · M21 · M22 · M23 · M24 · M25 · M26.
+M14 · M15 · M16 · M17 · M18 · M19 · M20 · M21 · M22 · M23 · M24 · M25 · M26 · M27.
 
 M24 closed the V1 feature arc — security headers and CSP, API request bounds, fault
 boundaries, bundle budgets, an accessibility audit, and the indexing policy. M25 froze
@@ -24,6 +24,12 @@ origin is a **build-time** input, so `NEXT_PUBLIC_SITE_URL` must be set before t
 production build or the site ships relative canonicals and a card pointing at localhost;
 the smoke script exists to catch exactly that. Deploy path:
 [`docs/launch/`](docs/launch/LAUNCH-RUNBOOK.md).
+
+M27 hardened the proof trail itself. The freeze proves a claim has not changed locally,
+but not that the repository it cites still exists at that path, so `pnpm verify:sources`
+re-checks every cited URL and that each pinned link carries the commit it claims — run
+weekly, opening an issue when the trail breaks. The four flagship repositories now carry
+READMEs that state their own limits rather than leaving a visitor at an empty page.
 
 ## Prerequisites
 

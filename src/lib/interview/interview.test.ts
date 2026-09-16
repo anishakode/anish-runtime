@@ -129,6 +129,10 @@ describe("selectInterviewSet (M21)", () => {
       event("lab:mlops", "ML_ENGINEERING"),
     ]);
     expect(set.consideredItemIds).toEqual(["lab:mlops"]);
+    // Without asserting the set was generated, a regression where lab:mlops
+    // matched no catalogue question would leave the loop empty and pass.
+    expect(set.generated).toBe(true);
+    expect(set.questions.length).toBeGreaterThan(0);
     for (const question of set.questions) {
       expect(question.matchedTriggerIds).toEqual(["lab:mlops"]);
     }

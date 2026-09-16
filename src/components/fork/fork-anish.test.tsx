@@ -41,12 +41,15 @@ describe("ForkAnish UI (M20)", () => {
     expect(screen.getByRole("alert")).toHaveTextContent(/Paste a job description/i);
   });
 
-  it("puts nothing derived from the pasted JD into the session trace", async () => {
+  it("records no session item at all, and nothing derived from the JD", async () => {
     const user = userEvent.setup();
-    let reasons: string[] = [];
+    let events: { itemId: string; reason: string }[] = [];
 
     function Probe() {
-      reasons = useSessionRuntime().events.map((event) => event.reason);
+      events = useSessionRuntime().events.map((event) => ({
+        itemId: event.itemId,
+        reason: event.reason,
+      }));
       return null;
     }
 
@@ -67,12 +70,44 @@ describe("ForkAnish UI (M20)", () => {
     await user.click(screen.getByRole("button", { name: /^FORK ANISH$/i }));
     await screen.findByLabelText(/Fork role branch/i);
 
-    expect(reasons.length).toBeGreaterThan(0);
-    const recorded = reasons.join(" ").toLowerCase();
+    // Forking is not a visit to a route and reveals no topic interest.
+    // Recording one would inflate the M19 Recompile heuristic and render on
+    // /ending as a node the visitor never opened, on the page that publishes
+    // "fabricated interactions: 0".
+    expect(events).toEqual([]);
+
+    const recorded = events
+      .map((e) => `${e.itemId} ${e.reason}`)
+      .join(" ")
+      .toLowerCase();
     for (const token of ["zephyr", "quaxil", "senior", "robotics", "platform"]) {
       expect(recorded, `"${token}" from the JD reached the session trace`).not.toContain(
         token,
       );
     }
+  });
+
+  it("never manufactures a visit to Experience or CV", async () => {
+    const user = userEvent.setup();
+    let itemIds: string[] = [];
+
+    function Probe() {
+      itemIds = useSessionRuntime().events.map((event) => event.itemId);
+      return null;
+    }
+
+    render(
+      <SessionRuntimeProvider>
+        <ForkAnish documents={documents} />
+        <Probe />
+      </SessionRuntimeProvider>,
+    );
+
+    await user.click(screen.getByRole("button", { name: /Try sample MLOps JD/i }));
+    await user.click(screen.getByRole("button", { name: /^FORK ANISH$/i }));
+    await screen.findByLabelText(/Fork role branch/i);
+
+    expect(itemIds).not.toContain("route:experience");
+    expect(itemIds).not.toContain("route:cv");
   });
 });

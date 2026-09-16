@@ -23,6 +23,7 @@
     "test:e2e:prod": "node scripts/run-e2e-prod.mjs",
     "validate:scope": "node scripts/validate-scope.mjs",
     "validate:evidence": "tsx scripts/validate-evidence.ts",
+    "verify:sources": "tsx scripts/verify-sources.ts",
     "freeze:check": "tsx scripts/freeze-evidence.ts --check",
     "freeze:write": "tsx scripts/freeze-evidence.ts --write",
     "freeze:ledger": "tsx scripts/freeze-evidence.ts --ledger",

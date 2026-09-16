@@ -100,6 +100,12 @@ stack a new issue every week. The issue text says to re-pin through change contr
 remove the claim, rather than to quietly drop the link — the link was supporting a
 claim, and deleting it silently would leave the claim unsupported.
 
+Dispatched once to confirm it works end to end: **18/18 reachable, run succeeded, no
+issue opened**. Being precise about what that proves — the success path is verified
+against the live corpus; the issue-creation branch has not been exercised, because
+doing so would mean breaking a real pin. The verification logic underneath it is unit
+tested for every failure mode.
+
 ## Not done
 
 - **Applying the README drafts.** Owner's call; paste-by-hand by request.

@@ -2,7 +2,8 @@
 
 **Status:** Accepted (M26)
 **Context:** Handoff §45. Launch is deployment of an already-proven system, not another
-feature milestone. The owner chose Vercel and deferred the origin to deploy time.
+feature milestone. The owner chose Vercel and deferred the origin to deploy time; that
+deferral is now resolved below.
 
 ## Decisions
 
@@ -19,6 +20,20 @@ the running site, that the canonical and card URLs belong to the origin being te
 that no `localhost` string survives in the page. The failure mode was rehearsed locally
 by deploying both ways; the script reports five distinct failures when the variable is
 missing and 38/38 when it is set.
+
+### The deferred origin resolves to the Vercel subdomain (M27, post-lock)
+
+`https://anish-runtime.vercel.app` is the permanent origin. No custom domain.
+
+The cost is honest: a `vercel.app` subdomain reads as staging to some readers, and the
+origin is not portable — leaving Vercel would change every canonical URL and every
+flagship repository homepage pointing back at `/work/<slug>`.
+
+Accepted anyway, because the alternative buys presentation and spends provenance. The
+origin is already cited from four external repositories and embedded in a frozen corpus;
+moving it later is a recorded change with a migration, which is a cheaper thing to own
+than a domain bought to look the part. If the decision reverses, the runbook's custom
+domain step is written and `pnpm smoke:live <new-origin>` is the gate.
 
 ### The social preview card was deferred to here on purpose
 

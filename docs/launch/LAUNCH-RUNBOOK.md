@@ -62,7 +62,11 @@ That exact failure was rehearsed locally; `pnpm smoke:live` reports all five (se
 
 **Redeploy after setting the variable.**
 
-## 4. Custom domain (if using one)
+## 4. Custom domain — decided against; kept for a future reversal
+
+The origin is permanently `https://anish-runtime.vercel.app` (ADR 0028). This section is
+not a pending step. It stays because the decision is reversible, and these are the steps
+it would take.
 
 1. Add the domain in Vercel and follow the DNS instructions.
 2. Wait for the certificate to issue; confirm `https://` serves without a warning.

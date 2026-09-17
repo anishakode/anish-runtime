@@ -83,7 +83,8 @@ Do **not** start the next milestone’s implementation until this audit is repor
 ### M4 — Landing Compilation + Home Runtime
 
 - [ ] Idle `/` remains readable: identity, positioning, View work / CV / Contact without RUN
-- [ ] RUN ANISH + journey presets (20 SEC / 2 MIN default / EXPLORE)
+- [ ] RUN ANISH + journey presets (20 SEC / 2 MIN default) — exactly two, and they must differ in settled layout, not only pacing (ADR 0030)
+- [ ] `/labs` index in the primary nav; Fork + Interview in the footer, still reachable (ADR 0030)
 - [ ] Compilation steps: identity → capabilities → evidence → projects (no fake terminal/particles)
 - [ ] Skip + Escape during compile; reduced-motion settles immediately
 - [ ] Settled state: system-ready, graph-backed counts, capabilities, flagships, reset

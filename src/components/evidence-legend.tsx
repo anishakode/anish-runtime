@@ -1,7 +1,7 @@
 import { EvidenceBadge } from "@/components/evidence-badge";
 import { EVIDENCE_STATES, type EvidenceState } from "@/lib/evidence/states";
 
-export const EVIDENCE_LEGEND: ReadonlyArray<{
+const EVIDENCE_LEGEND: ReadonlyArray<{
   state: EvidenceState;
   meaning: string;
 }> = [

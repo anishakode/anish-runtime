@@ -5,6 +5,7 @@
 
 import { getGraph, type EvidenceGraph } from "@/lib/evidence/queries";
 import type { EvidenceState } from "@/lib/evidence/schema";
+import { RUNTIME_LABS } from "@/lib/labs/catalog";
 import { SESSION_ITEM_CATEGORY } from "@/lib/session/categories";
 
 export type JourneyRef = {
@@ -16,23 +17,14 @@ export type JourneyRef = {
 
 export type JourneyCatalog = Record<string, JourneyRef>;
 
-const LAB_REFS: Record<string, { label: string; href: string; nodeId: string }> = {
-  "lab:mlops": {
-    label: "MLOps Runtime Lab",
-    href: "/labs/mlops",
-    nodeId: "ev.mlops.runtime-lab",
-  },
-  "lab:steward": {
-    label: "Steward Agent Lab",
-    href: "/labs/steward",
-    nodeId: "ev.steward.runtime-lab",
-  },
-  "lab:malware": {
-    label: "PDF Malware Explainability Lab",
-    href: "/labs/malware",
-    nodeId: "ev.malware.runtime-lab",
-  },
-};
+/** Derived from the shared registry so the journey replay and /labs cannot disagree. */
+const LAB_REFS: Record<string, { label: string; href: string; nodeId: string }> =
+  Object.fromEntries(
+    RUNTIME_LABS.map((lab) => [
+      lab.itemId,
+      { label: lab.label, href: lab.href, nodeId: lab.nodeId },
+    ]),
+  );
 
 const ROUTE_REFS: Record<string, { label: string; href: string }> = {
   "route:experience": { label: "Experience", href: "/experience" },

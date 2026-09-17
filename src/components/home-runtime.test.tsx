@@ -169,18 +169,25 @@ describe("HomeRuntime (M4)", () => {
     expect(screen.queryByRole("link", { name: "Steward_AI" })).not.toBeInTheDocument();
   });
 
-  it("EXPLORE settle keeps constellation and browse-all primary", async () => {
+  it("2 MIN settle keeps constellation, all flagships, and View work primary", async () => {
     const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
     render(<HomeRuntime {...baseProps} />);
-    fireEvent.click(screen.getByRole("radio", { name: /EXPLORE/i }));
     await user.click(screen.getByRole("button", { name: "RUN ANISH" }));
     await user.click(screen.getByRole("button", { name: /Skip compilation/i }));
-    expect(screen.getByText(/Journey mode · EXPLORE/i)).toBeInTheDocument();
+    expect(screen.getByText(/Journey mode · 2 MIN/i)).toBeInTheDocument();
     expect(
       screen.getByRole("list", { name: "Capability constellation" }),
     ).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Browse all work" })).toHaveClass(
-      "btn-primary",
+    expect(screen.getByRole("list", { name: "Flagship projects" }).children).toHaveLength(
+      3,
     );
+    expect(screen.getByRole("link", { name: "View work" })).toHaveClass("btn-primary");
+  });
+
+  it("offers exactly two journey presets", () => {
+    render(<HomeRuntime {...baseProps} />);
+    const presets = screen.getAllByRole("radio");
+    expect(presets.map((p) => p.getAttribute("value"))).toEqual(["20s", "2min"]);
+    expect(screen.queryByRole("radio", { name: /EXPLORE/i })).not.toBeInTheDocument();
   });
 });

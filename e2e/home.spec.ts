@@ -9,9 +9,47 @@ test.describe("M2 utility portfolio — strict recruiter edges", () => {
       page.getByText("AI · ML · Software Engineering", { exact: true }),
     ).toBeVisible();
     const nav = page.getByRole("navigation", { name: "Primary" });
-    for (const label of ["Work", "Experience", "About", "CV", "Contact"]) {
+    for (const label of ["Work", "Labs", "Experience", "About", "CV", "Contact"]) {
       await expect(nav.getByRole("link", { name: label })).toBeVisible();
     }
+
+    // Fork and Interview moved to the footer at M27 so the labs could take a
+    // top-level slot. They must stay reachable, and must not be back up here.
+    await expect(nav.getByRole("link", { name: "Fork Anish" })).toHaveCount(0);
+    const session = page.getByRole("navigation", { name: "Session surfaces" });
+    for (const label of [
+      "Fork Anish",
+      "Interview my work",
+      "Under the surface",
+      "Ending signal",
+    ]) {
+      await expect(session.getByRole("link", { name: label })).toBeVisible();
+    }
+  });
+
+  test("Labs index lists every lab and is reachable from the primary nav", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    await page
+      .getByRole("navigation", { name: "Primary" })
+      .getByRole("link", { name: "Labs" })
+      .click();
+    await expect(page.getByRole("heading", { name: "Runtime Labs" })).toBeVisible();
+
+    const labs = page.getByLabel("Runtime Labs").locator("> li");
+    await expect(labs).toHaveCount(3);
+    // Each lab must badge itself on the index, where the choice is made.
+    for (const name of [
+      "MLOps Runtime Lab",
+      "Steward Agent Lab",
+      "PDF Malware Explainability Lab",
+    ]) {
+      await expect(labs.filter({ hasText: name })).toContainText("PORTFOLIO EXTENSION");
+    }
+
+    await page.getByRole("link", { name: /MLOps Runtime Lab/ }).click();
+    await expect(page.getByRole("heading", { name: "MLOps Runtime Lab" })).toBeVisible();
   });
 
   test("utility routes are reachable with graph content", async ({ page }) => {
@@ -344,7 +382,7 @@ test.describe("M2 utility portfolio — strict recruiter edges", () => {
 
     await page.goto("/labs/mlops");
     await page.goto("/work/steward-ai");
-    await page.getByRole("link", { name: "INTERVIEW" }).click();
+    await page.getByRole("link", { name: "Interview my work" }).click();
     await page.getByRole("button", { name: /BUILD QUESTION SET/i }).click();
 
     const questions = page.getByLabel("Questions").locator("> li");
@@ -380,7 +418,7 @@ test.describe("M2 utility portfolio — strict recruiter edges", () => {
     await expect(mlopsLab).toContainText("PORTFOLIO SIMULATION");
 
     // Client-side navigation keeps the in-memory trace alive across the action.
-    await page.getByRole("link", { name: "FORK ANISH" }).click();
+    await page.getByRole("link", { name: "Fork Anish" }).click();
     await page.getByRole("button", { name: /Try sample MLOps JD/i }).click();
     await page.getByRole("link", { name: "Under the surface" }).click();
 

@@ -7,8 +7,18 @@ import Link from "next/link";
  * has to render.
  */
 
-export const PRIMARY_NAV = [
+/**
+ * Recruiter path plus Labs.
+ *
+ * Labs was added here because the three Runtime Labs are the strongest thing
+ * in the portfolio and had no top-level entry at all — reachable only from
+ * inside a project page, while Fork and Interview held header buttons. That
+ * put the most speculative surfaces above the most evidenced ones. Those two
+ * moved to the footer; the five recruiter routes are unchanged.
+ */
+const PRIMARY_NAV = [
   { href: "/work", label: "Work" },
+  { href: "/labs", label: "Labs" },
   { href: "/experience", label: "Experience" },
   { href: "/about", label: "About" },
   { href: "/cv", label: "CV" },
@@ -50,7 +60,13 @@ export function SiteFooter() {
     <footer className="site-chrome mt-auto border-t border-[var(--stroke)]">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-2 px-6 py-6 text-sm text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
         <p>Anish Akode · AI · ML · Software Engineering</p>
-        <div className="flex flex-wrap items-center gap-4">
+        <nav aria-label="Session surfaces" className="flex flex-wrap items-center gap-4">
+          <Link href="/fork" className="underline-offset-4 hover:underline">
+            Fork Anish
+          </Link>
+          <Link href="/interview" className="underline-offset-4 hover:underline">
+            Interview my work
+          </Link>
           <Link href="/surface" className="underline-offset-4 hover:underline">
             Under the surface
           </Link>
@@ -60,7 +76,7 @@ export function SiteFooter() {
           <p className="instrument-label text-xs tracking-wide">
             Editorial Lab · locked through M27
           </p>
-        </div>
+        </nav>
       </div>
     </footer>
   );

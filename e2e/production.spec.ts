@@ -15,6 +15,7 @@ const PUBLIC_ROUTES = [
   "/cv",
   "/contact",
   "/failures",
+  "/labs",
   "/labs/mlops",
   "/labs/steward",
   "/labs/malware",
@@ -166,6 +167,9 @@ test.describe("recruiter path without JavaScript", () => {
 
   const RECRUITER_ROUTES: [string, string][] = [
     ["/work", "Work"],
+    // The labs themselves need JS, but the index that chooses between them is a
+    // server-rendered list. It is in the primary nav, so it must not need JS.
+    ["/labs", "Labs"],
     ["/experience", "Experience"],
     ["/about", "About"],
     ["/cv", "CV"],

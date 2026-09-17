@@ -8,7 +8,6 @@ import {
   ROUTE_PRIORITY,
   STATIC_INDEXABLE_ROUTES,
   absoluteUrl,
-  isNoindexRoute,
   siteUrl,
 } from "@/lib/seo/routes";
 import robots from "@/app/robots";
@@ -47,12 +46,14 @@ afterEach(() => {
 
 describe("indexing policy (M24)", () => {
   it("never lists a route as both indexable and noindex", () => {
+    expect(NOINDEX_ROUTES.length).toBeGreaterThan(0);
     for (const route of NOINDEX_ROUTES) {
       expect(STATIC_INDEXABLE_ROUTES).not.toContain(route);
-      expect(isNoindexRoute(route)).toBe(true);
     }
-    expect(isNoindexRoute("/work")).toBe(false);
-    expect(isNoindexRoute("/endings")).toBe(false);
+    // The two lists are the whole policy: robots disallows NOINDEX_ROUTES and
+    // the sitemap enumerates STATIC_INDEXABLE_ROUTES. Overlap would publish a
+    // contradiction, which the assertions above are what actually prevent.
+    expect(STATIC_INDEXABLE_ROUTES).toContain("/work");
   });
 
   it("classifies every page in the app — no route silently unlisted", () => {

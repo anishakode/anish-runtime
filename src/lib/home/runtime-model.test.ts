@@ -3,6 +3,7 @@ import { loadEvidenceGraph } from "@/lib/evidence/load-graph";
 import {
   COMPILATION_STEPS,
   DEFAULT_JOURNEY,
+  JOURNEY_OPTIONS,
   deriveCapabilities,
   flagshipSummaries,
   journeyLabel,
@@ -24,7 +25,20 @@ describe("home runtime model (M4)", () => {
 
   it("paces compilation faster for 20 SEC than 2 MIN", () => {
     expect(stepDurationMs("20s")).toBeLessThan(stepDurationMs("2min"));
-    expect(stepDurationMs("explore")).toBeGreaterThan(0);
+    expect(stepDurationMs("20s")).toBeGreaterThan(0);
+  });
+
+  it("offers exactly two presets, and they differ in more than pacing", () => {
+    expect(JOURNEY_OPTIONS.map((o) => o.id)).toEqual(["20s", "2min"]);
+
+    // The guard this file previously lacked: a third preset was carried for
+    // three milestones whose settled layout was identical to 2 MIN. Two presets
+    // that agree on every layout field are one preset with two labels.
+    const plans = JOURNEY_OPTIONS.map((o) => settledJourneyPlan(o.id));
+    const shapes = plans.map((p) =>
+      [p.flagshipLimit, p.showConstellation, p.primaryHref, p.primaryLabel].join("|"),
+    );
+    expect(new Set(shapes).size).toBe(JOURNEY_OPTIONS.length);
   });
 
   it("differentiates settled journeys without inventing evidence", () => {
@@ -39,7 +53,6 @@ describe("home runtime model (M4)", () => {
       primaryHref: "/work",
       primaryLabel: "View work",
     });
-    expect(settledJourneyPlan("explore").primaryLabel).toBe("Browse all work");
   });
 
   it("derives capabilities only from graph positioning and flagship themes", () => {

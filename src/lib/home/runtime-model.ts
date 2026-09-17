@@ -1,6 +1,16 @@
 import type { EvidenceGraph } from "@/lib/evidence/schema";
 
-export type JourneyMode = "20s" | "2min" | "explore";
+/**
+ * Two presets, because there were three and two of them were the same.
+ *
+ * `2min` and `explore` both showed three flagships and the constellation and
+ * both sent the visitor to /work; they differed only in compile dwell and in
+ * whether the button read "View work" or "Browse all work". M4-PRELOCK-AUDIT
+ * recorded that as "copy implies richer differentiation than shipped" and it
+ * went unfixed. A preset picker whose whole value is honestly respecting the
+ * reader's time cannot itself offer a choice that is not one.
+ */
+export type JourneyMode = "20s" | "2min";
 
 export type RuntimePhase = "idle" | "compiling" | "ready";
 
@@ -15,11 +25,6 @@ export const JOURNEY_OPTIONS = [
     label: "2 MIN",
     description: "Recommended — compile, then inspect all flagships.",
     recommended: true,
-  },
-  {
-    id: "explore" as const,
-    label: "EXPLORE",
-    description: "Open-ended — constellation, flagships, full Work index.",
   },
 ] as const;
 
@@ -41,8 +46,6 @@ export function stepDurationMs(mode: JourneyMode): number {
       return 280;
     case "2min":
       return 650;
-    case "explore":
-      return 420;
     default: {
       const _exhaustive: never = mode;
       return _exhaustive;
@@ -56,7 +59,7 @@ export function journeyLabel(mode: JourneyMode): string {
 
 /**
  * Settled-runtime layout differs by journey — still graph-backed, no invented claims.
- * 20 SEC emphasizes a single flagship + CV; 2 MIN / EXPLORE show fuller surfaces.
+ * 20 SEC emphasizes a single flagship + CV; 2 MIN shows the fuller surface.
  */
 export function settledJourneyPlan(mode: JourneyMode) {
   switch (mode) {
@@ -75,14 +78,6 @@ export function settledJourneyPlan(mode: JourneyMode) {
         showConstellation: true,
         primaryHref: "/work" as const,
         primaryLabel: "View work",
-      };
-    case "explore":
-      return {
-        guidance: "Explore freely — constellation, flagships, and the full Work index.",
-        flagshipLimit: 3,
-        showConstellation: true,
-        primaryHref: "/work" as const,
-        primaryLabel: "Browse all work",
       };
     default: {
       const _exhaustive: never = mode;

@@ -12,6 +12,7 @@ import {
   clampArchitectureIndex,
   nextArchitectureIndex,
   previousArchitectureIndex,
+  revealedArchitectureStages,
   type ArchitectureStageView,
 } from "@/lib/architecture/stages";
 
@@ -21,7 +22,10 @@ export function ReversibleArchitecture({ stages }: { stages: ArchitectureStageVi
   const [index, setIndex] = useState(0);
   const safeIndex = clampArchitectureIndex(index);
   const active = stages[safeIndex] ?? stages[0];
-  const revealed = useMemo(() => stages.slice(0, safeIndex + 1), [stages, safeIndex]);
+  const revealed = useMemo(
+    () => revealedArchitectureStages(stages, safeIndex),
+    [stages, safeIndex],
+  );
 
   if (!active || stages.length === 0) {
     return null;

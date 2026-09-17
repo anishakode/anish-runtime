@@ -123,19 +123,19 @@ export function clampArchitectureIndex(index: number): number {
   return Math.max(0, Math.min(ARCHITECTURE_STAGE_COUNT - 1, Math.trunc(index)));
 }
 
-export function architectureStageAt(index: number): ArchitectureStageDef {
-  const i = clampArchitectureIndex(index);
-  const stage = MLOPS_ARCHITECTURE_STAGES[i];
-  if (!stage) {
-    throw new Error(`architectureStageAt: missing stage at ${i}`);
-  }
-  return stage;
-}
-
-/** Cumulative stages revealed from 0 through index (inclusive). */
-export function revealedArchitectureStages(index: number): ArchitectureStageDef[] {
+/**
+ * Cumulative stages revealed from 0 through index (inclusive).
+ *
+ * Generic over the stage shape because the rule has two callers on two types:
+ * the scrubber renders graph-enriched `ArchitectureStageView`s while the tests
+ * assert against the raw `ArchitectureStageDef`s. It previously took no array
+ * and the scrubber sliced inline instead, so the reveal rule existed twice and
+ * only the unused copy was tested — an off-by-one fixed here would not have
+ * reached the UI.
+ */
+export function revealedArchitectureStages<T>(stages: readonly T[], index: number): T[] {
   const end = clampArchitectureIndex(index);
-  return MLOPS_ARCHITECTURE_STAGES.slice(0, end + 1).map((s) => s);
+  return stages.slice(0, end + 1);
 }
 
 export function nextArchitectureIndex(index: number): number {

@@ -15,7 +15,9 @@ const FORBIDDEN_PATH_FRAGMENTS = [];
 
 const REQUIRED = [
   "AGENTS.md",
-  "ANISH_RUNTIME_MASTER_HANDOFF.md",
+  // ANISH_RUNTIME_MASTER_HANDOFF.md is deliberately absent: it is gitignored
+  // from M27 (see .gitignore) and kept on disk only for agent work, so a clean
+  // checkout must validate without it.
   "package.json",
   "pnpm-lock.yaml",
   "content/evidence/graph.json",
@@ -162,6 +164,10 @@ const REQUIRED = [
   "src/lib/search/index-build.ts",
   "src/lib/search/semantic.ts",
   "src/lib/search/retrieve.ts",
+  "src/lib/labs/catalog.ts",
+  "src/lib/labs/labs.test.ts",
+  "src/app/labs/page.tsx",
+  "src/app/labs/page.test.tsx",
   "src/components/labs/mlops-lab.tsx",
   "src/app/labs/mlops/page.tsx",
   "src/components/labs/steward-lab.tsx",

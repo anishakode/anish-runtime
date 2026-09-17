@@ -24,6 +24,7 @@ const PAGES: [string, () => Promise<unknown>][] = [
   ["/cv", () => import("@/app/cv/page")],
   ["/contact", () => import("@/app/contact/page")],
   ["/failures", () => import("@/app/failures/page")],
+  ["/labs", () => import("@/app/labs/page")],
   ["/labs/mlops", () => import("@/app/labs/mlops/page")],
   ["/labs/steward", () => import("@/app/labs/steward/page")],
   ["/labs/malware", () => import("@/app/labs/malware/page")],

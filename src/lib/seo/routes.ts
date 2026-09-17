@@ -16,6 +16,7 @@ export const STATIC_INDEXABLE_ROUTES = [
   "/cv",
   "/contact",
   "/failures",
+  "/labs",
   "/labs/mlops",
   "/labs/steward",
   "/labs/malware",
@@ -24,6 +25,7 @@ export const STATIC_INDEXABLE_ROUTES = [
 export const ROUTE_PRIORITY: Record<string, number> = {
   "/": 1,
   "/work": 0.9,
+  "/labs": 0.9,
   "/cv": 0.8,
   "/experience": 0.8,
   "/about": 0.7,
@@ -39,10 +41,6 @@ export function siteUrl(): string {
 export const NOINDEX_METADATA = {
   robots: { index: false, follow: false },
 } as const;
-
-export function isNoindexRoute(path: string): boolean {
-  return (NOINDEX_ROUTES as readonly string[]).includes(path);
-}
 
 export function absoluteUrl(path: string): string {
   const base = siteUrl();

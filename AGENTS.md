@@ -2,7 +2,9 @@
 
 This repo is a **from-scratch rebuild** of an evidence-first, AI-native engineering portfolio — not a résumé template.
 
-**Canonical product constitution:** `ANISH_RUNTIME_MASTER_HANDOFF.md`  
+**Canonical product constitution:** `ANISH_RUNTIME_MASTER_HANDOFF.md` — present in the working
+tree but **gitignored since M27**, so it is not published. Read it as before; do not re-add it to
+version control, and do not treat its deferred/roadmap sections as shipped.  
 Treat M0–M23 in that file as the **product design history / contracts**. This workspace implements them again under approval gates. Do not invent features outside the approved milestone.
 
 ## Mottos (never dilute)

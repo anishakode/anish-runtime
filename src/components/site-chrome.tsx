@@ -18,18 +18,6 @@ export function SiteHeader() {
         <div className="flex flex-wrap items-center gap-4">
           <PrimaryNav />
           <AskRuntime documents={documents} />
-          <Link
-            href="/fork"
-            className="ask-runtime-trigger btn-secondary text-xs no-underline"
-          >
-            FORK ANISH
-          </Link>
-          <Link
-            href="/interview"
-            className="ask-runtime-trigger btn-secondary text-xs no-underline"
-          >
-            INTERVIEW
-          </Link>
         </div>
       </div>
     </header>

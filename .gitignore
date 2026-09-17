@@ -47,3 +47,11 @@ next-env.d.ts
 
 # local firecrawl / agent artifacts
 .firecrawl/
+
+# Internal product constitution — kept on disk for agent work, not published.
+# It is 1,783 lines mixing shipped contracts with deferred ideas and roadmap, so
+# a visitor cannot tell built from planned. On a site whose entire argument is
+# that claims must be evidenced, publishing a spec that reads as claims is the
+# largest overclaim risk in the repository. Removed from HEAD at M27; earlier
+# commits still contain it, and history is deliberately not rewritten.
+ANISH_RUNTIME_MASTER_HANDOFF.md

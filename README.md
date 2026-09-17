@@ -2,7 +2,11 @@
 
 **An executable professional identity.** — **https://anish-runtime.vercel.app**
 
-This repository is a from-scratch rebuild guided by `ANISH_RUNTIME_MASTER_HANDOFF.md` and `AGENTS.md`.
+This repository is a from-scratch rebuild. The engineering contract it was built under is
+[`AGENTS.md`](AGENTS.md); the decisions are recorded in [`docs/adr/`](docs/adr) and the
+milestone audits in [`docs/milestones/`](docs/milestones). The longer product constitution is
+kept out of this repository on purpose — it mixes shipped contracts with deferred ideas, and
+this project should not publish a document a reader could mistake for a list of claims.
 
 ## Current milestone
 

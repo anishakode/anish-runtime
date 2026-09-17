@@ -1,6 +1,7 @@
 # Milestone plan (from-scratch rebuild)
 
-Canonical product contracts: `ANISH_RUNTIME_MASTER_HANDOFF.md`.
+Canonical product contracts: `ANISH_RUNTIME_MASTER_HANDOFF.md` (local-only since M27 — kept in
+the working tree for agent work, gitignored rather than published).
 
 | Milestone                               | Status | Notes                                                |
 | --------------------------------------- | ------ | ---------------------------------------------------- |

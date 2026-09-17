@@ -5,7 +5,38 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    groups:
+      # react and react-dom are a matched pair. Bumped separately, one PR
+      # desyncs them against a lockfile that pins both, which is how the first
+      # round of these arrived.
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      # Same reasoning: the type packages have to move with the runtime.
+      next:
+        patterns:
+          - "next"
+          - "eslint-config-next"
+    ignore:
+      # @types/node's major tracks the Node major it describes, and this repo
+      # runs Node 22 (see `engines` and the workflow `node-version`). Taking
+      # the newest major would typecheck code against APIs the runtime does
+      # not have — a green build that fails when it runs. Patch and minor
+      # within 22.x still come through.
+      - dependency-name: "@types/node"
+        update-types:
+          - version-update:semver-major
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
       interval: weekly
+    groups:
+      # Every workflow uses the same few actions, so a per-action PR updates
+      # one file and silently leaves the others behind — which is exactly what
+      # happened to verify-sources.yml.
+      actions:
+        patterns:
+          - "*"

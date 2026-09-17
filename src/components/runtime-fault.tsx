@@ -33,13 +33,15 @@ export function RuntimeFault({
         id="main"
         className="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center gap-4 px-6 py-16"
       >
-        <p className="eyebrow">RUNTIME FAULT</p>
-        <h1 className="page-title">{subsystem} stopped responding</h1>
-        <p className="page-lede">{fallback}</p>
-        <p className="text-sm text-[var(--muted)]">
-          Nothing was lost — this session was never stored anywhere.
-        </p>
-        <div className="flex flex-wrap gap-3">
+        <div className="max-w-xl space-y-3">
+          <p className="eyebrow">RUNTIME FAULT</p>
+          <h1 className="page-title">{subsystem} stopped responding</h1>
+          <p className="page-lede max-w-none">{fallback}</p>
+          <p className="text-sm text-[var(--muted)]">
+            Nothing was lost — this session was never stored anywhere.
+          </p>
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
           {onRetry ? (
             <button type="button" className="btn-primary" onClick={onRetry}>
               TRY AGAIN

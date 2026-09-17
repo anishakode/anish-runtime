@@ -15,7 +15,7 @@ function ExhibitCard({ exhibit }: { exhibit: FailureExhibit }) {
       className="border border-[var(--stroke)] p-4"
       aria-labelledby={`failure-exhibit-${exhibit.id}`}
     >
-      <div className="mb-2 flex flex-wrap items-center gap-2">
+      <div className="mb-2 flex flex-wrap items-start gap-2">
         <EvidenceBadge state={exhibit.evidenceState} />
         <span className="instrument-label text-xs">Published exhibit</span>
       </div>
@@ -68,15 +68,19 @@ export function FailureMuseum({ museum, hideMuseumLink = false }: FailureMuseumP
   return (
     <div id="failure-museum" className="failure-museum space-y-6">
       <aside
-        className="border border-[var(--stroke)] bg-[var(--state-limited-bg)] p-4 text-sm text-[var(--state-limited-fg)]"
+        className={
+          museum.empty
+            ? "border border-[var(--stroke)] p-4 text-sm"
+            : "border border-[var(--stroke)] bg-[var(--state-limited-bg)] p-4 text-sm text-[var(--state-limited-fg)]"
+        }
         aria-label="Failure Museum evidence gate"
       >
-        <div className="mb-2 flex flex-wrap items-center gap-2">
+        <div className="mb-2 flex flex-wrap items-start gap-2">
           <EvidenceBadge state={museum.state} />
           <span className="instrument-label text-xs">Failure Museum</span>
         </div>
         <h2 className="font-medium text-[var(--on-surface)]">{museum.title}</h2>
-        <p className="mt-2">{museum.summary}</p>
+        <p className="mt-2 text-[var(--on-surface)]">{museum.summary}</p>
         <p className="mt-3 text-[var(--muted)]">
           Published exhibits: <strong>{museum.publishedCount}</strong>
           {museum.empty ? " — empty by design until artifact-grade proof exists." : "."}

@@ -63,7 +63,7 @@ export function StewardLab() {
           className="border border-[var(--stroke)] bg-[var(--state-extension-bg)] p-4 text-sm text-[var(--state-extension-fg)]"
           aria-label="Evidence boundary"
         >
-          <div className="mb-2 flex flex-wrap items-center gap-2">
+          <div className="mb-2 flex flex-wrap items-start gap-2">
             <EvidenceBadge state={result.evidenceState} />
             <span className="instrument-label text-xs tracking-wide">Agent Lab</span>
           </div>
@@ -121,7 +121,7 @@ export function StewardLab() {
         </section>
 
         <section className="space-y-3" aria-label="Tool workflow states">
-          <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-start justify-between gap-3">
             <h3 className="text-lg font-semibold">Tool workflow</h3>
             <SourceTraceTrigger trace={stewardMcpLabSourceTrace()}>
               Trace MCP server
@@ -159,7 +159,7 @@ export function StewardLab() {
         </section>
 
         <section className="space-y-3" aria-label="Runtime outcome">
-          <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-start justify-between gap-3">
             <h3 className="text-lg font-semibold">Outcome</h3>
             <SourceTraceTrigger trace={stewardSafetyLabSourceTrace()}>
               Trace safety boundary

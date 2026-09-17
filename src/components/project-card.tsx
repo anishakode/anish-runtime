@@ -16,7 +16,7 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
         <EvidenceBadge state={project.evidenceState} />
       </div>
-      <p className="mt-3 max-w-prose text-[var(--muted)]">{project.summary}</p>
+      <p className="mt-3 text-[var(--muted)]">{project.summary}</p>
       {project.themes.length > 0 ? (
         <ul className="mt-3 flex flex-wrap gap-2">
           {project.themes.map((theme) => (

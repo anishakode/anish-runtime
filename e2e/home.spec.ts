@@ -103,6 +103,8 @@ test.describe("M2 utility portfolio — strict recruiter edges", () => {
     expect(body).toContain("ANISH // RUNTIME");
     expect(body).toContain("Anish Akode");
     expect(body).toContain("/work");
+    expect(body).toMatch(/^- \/labs —/m);
+    expect(body).toContain("/labs/mlops");
     expect(body).toContain("/evidence.json");
     expect(body).toContain("anishakode3101@gmail.com");
     expect(body).not.toContain("anishakode2002@gmail.com");

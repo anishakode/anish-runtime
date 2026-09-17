@@ -107,7 +107,7 @@ export function UnderTheSurface() {
                   <ul className="mt-3 space-y-3" aria-label={`${layer.label} subsystems`}>
                     {subsystems.map((sub) => (
                       <li key={sub.id} className="border-t border-[var(--stroke)] pt-3">
-                        <div className="flex flex-wrap items-center gap-2">
+                        <div className="flex flex-wrap items-start gap-2">
                           <span className="font-medium">{sub.name}</span>
                           <span className="instrument-label text-xs tracking-wide">
                             {REALITY_LABEL_TEXT[sub.reality]}
@@ -147,7 +147,7 @@ export function UnderTheSurface() {
           <ul className="space-y-3" aria-label="Runtime trace entries">
             {[...entries].reverse().map((entry) => (
               <li key={entry.id} className="border border-[var(--stroke)] p-3">
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex flex-wrap items-start gap-2">
                   <span className="font-medium">{entry.label}</span>
                   <span className="instrument-label text-xs tracking-wide">
                     {entry.status}
@@ -166,7 +166,7 @@ export function UnderTheSurface() {
         )}
 
         {trace ? (
-          <div className="flex flex-wrap items-center gap-3 text-sm text-[var(--muted)]">
+          <div className="flex flex-wrap items-start gap-3 text-sm text-[var(--muted)]">
             <button type="button" className="btn-secondary text-xs" onClick={trace.clear}>
               CLEAR TRACE
             </button>

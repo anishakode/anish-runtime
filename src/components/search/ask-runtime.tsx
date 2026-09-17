@@ -65,7 +65,7 @@ function HitCard({
       className="ask-runtime-hit block border border-[var(--stroke)] p-3 no-underline"
       onClick={onNavigate}
     >
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-start gap-2">
         <EvidenceBadge state={evidenceState} />
         <span className="instrument-label text-xs text-[var(--muted)]">{meta}</span>
       </div>
@@ -338,7 +338,7 @@ export function AskRuntime({ documents }: AskRuntimeProps) {
               />
             </label>
 
-            <div className="mt-3 flex flex-wrap items-center gap-3">
+            <div className="mt-3 flex flex-wrap items-start gap-3">
               <p className="instrument-label text-xs text-[var(--muted)]">
                 Deterministic first · semantic fallback only when needed · Press Escape to
                 close

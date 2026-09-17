@@ -120,6 +120,7 @@ describe("sitemap (M24)", () => {
     const priority = new Map(sitemap().map((entry) => [entry.url, entry.priority]));
     expect(priority.get("/")).toBe(ROUTE_PRIORITY["/"]);
     expect(priority.get("/work")).toBe(0.9);
+    expect(priority.get("/labs")).toBe(0.9);
     expect(priority.get("/cv")).toBe(0.8);
     // Unranked routes fall back rather than disappearing.
     expect(priority.get("/labs/mlops")).toBe(0.6);

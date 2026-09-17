@@ -39,7 +39,7 @@ export function EndingSignalView({ catalog, contact }: EndingSignalViewProps) {
         <h2 id="ending-heading" className="page-title text-xl">
           {ENDING_HEADING}
         </h2>
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-baseline gap-3">
           <span className="instrument-label text-xs tracking-wide">{signal.density}</span>
           <p className="text-sm text-[var(--muted)]">{signal.densitySummary}</p>
         </div>
@@ -57,7 +57,7 @@ export function EndingSignalView({ catalog, contact }: EndingSignalViewProps) {
           <ol className="space-y-3" aria-label="Journey nodes">
             {signal.nodes.map((node) => (
               <li key={node.itemId} className="border border-[var(--stroke)] p-3">
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex flex-wrap items-baseline gap-2">
                   <span className="instrument-label text-xs text-[var(--muted)]">
                     {String(node.order).padStart(2, "0")}
                   </span>

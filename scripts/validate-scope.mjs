@@ -95,6 +95,7 @@ const REQUIRED = [
   // Binds the footer's locked-milestone marker to the milestones table, after
   // it drifted behind a lock twice (M24 and M27 audits).
   "src/components/site-chrome.test.tsx",
+  "src/components/layout-contracts.test.tsx",
   "scripts/check-bundle-budget.mjs",
   "e2e/production.spec.ts",
   "src/app/opengraph-image.tsx",
@@ -123,6 +124,7 @@ const REQUIRED = [
   "docs/presence/README-boring-ai.md",
   "docs/presence/README-steward-ai-patch.md",
   "docs/adr/0029-proof-trail-integrity.md",
+  "docs/adr/0030-subtraction-pass.md",
   "docs/milestones/M27-REPORT.md",
   "docs/milestones/M27-LOCK-AUDIT.md",
   "src/lib/freeze/claims.ts",

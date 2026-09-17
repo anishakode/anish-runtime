@@ -40,6 +40,7 @@ export function GET() {
     `- / — home`,
     `- /work — projects by tier`,
     `- /work/{slug} — project evidence`,
+    `- /labs — Runtime Labs index (PORTFOLIO_EXTENSION; optional)`,
     `- /labs/mlops — MLOps Runtime Lab (PORTFOLIO_EXTENSION; optional)`,
     `- /labs/steward — Steward Agent Lab (PORTFOLIO_EXTENSION; optional)`,
     `- /labs/malware — PDF Malware Explainability Lab (PORTFOLIO_EXTENSION; optional)`,

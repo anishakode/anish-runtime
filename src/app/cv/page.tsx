@@ -127,7 +127,10 @@ export default function CvPage() {
           <ul className="space-y-4">
             {projects.map((project) => (
               <li key={project.id}>
-                <p className="font-medium">{project.title}</p>
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <p className="font-medium">{project.title}</p>
+                  <EvidenceBadge state={project.evidenceState} />
+                </div>
                 <p className="text-sm text-[var(--muted)]">{project.summary}</p>
               </li>
             ))}

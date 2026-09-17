@@ -89,7 +89,7 @@ export function ReversibleArchitecture({ stages }: { stages: ArchitectureStageVi
           className="space-y-3 border-t border-[var(--stroke)] pt-4"
           aria-live="polite"
         >
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-start gap-2">
             <h3 className="text-lg font-semibold">{active.title}</h3>
             <span className="instrument-label text-xs text-[var(--muted)]">
               {ARCHITECTURE_REALITY_LABEL[active.reality]}

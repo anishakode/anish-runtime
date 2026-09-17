@@ -175,11 +175,14 @@ export function HomeRuntime({
       </div>
 
       {phase === "idle" ? (
-        <>
-          <p className="eyebrow">ANISH // RUNTIME</p>
-          <h1 className="page-title max-w-xl sm:text-5xl">{name}</h1>
+        // Same open rhythm as production: every sibling is a gap-8 child.
+        // Nesting intro into space-y-3 made localhost look compact next to live.
+        // One max-w-xl keeps the measure; the brand eyebrow is omitted — the
+        // header already says ANISH // RUNTIME.
+        <div className="flex max-w-xl flex-col gap-8">
+          <h1 className="page-title sm:text-5xl">{name}</h1>
           <p className="text-lg text-[var(--muted)]">{positioning}</p>
-          <p className="page-lede">
+          <p className="page-lede max-w-none">
             {proposition} {tagline}
           </p>
           <p className="instrument-label text-sm text-[var(--muted)]">
@@ -187,7 +190,7 @@ export function HomeRuntime({
             {stats.sources} sources
           </p>
 
-          <fieldset className="journey-fieldset max-w-xl border-0 p-0">
+          <fieldset className="journey-fieldset border-0 p-0">
             <legend className="instrument-label mb-2 text-xs tracking-wide text-[var(--muted)]">
               Journey preset
             </legend>
@@ -223,7 +226,7 @@ export function HomeRuntime({
             </p>
           </fieldset>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <button
               ref={runButtonRef}
               type="button"
@@ -242,11 +245,11 @@ export function HomeRuntime({
               Contact
             </Link>
           </div>
-          <p className="max-w-md text-sm text-[var(--muted)]">
+          <p className="text-sm text-[var(--muted)]">
             Readable without running. Compilation is progressive enhancement — Skip and
             Escape are available once it starts.
           </p>
-        </>
+        </div>
       ) : null}
 
       {phase === "compiling" ? (
@@ -278,7 +281,7 @@ export function HomeRuntime({
               );
             })}
           </ol>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <button
               ref={skipButtonRef}
               type="button"
@@ -287,36 +290,40 @@ export function HomeRuntime({
             >
               Skip compilation
             </button>
-            <p className="self-center text-sm text-[var(--muted)]">
-              Press Escape to skip
-            </p>
+            <p className="text-sm text-[var(--muted)]">Press Escape to skip</p>
           </div>
         </section>
       ) : null}
 
       {phase === "ready" ? (
         <section className="runtime-ready" aria-labelledby="ready-heading">
-          <p className="eyebrow">System ready</p>
-          <h1
-            id="ready-heading"
-            ref={readyHeadingRef}
-            tabIndex={-1}
-            className="page-title"
-          >
-            {name}
-          </h1>
-          <p className="text-lg text-[var(--muted)]">{positioning}</p>
-          <p className="instrument-label text-sm text-[var(--muted)]">
-            Journey mode · {journeyLabel(journey)} · {stats.nodes} nodes ·{" "}
-            {stats.projects} projects · {stats.sources} sources · {stats.edges} edges ·
-            flagship {stats.byTier.flagship}
-          </p>
-          <p className="mt-2 max-w-xl text-sm text-[var(--muted)]">{plan.guidance}</p>
-          {recompileNote ? (
-            <p className="mt-2 max-w-xl text-sm text-[var(--muted)]" role="status">
-              {recompileNote}
+          {/*
+            Intro stays on one measure. Guidance previously capped at max-w-xl
+            while positioning and the stats line ran the full main column.
+          */}
+          <div className="flex max-w-xl flex-col gap-8">
+            <p className="eyebrow">System ready</p>
+            <h1
+              id="ready-heading"
+              ref={readyHeadingRef}
+              tabIndex={-1}
+              className="page-title"
+            >
+              {name}
+            </h1>
+            <p className="text-lg text-[var(--muted)]">{positioning}</p>
+            <p className="instrument-label text-sm text-[var(--muted)]">
+              Journey mode · {journeyLabel(journey)} · {stats.nodes} nodes ·{" "}
+              {stats.projects} projects · {stats.sources} sources · {stats.edges} edges ·
+              flagship {stats.byTier.flagship}
             </p>
-          ) : null}
+            <p className="text-sm text-[var(--muted)]">{plan.guidance}</p>
+            {recompileNote ? (
+              <p className="text-sm text-[var(--muted)]" role="status">
+                {recompileNote}
+              </p>
+            ) : null}
+          </div>
 
           {plan.showConstellation ? (
             <div className="mt-6">

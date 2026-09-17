@@ -43,7 +43,7 @@ export function ProjectEvidenceSection({ nodes }: { nodes: ProjectEvidenceNodeVi
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <h3 className="font-medium">{node.title}</h3>
-                    <div className="flex flex-wrap items-center gap-2">
+                    <div className="flex flex-wrap items-start gap-2">
                       <EvidenceBadge state={node.state} />
                       {trace ? <SourceTraceTrigger trace={trace} /> : null}
                     </div>

@@ -127,7 +127,7 @@ export function ProjectXray({
             aria-live="polite"
             aria-label="Selected component"
           >
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-start gap-2">
               <h4 className="font-semibold">{selected.component.label}</h4>
               <EvidenceBadge state={selected.component.evidenceState} />
               <span className="instrument-label text-xs text-[var(--muted)]">

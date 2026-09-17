@@ -50,7 +50,7 @@ export default function ExperiencePage() {
                 {role.technologies.length > 0 ? (
                   <ul className="mt-4 flex flex-wrap gap-2">
                     {role.technologies.map((tech) => (
-                      <li key={tech} className="chip">
+                      <li key={tech} className="chip-static">
                         {tech}
                       </li>
                     ))}

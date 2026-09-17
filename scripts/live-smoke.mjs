@@ -13,7 +13,17 @@
 
 const RECRUITER_ROUTES = ["/work", "/experience", "/about", "/cv", "/contact"];
 const NOINDEX_ROUTES = ["/ending", "/surface", "/fork", "/interview"];
-const PUBLIC_ROUTES = ["/", ...RECRUITER_ROUTES, "/failures", "/labs/mlops"];
+// /labs is primary-nav after ADR 0030 — a failure there must fail smoke, not
+// hide behind the deeper /labs/mlops check alone.
+const PUBLIC_ROUTES = [
+  "/",
+  ...RECRUITER_ROUTES,
+  "/failures",
+  "/labs",
+  "/labs/mlops",
+  "/labs/steward",
+  "/labs/malware",
+];
 
 const args = process.argv.slice(2);
 const allowHttp = args.includes("--allow-http");
@@ -179,7 +189,16 @@ async function checkMachineReadable() {
   );
 
   const { response: llms, body: llmsBody } = await get("/llms.txt");
-  record(llms.status === 200 && llmsBody.length > 0, "llms.txt is served");
+  // Require the index as its own route line. A naive `includes("/labs")` would
+  // pass on `/labs/mlops` alone — which is how the pre-0030 surface looked.
+  const listsLabsIndex = /^- \/labs —/m.test(llmsBody);
+  record(
+    llms.status === 200 &&
+      listsLabsIndex &&
+      llmsBody.includes("/work") &&
+      llmsBody.includes("/evidence.json"),
+    "llms.txt lists the primary human routes including /labs",
+  );
 }
 
 async function checkAiOffFallbacks() {

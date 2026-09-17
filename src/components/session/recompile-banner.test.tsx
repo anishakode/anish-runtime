@@ -62,11 +62,27 @@ describe("RecompileBanner (M19)", () => {
     await user.click(screen.getByRole("button", { name: /^RECOMPILE$/i }));
     expect(screen.getByTestId("consent")).toHaveTextContent("approved");
     expect(screen.getByTestId("category")).toHaveTextContent("ML_ENGINEERING");
-    expect(screen.getByLabelText(/Session recompile active/i)).toBeInTheDocument();
+    const active = screen.getByLabelText(/Session recompile active/i);
+    expect(active).toBeInTheDocument();
+    // Session chrome must not print into the CV PDF — same class the print
+    // stylesheet already strips for header/footer.
+    expect(active.className).toMatch(/\bno-print\b/);
 
     await user.click(screen.getByRole("button", { name: /^RESET$/i }));
     expect(screen.getByTestId("consent")).toHaveTextContent("none");
     expect(screen.getByTestId("category")).toHaveTextContent("none");
+  });
+
+  it("marks the consent prompt no-print as well", async () => {
+    const user = userEvent.setup();
+    render(
+      <SessionRuntimeProvider>
+        <Harness />
+      </SessionRuntimeProvider>,
+    );
+    await user.click(screen.getByRole("button", { name: /Seed ML lean/i }));
+    const prompt = await screen.findByLabelText(/Signal recompile prompt/i);
+    expect(prompt.className).toMatch(/\bno-print\b/);
   });
 
   it("NOT NOW dismisses without changing evidence presentation category", async () => {

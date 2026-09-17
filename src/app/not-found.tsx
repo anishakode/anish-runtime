@@ -12,12 +12,14 @@ export default function NotFound() {
         id="main"
         className="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center gap-4 px-6 py-16"
       >
-        <p className="eyebrow">404</p>
-        <h1 className="page-title">Page not found</h1>
-        <p className="page-lede">
-          That route is not part of the utility portfolio. Try Work, Experience, About,
-          CV, or Contact.
-        </p>
+        <div className="max-w-xl space-y-3">
+          <p className="eyebrow">404</p>
+          <h1 className="page-title">Page not found</h1>
+          <p className="page-lede max-w-none">
+            That route is not part of the utility portfolio. Try Work, Experience, About,
+            CV, or Contact.
+          </p>
+        </div>
         <p>
           <Link href="/" className="btn-secondary">
             Back to home

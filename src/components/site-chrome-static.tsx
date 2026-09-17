@@ -27,7 +27,7 @@ const PRIMARY_NAV = [
 
 export function PrimaryNav() {
   return (
-    <nav aria-label="Primary" className="flex flex-wrap gap-4 text-sm">
+    <nav aria-label="Primary" className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
       {PRIMARY_NAV.map((item) => (
         <Link
           key={item.href}
@@ -45,7 +45,7 @@ export function PrimaryNav() {
 export function MinimalHeader() {
   return (
     <header className="site-chrome border-b border-[var(--stroke)] bg-[var(--surface)]">
-      <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
         <Link href="/" className="instrument-label text-sm font-medium tracking-wide">
           ANISH // RUNTIME
         </Link>
@@ -58,25 +58,35 @@ export function MinimalHeader() {
 export function SiteFooter() {
   return (
     <footer className="site-chrome mt-auto border-t border-[var(--stroke)]">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-2 px-6 py-6 text-sm text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
+      {/*
+        Two columns, not three. The locked marker used to sit inside the session
+        nav flex, so on wrap it landed under "Fork Anish" instead of under the
+        link row as a whole — the right edge no longer matched the header.
+      */}
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-3 px-6 py-6 text-sm text-[var(--muted)] sm:flex-row sm:items-start sm:justify-between">
         <p>Anish Akode · AI · ML · Software Engineering</p>
-        <nav aria-label="Session surfaces" className="flex flex-wrap items-center gap-4">
-          <Link href="/fork" className="underline-offset-4 hover:underline">
-            Fork Anish
-          </Link>
-          <Link href="/interview" className="underline-offset-4 hover:underline">
-            Interview my work
-          </Link>
-          <Link href="/surface" className="underline-offset-4 hover:underline">
-            Under the surface
-          </Link>
-          <Link href="/ending" className="underline-offset-4 hover:underline">
-            Ending signal
-          </Link>
+        <div className="flex flex-col gap-2 sm:items-end">
+          <nav
+            aria-label="Session surfaces"
+            className="flex flex-wrap gap-x-4 gap-y-2 sm:justify-end"
+          >
+            <Link href="/fork" className="underline-offset-4 hover:underline">
+              Fork Anish
+            </Link>
+            <Link href="/interview" className="underline-offset-4 hover:underline">
+              Interview my work
+            </Link>
+            <Link href="/surface" className="underline-offset-4 hover:underline">
+              Under the surface
+            </Link>
+            <Link href="/ending" className="underline-offset-4 hover:underline">
+              Ending signal
+            </Link>
+          </nav>
           <p className="instrument-label text-xs tracking-wide">
             Editorial Lab · locked through M27
           </p>
-        </nav>
+        </div>
       </div>
     </footer>
   );

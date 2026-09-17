@@ -167,7 +167,7 @@ export function ForkAnish({ documents }: ForkAnishProps) {
             <ul className="space-y-4" aria-label="Requirement classifications">
               {sorted.map((req) => (
                 <li key={req.requirementId} className="border border-[var(--stroke)] p-4">
-                  <div className="flex flex-wrap items-center gap-2">
+                  <div className="flex flex-wrap items-start gap-2">
                     <span className="instrument-label text-xs tracking-wide">
                       {req.classification.replaceAll("_", " ")}
                     </span>

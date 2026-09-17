@@ -79,7 +79,7 @@ export function InterviewMyWork({ catalog }: InterviewMyWorkProps) {
             <ol className="space-y-6" aria-label="Questions">
               {set.questions.map((question) => (
                 <li key={question.id} className="border border-[var(--stroke)] p-4">
-                  <div className="flex flex-wrap items-center gap-3">
+                  <div className="flex flex-wrap items-start gap-3">
                     <span className="instrument-label text-xs tracking-wide">
                       {question.archetype}
                     </span>

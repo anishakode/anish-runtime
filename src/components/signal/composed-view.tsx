@@ -37,7 +37,7 @@ function EvidenceItems({
             className="block no-underline hover:underline"
             onClick={onNavigate}
           >
-            <span className="flex flex-wrap items-center gap-2">
+            <span className="flex flex-wrap items-start gap-2">
               <EvidenceBadge state={item.evidenceState} />
               {item.kind ? (
                 <span className="instrument-label text-xs text-[var(--muted)]">
@@ -78,7 +78,7 @@ function RenderBlock({
       return (
         <BlockShell label={`ProjectCard · ${block.tier}`}>
           <Link href={block.href} className="no-underline" onClick={onNavigate}>
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-start gap-2">
               <EvidenceBadge state={block.evidenceState} />
               <span className="font-medium text-[var(--on-surface)]">{block.title}</span>
             </div>
@@ -111,7 +111,7 @@ function RenderBlock({
       return (
         <BlockShell label="MetricBlock">
           <Link href={block.href} className="no-underline" onClick={onNavigate}>
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-start gap-2">
               <EvidenceBadge state={block.evidenceState} />
               <span className="font-medium">{block.title}</span>
             </div>
@@ -179,7 +179,7 @@ function RenderBlock({
       return (
         <BlockShell label="ExperienceCard">
           <Link href={block.href} className="no-underline" onClick={onNavigate}>
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-start gap-2">
               <EvidenceBadge state={block.evidenceState} />
               <span className="font-medium">{block.title}</span>
             </div>
@@ -196,7 +196,7 @@ function RenderBlock({
       return (
         <BlockShell label="SkillEvidence">
           <Link href={block.href} className="no-underline" onClick={onNavigate}>
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-start gap-2">
               <EvidenceBadge state={block.evidenceState} />
               <span className="font-medium">{block.title}</span>
             </div>

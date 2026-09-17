@@ -36,6 +36,10 @@ describe("FailureMuseum (M14)", () => {
     expect(
       screen.queryByRole("link", { name: /Open dedicated Failure Museum/i }),
     ).not.toBeInTheDocument();
+    const gate = screen.getByLabelText(/Failure Museum evidence gate/i);
+    // Empty museum uses neutral chrome — the peach LIMITED tint reads as an
+    // error page to a cold recruiter. The badge still carries the state.
+    expect(gate.className).not.toMatch(/state-limited-bg/);
   });
 
   it("links to /failures when used as an embedded surface", () => {

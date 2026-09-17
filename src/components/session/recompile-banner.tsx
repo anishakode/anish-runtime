@@ -22,11 +22,11 @@ export function RecompileBanner() {
   if (consent === "approved" && activeCategory) {
     return (
       <div
-        className="border-b border-[var(--stroke)] bg-[var(--surface)] px-6 py-3"
+        className="no-print border-b border-[var(--stroke)] bg-[var(--surface)] px-6 py-3"
         role="status"
         aria-label="Session recompile active"
       >
-        <div className="mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-3 text-sm">
+        <div className="mx-auto flex w-full max-w-5xl flex-wrap items-start justify-between gap-3 text-sm">
           <p>
             Session recompiled around{" "}
             <strong>{SESSION_CATEGORY_LABEL[activeCategory]}</strong>
@@ -49,7 +49,7 @@ export function RecompileBanner() {
 
   return (
     <div
-      className="border-b border-[var(--stroke)] bg-[var(--surface)] px-6 py-4"
+      className="no-print border-b border-[var(--stroke)] bg-[var(--surface)] px-6 py-4"
       role="region"
       aria-label="Signal recompile prompt"
     >

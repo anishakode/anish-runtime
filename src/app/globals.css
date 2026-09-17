@@ -102,7 +102,8 @@
   .btn,
   .btn-primary,
   .btn-secondary,
-  .chip {
+  .chip,
+  .chip-static {
     forced-color-adjust: none;
     border: 1px solid ButtonBorder !important;
     background: Canvas !important;
@@ -237,6 +238,20 @@ body {
   letter-spacing: 0.04em;
   color: var(--muted);
   cursor: pointer;
+}
+
+/* Non-interactive tags (Experience tech list). Same look, no pointer affordance. */
+.chip-static {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--stroke);
+  background: transparent;
+  padding: 0.35rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  cursor: default;
 }
 
 .chip-selected {

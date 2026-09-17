@@ -13,7 +13,10 @@ Handoff WOW 1 requires the portfolio to “build itself” via RUN ANISH without
 Ship M4 as a client `HomeRuntime` on `/`:
 
 - Idle landing remains graph-backed identity + recruiter CTAs
-- Journey presets: 20 SEC / 2 MIN (default) / EXPLORE — settled layout differs by preset (flagship count, constellation, primary CTA) while remaining graph-backed
+- Journey presets: 20 SEC / 2 MIN (default) — settled layout differs by preset
+  (flagship count, constellation, primary CTA) while remaining graph-backed.
+  A third EXPLORE preset was shipped at M4 but was identical to 2 MIN in settled
+  layout; removed in ADR 0030 so the picker only offers a real choice.
 - Compilation: four semantic steps (identity → capabilities → evidence → projects)
 - Settled runtime: system-ready, CSS capability constellation (stacked on small viewports), canonical counts, flagship links, CV/contact, reset
 - Native radio journey controls; Skip button + Escape during compile; reduced motion settles immediately; focus handoff to ready heading

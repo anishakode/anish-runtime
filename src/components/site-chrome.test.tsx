@@ -121,6 +121,15 @@ describe("navigation prominence", () => {
     );
   });
 
+  it("keeps the locked marker outside the session nav", () => {
+    // Regression for the wrap bug: when the marker lived inside the nav flex it
+    // dropped under "Fork Anish" instead of sitting under the whole link row.
+    render(<SiteFooter />);
+    const nav = screen.getByRole("navigation", { name: "Session surfaces" });
+    expect(nav.textContent).not.toMatch(/locked through/i);
+    expect(screen.getByText(/locked through M\d+/i)).toBeInTheDocument();
+  });
+
   it("routes the nav entry at the index that lists every lab", () => {
     expect(RUNTIME_LABS.length).toBeGreaterThan(0);
     for (const lab of RUNTIME_LABS) {

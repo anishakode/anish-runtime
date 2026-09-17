@@ -58,7 +58,7 @@ export function MlopsLab() {
           className="border border-[var(--stroke)] bg-[var(--state-extension-bg)] p-4 text-sm text-[var(--state-extension-fg)]"
           aria-label="Evidence boundary"
         >
-          <div className="mb-2 flex flex-wrap items-center gap-2">
+          <div className="mb-2 flex flex-wrap items-start gap-2">
             <EvidenceBadge state={session.evidenceState} />
             <span className="instrument-label text-xs tracking-wide">Runtime Lab</span>
           </div>

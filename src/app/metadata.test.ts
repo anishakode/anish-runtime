@@ -78,8 +78,9 @@ describe("page metadata (M24)", () => {
     it(`${route} declares a title and never re-suffixes the site name`, async () => {
       const title = (await metadataOf(load))?.title;
       if (route === "/") {
-        // The landing page inherits the root default title.
-        expect(title === undefined || typeof title === "string").toBe(true);
+        // The landing page inherits the root default title — that must be an
+        // explicit absence, not "anything goes".
+        expect(title).toBeUndefined();
       } else {
         expect(typeof title).toBe("string");
       }

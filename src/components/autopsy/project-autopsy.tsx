@@ -215,7 +215,7 @@ function AutopsyPanel({
 function StoryLens({ bundle }: { bundle: AutopsyProjectBundle }) {
   return (
     <article className="space-y-4">
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-start gap-2">
         <h3 className="text-lg font-semibold">{bundle.story.title}</h3>
         <EvidenceBadge state={bundle.story.evidenceState} />
       </div>
@@ -241,7 +241,7 @@ function DecisionsLens({ bundle }: { bundle: AutopsyProjectBundle }) {
       <ul className="space-y-4">
         {bundle.decisions.map((decision) => (
           <li key={decision.id} className="border border-[var(--stroke)] p-3 space-y-2">
-            <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex flex-wrap items-start justify-between gap-2">
               <h3 className="font-medium">{decision.title}</h3>
               <EvidenceBadge state={decision.evidenceState} />
             </div>

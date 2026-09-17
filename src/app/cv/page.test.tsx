@@ -44,6 +44,20 @@ describe("CvPage", () => {
     expect(hiddenInPrint(badge), "evidence badge is hidden from the PDF").toBe(false);
   });
 
+  it("prints an evidence badge beside every selected project", () => {
+    // Roles already print with badges. Projects that leave the site as bare
+    // titles would be the same CV-print gap in a second place.
+    render(<CvPage />);
+    const projectsHeading = screen.getByRole("heading", { name: /Selected projects/i });
+    const section = projectsHeading.closest("section");
+    expect(section).not.toBeNull();
+    const badges = section!.querySelectorAll("[data-evidence-state], .evidence-badge");
+    expect(badges.length).toBeGreaterThan(0);
+    for (const badge of badges) {
+      expect(hiddenInPrint(badge as HTMLElement)).toBe(false);
+    }
+  });
+
   it("hides only the print control itself from the printed page", () => {
     // A print button inside a PDF is noise; an evidence label is not. This is
     // the line the earlier version got wrong.

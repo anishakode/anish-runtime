@@ -297,7 +297,20 @@ Every workflow run on `main` is green, including the two `Verify sources` dispat
   browser.
 - **The human launch checklist** from M26 — real phone, screen reader, print, reading
   the claims cold.
-- **Six Dependabot PRs**, red only because they branched before the typegen fix, and
-  three actions on deprecated Node 20.
+- ~~**Six Dependabot PRs** and three actions on deprecated Node 20.~~ **Closed** in
+  `cba4fc1`. Taken locally rather than merged, because three were wrong as proposed: the
+  action PRs each updated `ci.yml` and left `verify-sources.yml` behind; one bumped
+  `react` without `react-dom` against a lockfile pinning both; and one moved
+  `@types/node` to v26 while this repo runs Node 22, which would have typechecked
+  against APIs the runtime does not have. `dependabot.yml` now groups the pairs, groups
+  all actions so workflows cannot drift apart, and ignores `@types/node` majors — each
+  rule carrying the failure it prevents. TypeScript is on 6.0.3; 7 exists but is the
+  native port and is left as its own change with its own validation.
 - **Local `pnpm ci` still excludes e2e**, documented in `TEST-STATUS.md`; CI runs it.
-- **`verify:sources` issue-creation branch unexercised**, as above.
+- ~~**`verify:sources` issue-creation branch unexercised.**~~ **Closed** in `ba18e7a`.
+  The logic was inline in the workflow YAML, so nothing could reach it — and it only
+  ever runs when the proof trail is already broken, which is the one moment it has to
+  work. Extracted to `scripts/provenance-issue.mjs` with eight tests covering the
+  dedupe, the `state: "open"` scoping (so closing an issue does not suppress a later
+  failure), a missing or empty log still filing the alert, and oversized-log truncation
+  keeping the tail. The workflow now dispatches green on the rewritten step.

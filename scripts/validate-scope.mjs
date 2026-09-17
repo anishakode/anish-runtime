@@ -111,6 +111,10 @@ const REQUIRED = [
   // the proof trail is already broken — is reachable by tests.
   "scripts/provenance-issue.mjs",
   "scripts/provenance-issue.test.ts",
+  // Binds each evidence state to the kind of source that can justify it,
+  // after a cold read found capability nodes badged code-verified whose only
+  // trace was a README.
+  "src/lib/evidence/state-backing.test.ts",
   "docs/presence/README.md",
   "docs/presence/README-mlops-governance-dashboard.md",
   "docs/presence/README-malware-detection.md",

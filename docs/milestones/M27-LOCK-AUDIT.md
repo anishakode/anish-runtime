@@ -288,6 +288,81 @@ Every workflow run on `main` is green, including the two `Verify sources` dispat
 
 ---
 
+## External cold read of the live site — two findings, both fixed
+
+Run after the lock, deliberately by a reader with no knowledge of how any of this
+was built, against the live origin rather than the repository. The brief was one
+question: does any sentence claim more than its evidence supports? It was warned
+about polarity, since the site states many honest claims as negations and an earlier
+automated probe kept flagging those.
+
+Its verdict was that the prose-to-evidence discipline holds — badges and summaries are
+generated from the same graph, so a flattering badge is structurally hard to produce —
+and that the overclaiming lives in one delivery mechanism and one unbadged sentence.
+
+### HIGH — the printed CV stripped its own evidence labels
+
+The `/cv` page invites its own export, and the PDF contained "Approximately 30% fewer
+API integration defects", "Zero audit failures across six release cycles", and
+"Approximately 40% faster incident investigation" with **no evidence label of any
+kind**. The metrics rendered as bare bullets and the only badge sat inside a
+`no-print` div, which `globals.css` resolves to `display: none !important` under
+`@media print`.
+
+All three are `OWNER_CONFIRMED_PROFESSIONAL`, resting solely on the owner's word.
+`/experience` says so inline; the exported PDF did not.
+
+**This reverses a decision recorded earlier in this audit.** The CV print gap was
+previously closed as a product decision, on the reasoning that the CV is a
+conventional document and the site carries the qualifiers. That reasoning is sound
+for the page and false for the file: the PDF is the one artifact that _leaves_ the
+site, so it is read by people with no access to the rest of it — the exact condition
+under which a qualifier elsewhere is worth nothing. The owner reversed the decision
+when the argument was put that way.
+
+**Fixed** by removing `no-print` from the badge and rendering the source `note`
+beneath the metrics, read from the graph exactly as `/experience` does rather than
+hardcoded. Five tests in `src/app/cv/page.test.tsx` walk the DOM ancestry to assert
+what survives printing, including that the print button is the _only_ thing hidden
+and that no evidence label may sit inside a `no-print` block.
+
+### LOW as reported, and the report's diagnosis was wrong
+
+It flagged `ev.steward.a2a` as badged `PUBLIC_CODE_VERIFIED` while tracing only to
+`README.md`, and proposed weakening it to `PUBLIC_DOCUMENT_VERIFIED`. It was explicit
+that it could not see the repository. Checking it changed the answer: the Steward repo
+at the pinned commit contains `a2a-agent/steward_agent/agent.py`, 366 lines importing
+`google.adk.agents.LlmAgent` to orchestrate three sub-agents. The claim was correct;
+the **pointer** was wrong. Weakening the state would have made the site less accurate,
+not more.
+
+Sweeping the corpus for the same shape rather than fixing only what was reported found
+three more, one of which the cold read had not seen:
+
+| Node                         | Was                    | Now                                                                           |
+| ---------------------------- | ---------------------- | ----------------------------------------------------------------------------- |
+| `ev.steward.a2a`             | README only            | `a2a-agent/steward_agent/agent.py` (state unchanged)                          |
+| `ev.steward.fhir`            | repo + README          | `mcp-server/tools/fhir_client.py` (state unchanged)                           |
+| `ev.mlops.monitoring`        | repo root only         | `backend/app/api/monitoring.py` (state unchanged)                             |
+| `ev.steward.safety-boundary` | `PUBLIC_CODE_VERIFIED` | `PUBLIC_DOCUMENT_VERIFIED` — a stated boundary is a document, not a behaviour |
+
+`src/lib/evidence/state-backing.test.ts` now enforces the rule the legend already
+implied: a non-`project` node may claim code verification only if a non-README
+`github_file` backs it. `project` nodes stay exempt, because "this repository exists
+and is public" is legitimately evidenced by the repository. Five change-control
+entries are recorded in `freeze.json`; the corpus is 99 claims at `551e9d36a463f48f`.
+
+### Declined, deliberately
+
+The lede — _"I build intelligent systems from data to model to production"_ — was
+raised as the only positive use of "production" in the corpus (every other mention is
+a disclaimer) and the only capability claim with no evidence state, with no node
+joining modelling and production. The owner kept it: eighteen months of professional
+data and cloud engineering at Cardstack stands behind it. Recorded here so the
+reasoning is visible rather than the finding being silently dropped.
+
+---
+
 ## Known gaps carried forward
 
 - **Profile bio and pinned repositories are not done, and cannot be done from here.**

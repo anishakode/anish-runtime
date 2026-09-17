@@ -1,8 +1,8 @@
 # Test status (unit)
 
-**Generated:** 2026-09-17T09:22:28.373Z  
+**Generated:** 2026-09-17T10:43:50.876Z  
 **Result:** PASS  
-**Counts:** 501 passed · 0 failed · 0 pending · 501 total
+**Counts:** 510 passed · 0 failed · 0 pending · 510 total
 
 See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to protect.
 
@@ -20,6 +20,20 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `scripts/provenance-issue.test.ts` | provenance issue filing (M27) treats an empty log the same as a missing one | **PASSED** |
 | `scripts/provenance-issue.test.ts` | provenance issue filing (M27) keeps the tail of an oversized log, where the failures are | **PASSED** |
 | `scripts/provenance-issue.test.ts` | provenance issue filing (M27) tells the owner what to do, and rules out the tempting wrong fix | **PASSED** |
+| `src/components/evidence-legend.test.tsx` | EvidenceBadge + legend (M3) keeps textual state labels (colour is never the only cue) | **PASSED** |
+| `src/components/evidence-legend.test.tsx` | EvidenceBadge + legend (M3) covers every EvidenceState in the legend data | **PASSED** |
+| `src/components/evidence-legend.test.tsx` | EvidenceBadge + legend (M3) renders every evidence state label in the legend UI | **PASSED** |
+| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) keeps recruiter identity and CTAs visible before RUN | **PASSED** |
+| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) compiles through four steps then settles with graph-backed counts | **PASSED** |
+| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) Skip jumps to ready and moves focus to the ready heading | **PASSED** |
+| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) Escape during compilation settles the runtime | **PASSED** |
+| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) reduced motion settles immediately on RUN | **PASSED** |
+| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) Reset returns to the readable idle landing and refocuses RUN | **PASSED** |
+| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) 20 SEC settle shows one flagship, hides constellation, CV primary | **PASSED** |
+| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) EXPLORE settle keeps constellation and browse-all primary | **PASSED** |
+| `src/components/site-chrome.test.tsx` | footer milestone marker names the highest milestone the planning table records as locked | **PASSED** |
+| `src/components/site-chrome.test.tsx` | footer milestone marker is asserted by e2e against the same milestone, not a stale one | **PASSED** |
+| `src/components/site-chrome.test.tsx` | footer milestone marker agrees with the README's locked-milestone line | **PASSED** |
 | `src/app/error.test.tsx` | route error boundary (M24) keeps the recruiter path reachable when a surface fails | **PASSED** |
 | `src/app/error.test.tsx` | route error boundary (M24) offers retry and states that nothing was stored | **PASSED** |
 | `src/app/error.test.tsx` | route error boundary (M24) shows the digest instead of a stack trace | **PASSED** |
@@ -66,36 +80,6 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/app/opengraph-image.test.tsx` | social preview card (M26) makes no claim the corpus cannot back | **PASSED** |
 | `src/app/page.test.tsx` | HomePage — recruiter contracts exposes identity and recruiter CTAs from the Evidence Graph without running | **PASSED** |
 | `src/app/page.test.tsx` | HomePage — recruiter contracts does not expose the excluded obsolete email | **PASSED** |
-| `src/components/evidence-legend.test.tsx` | EvidenceBadge + legend (M3) keeps textual state labels (colour is never the only cue) | **PASSED** |
-| `src/components/evidence-legend.test.tsx` | EvidenceBadge + legend (M3) covers every EvidenceState in the legend data | **PASSED** |
-| `src/components/evidence-legend.test.tsx` | EvidenceBadge + legend (M3) renders every evidence state label in the legend UI | **PASSED** |
-| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) keeps recruiter identity and CTAs visible before RUN | **PASSED** |
-| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) compiles through four steps then settles with graph-backed counts | **PASSED** |
-| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) Skip jumps to ready and moves focus to the ready heading | **PASSED** |
-| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) Escape during compilation settles the runtime | **PASSED** |
-| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) reduced motion settles immediately on RUN | **PASSED** |
-| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) Reset returns to the readable idle landing and refocuses RUN | **PASSED** |
-| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) 20 SEC settle shows one flagship, hides constellation, CV primary | **PASSED** |
-| `src/components/home-runtime.test.tsx` | HomeRuntime (M4) EXPLORE settle keeps constellation and browse-all primary | **PASSED** |
-| `src/components/site-chrome.test.tsx` | footer milestone marker names the highest milestone the planning table records as locked | **PASSED** |
-| `src/components/site-chrome.test.tsx` | footer milestone marker is asserted by e2e against the same milestone, not a stale one | **PASSED** |
-| `src/components/site-chrome.test.tsx` | footer milestone marker agrees with the README's locked-milestone line | **PASSED** |
-| `src/app/about/page.test.tsx` | AboutPage renders profile and both education records from the graph | **PASSED** |
-| `src/app/contact/page.test.tsx` | ContactPage — identity hygiene links only canonical graph contact channels | **PASSED** |
-| `src/app/cv/page.test.tsx` | CvPage prints graph-backed identity, experience metrics, and selected projects | **PASSED** |
-| `src/app/ending/page.test.tsx` | Ending page (M23) exposes the Ending Signal without gating recruiter routes | **PASSED** |
-| `src/app/ending/page.test.tsx` | Ending page (M23) uses canonical contact channels from the graph, not excluded ones | **PASSED** |
-| `src/app/experience/page.test.tsx` | ExperiencePage — provenance honesty shows Cardstack metrics with owner-confirmation note and state badge | **PASSED** |
-| `src/app/failures/page.test.tsx` | FailuresPage (M14) frames the empty museum and keeps recruiter paths ungated | **PASSED** |
-| `src/app/fork/page.test.tsx` | Fork page (M20) exposes Fork Anish without gating recruiter routes | **PASSED** |
-| `src/app/interview/page.test.tsx` | Interview page (M21) exposes Interview My Work without gating recruiter routes | **PASSED** |
-| `src/app/interview/page.test.tsx` | Interview page (M21) states the answer-key boundary before any question set exists | **PASSED** |
-| `src/app/interview/page.test.tsx` | Interview page (M21) promises no answer, score, or ranking in the page framing | **PASSED** |
-| `src/app/work/page.test.tsx` | WorkPage — evidence-first listing lists all flagship projects with evidence badges | **PASSED** |
-| `src/app/work/page.test.tsx` | WorkPage — evidence-first listing keeps supporting and archive tiers non-empty from corpus | **PASSED** |
-| `src/app/work/page.test.tsx` | WorkPage — evidence-first listing renders empty-tier copy when a tier has no projects | **PASSED** |
-| `src/app/surface/page.test.tsx` | Surface page (M22) exposes Under the Surface without gating recruiter routes | **PASSED** |
-| `src/app/surface/page.test.tsx` | Surface page (M22) shows the runtime trace as unavailable outside the provider rather than faking it | **PASSED** |
 | `src/components/architecture/reversible-architecture.test.tsx` | ReversibleArchitecture (M9) labels reconstruction and starts at System Boundary with portfolio honesty | **PASSED** |
 | `src/components/architecture/reversible-architecture.test.tsx` | ReversibleArchitecture (M9) advances with Next and opens Source Trace on detection | **PASSED** |
 | `src/components/architecture/reversible-architecture.test.tsx` | ReversibleArchitecture (M9) jumps stages with the scrubber | **PASSED** |
@@ -115,6 +99,11 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/components/ending/ending-signal-view.test.tsx` | EndingSignalView (M23) explains provenance and exclusions behind WHY THIS SIGNAL? | **PASSED** |
 | `src/components/ending/ending-signal-view.test.tsx` | EndingSignalView (M23) publishes the journey integrity manifest with zeroed tracking | **PASSED** |
 | `src/components/ending/ending-signal-view.test.tsx` | EndingSignalView (M23) closes on the human with conventional contact actions | **PASSED** |
+| `src/components/interview/interview-my-work.test.tsx` | InterviewMyWork (M21) shows the entry line and generates nothing before a trail exists | **PASSED** |
+| `src/components/interview/interview-my-work.test.tsx` | InterviewMyWork (M21) builds at most three evidence-bound questions from the trail | **PASSED** |
+| `src/components/interview/interview-my-work.test.tsx` | InterviewMyWork (M21) reveals matched triggers and source counts only on WHY THIS QUESTION? | **PASSED** |
+| `src/components/interview/interview-my-work.test.tsx` | InterviewMyWork (M21) always shows the answer-key boundary and never a score | **PASSED** |
+| `src/components/interview/interview-my-work.test.tsx` | InterviewMyWork (M21) clears the set on demand | **PASSED** |
 | `src/components/failures/failure-museum.test.tsx` | FailureMuseum (M14) renders empty museum with gate requirements and zero published count | **PASSED** |
 | `src/components/failures/failure-museum.test.tsx` | FailureMuseum (M14) links to /failures when used as an embedded surface | **PASSED** |
 | `src/components/failures/failure-museum.test.tsx` | FailureMuseum (M14) renders published exhibits when the museum view is non-empty | **PASSED** |
@@ -122,11 +111,6 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/components/fork/fork-anish.test.tsx` | ForkAnish UI (M20) shows an error when forking an empty JD | **PASSED** |
 | `src/components/fork/fork-anish.test.tsx` | ForkAnish UI (M20) records no session item at all, and nothing derived from the JD | **PASSED** |
 | `src/components/fork/fork-anish.test.tsx` | ForkAnish UI (M20) never manufactures a visit to Experience or CV | **PASSED** |
-| `src/components/interview/interview-my-work.test.tsx` | InterviewMyWork (M21) shows the entry line and generates nothing before a trail exists | **PASSED** |
-| `src/components/interview/interview-my-work.test.tsx` | InterviewMyWork (M21) builds at most three evidence-bound questions from the trail | **PASSED** |
-| `src/components/interview/interview-my-work.test.tsx` | InterviewMyWork (M21) reveals matched triggers and source counts only on WHY THIS QUESTION? | **PASSED** |
-| `src/components/interview/interview-my-work.test.tsx` | InterviewMyWork (M21) always shows the answer-key boundary and never a score | **PASSED** |
-| `src/components/interview/interview-my-work.test.tsx` | InterviewMyWork (M21) clears the set on demand | **PASSED** |
 | `src/components/labs/malware-lab.test.tsx` | MalwareLab (M13) shows PORTFOLIO_EXTENSION boundary and static feature controls | **PASSED** |
 | `src/components/labs/malware-lab.test.tsx` | MalwareLab (M13) keeps SHAP detail LIMITED and withholds security verdict copy | **PASSED** |
 | `src/components/labs/malware-lab.test.tsx` | MalwareLab (M13) pins default study signal and updates contributions when toggled | **PASSED** |
@@ -143,24 +127,13 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/components/labs/steward-lab.test.tsx` | StewardLab (M12) switches to allergy conflict and keeps advice withheld | **PASSED** |
 | `src/components/labs/steward-lab.test.tsx` | StewardLab (M12) shows dry-run Task preview only on baseline | **PASSED** |
 | `src/components/labs/steward-lab.test.tsx` | StewardLab (M12) opens Source Trace for MCP server with SHA fingerprint | **PASSED** |
-| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) opens a diagnostic search dialog that is not chat-like | **PASSED** |
-| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) lists ranked hits with honest evidence badges | **PASSED** |
-| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) shows semantic relevance when deterministic matches are insufficient | **PASSED** |
-| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) shows a gap notice when nothing matches | **PASSED** |
-| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) keeps LIMITED_EVIDENCE visible for SHAP matches | **PASSED** |
-| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) closes on Escape | **PASSED** |
-| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) toggles open with Ctrl+K | **PASSED** |
-| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) exposes INTERPRET WITH SIGNAL only after a query is entered | **PASSED** |
-| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) runs Signal interpretation via API and shows composed UI | **PASSED** |
-| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) shows Signal gap notice when API returns no evidence | **PASSED** |
-| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) shows full fallback notice when composeStatus is fallback | **PASSED** |
-| `src/components/session/recompile-banner.test.tsx` | RecompileBanner (M19) stays hidden until the heuristic detects a lean | **PASSED** |
-| `src/components/session/recompile-banner.test.tsx` | RecompileBanner (M19) requires explicit RECOMPILE consent and allows RESET | **PASSED** |
-| `src/components/session/recompile-banner.test.tsx` | RecompileBanner (M19) NOT NOW dismisses without changing evidence presentation category | **PASSED** |
 | `src/components/source-trace/source-trace-drawer.test.tsx` | SourceTrace drawer opens authoritative panel with SHA fingerprint and closes on Escape | **PASSED** |
 | `src/components/source-trace/source-trace-drawer.test.tsx` | SourceTrace drawer closes via Close button | **PASSED** |
 | `src/components/source-trace/source-trace-drawer.test.tsx` | SourceTrace drawer restores focus to the Trace trigger after Close | **PASSED** |
 | `src/components/source-trace/source-trace-drawer.test.tsx` | SourceTrace drawer does not stack drawers when SourceTraceProvider is nested | **PASSED** |
+| `src/components/session/recompile-banner.test.tsx` | RecompileBanner (M19) stays hidden until the heuristic detects a lean | **PASSED** |
+| `src/components/session/recompile-banner.test.tsx` | RecompileBanner (M19) requires explicit RECOMPILE consent and allows RESET | **PASSED** |
+| `src/components/session/recompile-banner.test.tsx` | RecompileBanner (M19) NOT NOW dismisses without changing evidence presentation category | **PASSED** |
 | `src/components/surface/under-the-surface.test.tsx` | UnderTheSurface (M22) shows the entry line and all five layers | **PASSED** |
 | `src/components/surface/under-the-surface.test.tsx` | UnderTheSurface (M22) labels labs as portfolio simulation, never real runtime | **PASSED** |
 | `src/components/surface/under-the-surface.test.tsx` | UnderTheSurface (M22) filters subsystems by reality label | **PASSED** |
@@ -169,8 +142,6 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/components/surface/under-the-surface.test.tsx` | UnderTheSurface (M22) counts rejected unsafe entries without rendering them | **PASSED** |
 | `src/components/surface/under-the-surface.test.tsx` | UnderTheSurface (M22) clears the trace on demand | **PASSED** |
 | `src/components/surface/under-the-surface.test.tsx` | UnderTheSurface (M22) declares what is never recorded | **PASSED** |
-| `src/components/xray/project-xray.test.tsx` | ProjectXray (M11) lists layers and selects a component with related + Trace | **PASSED** |
-| `src/components/xray/project-xray.test.tsx` | ProjectXray (M11) isolates a layer and dims others in the semantic list | **PASSED** |
 | `src/lib/architecture/stages.test.ts` | architecture stages (M9) defines exactly five ordered handoff stages | **PASSED** |
 | `src/lib/architecture/stages.test.ts` | architecture stages (M9) clamps scrubber indices and supports prev/next bounds | **PASSED** |
 | `src/lib/architecture/stages.test.ts` | architecture stages (M9) reveals stages cumulatively | **PASSED** |
@@ -179,19 +150,6 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/lib/architecture/stages.test.ts` | architecture stages (M9) keeps system-boundary as portfolio simulation with PORTFOLIO_EXTENSION framing | **PASSED** |
 | `src/lib/architecture/stages.test.ts` | architecture stages (M9) does not invent Grafana or production telemetry copy | **PASSED** |
 | `src/lib/architecture/stages.test.ts` | architecture stages (M9) only calls a stage code-verified when every node it cites is | **PASSED** |
-| `src/lib/ending/ending.test.ts` | journey catalogue (M23) resolves canonical items to graph-backed labels and hrefs | **PASSED** |
-| `src/lib/ending/ending.test.ts` | journey catalogue (M23) has no entry for free-text query refs | **PASSED** |
-| `src/lib/ending/ending.test.ts` | classifyDensity (M23) keeps an inactive session SHALLOW | **PASSED** |
-| `src/lib/ending/ending.test.ts` | classifyDensity (M23) promotes to STANDARD on modest exploration or a single action | **PASSED** |
-| `src/lib/ending/ending.test.ts` | classifyDensity (M23) requires both node and action depth for DEEP | **PASSED** |
-| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) returns an empty, honest signal for a visitor who did nothing | **PASSED** |
-| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) orders canonical nodes by first visit and keeps the visit reason | **PASSED** |
-| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) discards non-canonical refs instead of rendering them | **PASSED** |
-| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) separates completed challenges from ordinary runtime actions | **PASSED** |
-| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) reaches DEEP only when a real session earns it | **PASSED** |
-| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) omits the thread when no deterministic lead exists | **PASSED** |
-| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) publishes an integrity manifest with zeroed tracking and inference | **PASSED** |
-| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) declares the excluded inference categories | **PASSED** |
 | `src/lib/autopsy/lenses.test.ts` | autopsy lenses (M10) defines the six handoff lenses with STORY as default | **PASSED** |
 | `src/lib/autopsy/lenses.test.ts` | autopsy lenses (M10) parses lens ids and falls back on invalid input | **PASSED** |
 | `src/lib/autopsy/lenses.test.ts` | autopsy lenses (M10) maps deep-link hashes to lenses (X-Ray / architecture open X-RAY) | **PASSED** |
@@ -205,6 +163,21 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/lib/autopsy/steward-bundle.test.ts` | steward autopsy bundle (M12) builds story/decisions from the Evidence Graph only | **PASSED** |
 | `src/lib/autopsy/steward-bundle.test.ts` | steward autopsy bundle (M12) keeps FAILURES empty and NOT_DEMONSTRATED | **PASSED** |
 | `src/lib/autopsy/steward-bundle.test.ts` | steward autopsy bundle (M12) includes PORTFOLIO_EXTENSION lab-boundary decision | **PASSED** |
+| `src/components/xray/project-xray.test.tsx` | ProjectXray (M11) lists layers and selects a component with related + Trace | **PASSED** |
+| `src/components/xray/project-xray.test.tsx` | ProjectXray (M11) isolates a layer and dims others in the semantic list | **PASSED** |
+| `src/lib/ending/ending.test.ts` | journey catalogue (M23) resolves canonical items to graph-backed labels and hrefs | **PASSED** |
+| `src/lib/ending/ending.test.ts` | journey catalogue (M23) has no entry for free-text query refs | **PASSED** |
+| `src/lib/ending/ending.test.ts` | classifyDensity (M23) keeps an inactive session SHALLOW | **PASSED** |
+| `src/lib/ending/ending.test.ts` | classifyDensity (M23) promotes to STANDARD on modest exploration or a single action | **PASSED** |
+| `src/lib/ending/ending.test.ts` | classifyDensity (M23) requires both node and action depth for DEEP | **PASSED** |
+| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) returns an empty, honest signal for a visitor who did nothing | **PASSED** |
+| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) orders canonical nodes by first visit and keeps the visit reason | **PASSED** |
+| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) discards non-canonical refs instead of rendering them | **PASSED** |
+| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) separates completed challenges from ordinary runtime actions | **PASSED** |
+| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) reaches DEEP only when a real session earns it | **PASSED** |
+| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) omits the thread when no deterministic lead exists | **PASSED** |
+| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) publishes an integrity manifest with zeroed tracking and inference | **PASSED** |
+| `src/lib/ending/ending.test.ts` | buildEndingSignal (M23) declares the excluded inference categories | **PASSED** |
 | `src/lib/evidence/load-graph.test.ts` | canonical Evidence Graph (M1) loads a validated graph with expected scale | **PASSED** |
 | `src/lib/evidence/load-graph.test.ts` | canonical Evidence Graph (M1) keeps canonical email and exclusions coherent | **PASSED** |
 | `src/lib/evidence/load-graph.test.ts` | canonical Evidence Graph (M1) marks Cardstack metrics as owner-confirmed only | **PASSED** |
@@ -247,6 +220,19 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/lib/evidence/source-trace.test.ts` | lab source traces Steward MCP lab trace matches Evidence Graph fingerprints | **PASSED** |
 | `src/lib/evidence/source-trace.test.ts` | lab source traces Steward safety lab trace matches Evidence Graph fingerprints | **PASSED** |
 | `src/lib/evidence/source-trace.test.ts` | lab source traces Malware report and SHAP lab traces match Evidence Graph fingerprints | **PASSED** |
+| `src/lib/evidence/state-backing.test.ts` | evidence state is backed by the kind of source it advertises resolves every sourceId to a real source | **PASSED** |
+| `src/lib/evidence/state-backing.test.ts` | evidence state is backed by the kind of source it advertises only lets a capability or boundary claim code-verified when a code file backs it | **PASSED** |
+| `src/lib/evidence/state-backing.test.ts` | evidence state is backed by the kind of source it advertises keeps the Steward boundary at document-verified, where its README puts it | **PASSED** |
+| `src/lib/evidence/state-backing.test.ts` | evidence state is backed by the kind of source it advertises points the Steward and MLOps capabilities at the code that implements them | **PASSED** |
+| `src/lib/evidence/state-backing.test.ts` | evidence state is backed by the kind of source it advertises pins every code source to a full commit SHA, not a branch | **PASSED** |
+| `src/lib/fork/fork.test.ts` | sanitizeJobDescription (M20) removes sensitive salary and demographic lines | **PASSED** |
+| `src/lib/fork/fork.test.ts` | extractRequirements (M20) pulls bullets under a Requirements heading | **PASSED** |
+| `src/lib/fork/fork.test.ts` | extractRequirements (M20) deduplicates identical requirements | **PASSED** |
+| `src/lib/fork/fork.test.ts` | classifyRequirement (M20) never upgrades semantic-only matches to VERIFIED | **PASSED** |
+| `src/lib/fork/fork.test.ts` | classifyRequirement (M20) caps every semantic match at LIMITED, not just the one case | **PASSED** |
+| `src/lib/fork/fork.test.ts` | classifyRequirement (M20) marks unknown skills as NOT_DEMONSTRATED | **PASSED** |
+| `src/lib/fork/fork.test.ts` | classifyRequirement (M20) can VERIFIED-match public MLOps monitoring evidence deterministically | **PASSED** |
+| `src/lib/fork/fork.test.ts` | forkFromJobDescription (M20) builds a temporary branch with integrity manifest and no fit score | **PASSED** |
 | `src/lib/failures/gate.test.ts` | Failure Museum gate + dataset (M14) keeps the canonical exhibit dataset empty | **PASSED** |
 | `src/lib/failures/gate.test.ts` | Failure Museum gate + dataset (M14) lists publication requirements that encode the artifact gate | **PASSED** |
 | `src/lib/failures/gate.test.ts` | Failure Museum gate + dataset (M14) rejects fabricated remembered-failure drafts at the gate | **PASSED** |
@@ -284,19 +270,19 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/lib/freeze/freeze.test.ts` | committed freeze manifest (M25) matches the live corpus | **PASSED** |
 | `src/lib/freeze/freeze.test.ts` | committed freeze manifest (M25) is a manifest this code can read | **PASSED** |
 | `src/lib/freeze/freeze.test.ts` | committed freeze manifest (M25) states honestly whether the owner has confirmed the corpus | **PASSED** |
-| `src/lib/fork/fork.test.ts` | sanitizeJobDescription (M20) removes sensitive salary and demographic lines | **PASSED** |
-| `src/lib/fork/fork.test.ts` | extractRequirements (M20) pulls bullets under a Requirements heading | **PASSED** |
-| `src/lib/fork/fork.test.ts` | extractRequirements (M20) deduplicates identical requirements | **PASSED** |
-| `src/lib/fork/fork.test.ts` | classifyRequirement (M20) never upgrades semantic-only matches to VERIFIED | **PASSED** |
-| `src/lib/fork/fork.test.ts` | classifyRequirement (M20) caps every semantic match at LIMITED, not just the one case | **PASSED** |
-| `src/lib/fork/fork.test.ts` | classifyRequirement (M20) marks unknown skills as NOT_DEMONSTRATED | **PASSED** |
-| `src/lib/fork/fork.test.ts` | classifyRequirement (M20) can VERIFIED-match public MLOps monitoring evidence deterministically | **PASSED** |
-| `src/lib/fork/fork.test.ts` | forkFromJobDescription (M20) builds a temporary branch with integrity manifest and no fit score | **PASSED** |
 | `src/lib/home/runtime-model.test.ts` | home runtime model (M4) defaults journey to 2 MIN and exposes four compilation steps | **PASSED** |
 | `src/lib/home/runtime-model.test.ts` | home runtime model (M4) paces compilation faster for 20 SEC than 2 MIN | **PASSED** |
 | `src/lib/home/runtime-model.test.ts` | home runtime model (M4) differentiates settled journeys without inventing evidence | **PASSED** |
 | `src/lib/home/runtime-model.test.ts` | home runtime model (M4) derives capabilities only from graph positioning and flagship themes | **PASSED** |
 | `src/lib/home/runtime-model.test.ts` | home runtime model (M4) lists exactly the flagship projects from the graph | **PASSED** |
+| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) pins the six static feature ids and weights | **PASSED** |
+| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) parses feature ids, drops unknowns, and falls back to defaults | **PASSED** |
+| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) is deterministic for the same feature set | **PASSED** |
+| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) pins exact study-signal math for default and empty sets | **PASSED** |
+| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) pins tier thresholds and full-feature signal | **PASSED** |
+| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) dedupes enabled ids and ignores non-feature strings at run time | **PASSED** |
+| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) withholds security verdicts and keeps SHAP limited for every set | **PASSED** |
+| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) toggles features without duplicates and preserves order of remaining | **PASSED** |
 | `src/lib/interview/interview.test.ts` | interview catalogue binding (M21) binds every catalogue question to canonical evidence nodes | **PASSED** |
 | `src/lib/interview/interview.test.ts` | interview catalogue binding (M21) reports real source counts from the graph | **PASSED** |
 | `src/lib/interview/interview.test.ts` | interview catalogue binding (M21) drops questions whose evidence is absent from the graph | **PASSED** |
@@ -309,14 +295,17 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/lib/interview/interview.test.ts` | selectInterviewSet (M21) collapses repeated visits to one canonical item | **PASSED** |
 | `src/lib/interview/interview.test.ts` | selectInterviewSet (M21) records the canonical triggers that earned each question | **PASSED** |
 | `src/lib/interview/interview.test.ts` | selectInterviewSet (M21) passes weak evidence states through without upgrading them | **PASSED** |
-| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) pins the six static feature ids and weights | **PASSED** |
-| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) parses feature ids, drops unknowns, and falls back to defaults | **PASSED** |
-| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) is deterministic for the same feature set | **PASSED** |
-| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) pins exact study-signal math for default and empty sets | **PASSED** |
-| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) pins tier thresholds and full-feature signal | **PASSED** |
-| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) dedupes enabled ids and ignores non-feature strings at run time | **PASSED** |
-| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) withholds security verdicts and keeps SHAP limited for every set | **PASSED** |
-| `src/lib/malware/reconstruction.test.ts` | malware reconstruction (M13) toggles features without duplicates and preserves order of remaining | **PASSED** |
+| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) opens a diagnostic search dialog that is not chat-like | **PASSED** |
+| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) lists ranked hits with honest evidence badges | **PASSED** |
+| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) shows semantic relevance when deterministic matches are insufficient | **PASSED** |
+| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) shows a gap notice when nothing matches | **PASSED** |
+| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) keeps LIMITED_EVIDENCE visible for SHAP matches | **PASSED** |
+| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) closes on Escape | **PASSED** |
+| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) toggles open with Ctrl+K | **PASSED** |
+| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) exposes INTERPRET WITH SIGNAL only after a query is entered | **PASSED** |
+| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) runs Signal interpretation via API and shows composed UI | **PASSED** |
+| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) shows Signal gap notice when API returns no evidence | **PASSED** |
+| `src/components/search/ask-runtime.test.tsx` | AskRuntime (M15–M17) shows full fallback notice when composeStatus is fallback | **PASSED** |
 | `src/lib/mlops/incident.test.ts` | mlops incident (M7) BREAK THE SYSTEM shifts data, enters incident, and builds a labeled debug path | **PASSED** |
 | `src/lib/mlops/incident.test.ts` | mlops incident (M7) RECOVER resets distributions and returns monitor to healthy | **PASSED** |
 | `src/lib/mlops/incident.test.ts` | mlops incident (M7) is deterministic for the same seed | **PASSED** |
@@ -374,25 +363,6 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/lib/search/semantic.test.ts` | retrieveEvidence orchestration (M16) appends semantic hits when deterministic results are insufficient | **PASSED** |
 | `src/lib/search/semantic.test.ts` | retrieveEvidence orchestration (M16) falls back to deterministic-only when semantic infrastructure fails | **PASSED** |
 | `src/lib/search/semantic.test.ts` | retrieveEvidence orchestration (M16) preserves LIMITED_EVIDENCE through semantic rehydration | **PASSED** |
-| `src/lib/security/security.test.ts` | content security policy (M24) drops unsafe-eval and websocket connects in production | **PASSED** |
-| `src/lib/security/security.test.ts` | content security policy (M24) locks down objects, frames, media, and base URIs | **PASSED** |
-| `src/lib/security/security.test.ts` | content security policy (M24) keeps the app same-origin — no third-party connect or script hosts | **PASSED** |
-| `src/lib/security/security.test.ts` | security headers (M24) emits the full production header set | **PASSED** |
-| `src/lib/security/security.test.ts` | security headers (M24) emits HSTS only for a configured https origin | **PASSED** |
-| `src/lib/security/security.test.ts` | security headers (M24) denies sensor and capture permissions | **PASSED** |
-| `src/lib/security/security.test.ts` | request guard (M24) treats a missing or foreign Origin as cross-origin | **PASSED** |
-| `src/lib/security/security.test.ts` | request guard (M24) matches Origin against the Host header, not the internal request URL | **PASSED** |
-| `src/lib/security/security.test.ts` | request guard (M24) accepts the browser's own same-origin declaration | **PASSED** |
-| `src/lib/security/security.test.ts` | request guard (M24) refuses a sibling subdomain and an unparseable Origin | **PASSED** |
-| `src/lib/security/security.test.ts` | request guard (M24) detects control characters but allows ordinary text | **PASSED** |
-| `src/lib/security/security.test.ts` | request guard (M24) stops reading a body once the ceiling is passed | **PASSED** |
-| `src/lib/security/security.test.ts` | request guard (M24) enforces the ceiling on a stream that declares no length | **PASSED** |
-| `src/lib/security/security.test.ts` | request guard (M24) reassembles a multi-chunk body under the ceiling | **PASSED** |
-| `src/lib/security/security.test.ts` | request guard (M24) names the reason for every rejection | **PASSED** |
-| `src/lib/security/security.test.ts` | request guard (M24) passes a well-formed same-origin query through untouched | **PASSED** |
-| `src/lib/security/security.test.ts` | rate limiter (M24) allows up to the cap then refuses within the window | **PASSED** |
-| `src/lib/security/security.test.ts` | rate limiter (M24) reopens on the next window | **PASSED** |
-| `src/lib/security/security.test.ts` | rate limiter (M24) derives no visitor key — the window is shared by construction | **PASSED** |
 | `src/lib/session/session.test.ts` | session distinct events (M19) collapses repeated clicks on the same item | **PASSED** |
 | `src/lib/session/session.test.ts` | evaluateSessionSignal (M19) does not detect below interaction threshold | **PASSED** |
 | `src/lib/session/session.test.ts` | evaluateSessionSignal (M19) rejects when repeated clicks fake volume without distinct support | **PASSED** |
@@ -413,6 +383,42 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/lib/seo/seo.test.ts` | robots (M24) disallows session surfaces and the API, and allows the rest | **PASSED** |
 | `src/lib/seo/seo.test.ts` | robots (M24) omits host and sitemap until an origin is configured | **PASSED** |
 | `src/lib/seo/seo.test.ts` | robots (M24) points at the sitemap once an origin is configured | **PASSED** |
+| `src/lib/sources/verify.test.ts` | source reachability (M27) passes a pinned source that still resolves | **PASSED** |
+| `src/lib/sources/verify.test.ts` | source reachability (M27) fails a moved path — the pin is intact but the file is gone | **PASSED** |
+| `src/lib/sources/verify.test.ts` | source reachability (M27) fails a renamed repository | **PASSED** |
+| `src/lib/sources/verify.test.ts` | source reachability (M27) treats an unreachable host as a failure, never as a pass | **PASSED** |
+| `src/lib/sources/verify.test.ts` | source reachability (M27) exempts only the source types that have nothing public to point at | **PASSED** |
+| `src/lib/sources/verify.test.ts` | source reachability (M27) refuses a URL-less source of any other type | **PASSED** |
+| `src/lib/sources/verify.test.ts` | source reachability (M27) reports every failure, not just the first | **PASSED** |
+| `src/lib/sources/verify.test.ts` | pin integrity (M27) accepts a URL that carries the commit it claims | **PASSED** |
+| `src/lib/sources/verify.test.ts` | pin integrity (M27) rejects a URL pointing at a branch while claiming a pin | **PASSED** |
+| `src/lib/sources/verify.test.ts` | pin integrity (M27) holds for every source in the real corpus | **PASSED** |
+| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) defines the four handoff scenarios | **PASSED** |
+| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) parses scenario ids and falls back on invalid input | **PASSED** |
+| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) keeps baseline deterministic with withheld advice and dry-run Task | **PASSED** |
+| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) marks missing renal context as warning and blocks recommendation | **PASSED** |
+| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) surfaces allergy conflict as warning without treatment advice | **PASSED** |
+| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) fails closed on invalid tool input with error states | **PASSED** |
+| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) never claims live FHIR, Gemini, or MCP runtime in boundary copy | **PASSED** |
+| `src/lib/security/security.test.ts` | content security policy (M24) drops unsafe-eval and websocket connects in production | **PASSED** |
+| `src/lib/security/security.test.ts` | content security policy (M24) locks down objects, frames, media, and base URIs | **PASSED** |
+| `src/lib/security/security.test.ts` | content security policy (M24) keeps the app same-origin — no third-party connect or script hosts | **PASSED** |
+| `src/lib/security/security.test.ts` | security headers (M24) emits the full production header set | **PASSED** |
+| `src/lib/security/security.test.ts` | security headers (M24) emits HSTS only for a configured https origin | **PASSED** |
+| `src/lib/security/security.test.ts` | security headers (M24) denies sensor and capture permissions | **PASSED** |
+| `src/lib/security/security.test.ts` | request guard (M24) treats a missing or foreign Origin as cross-origin | **PASSED** |
+| `src/lib/security/security.test.ts` | request guard (M24) matches Origin against the Host header, not the internal request URL | **PASSED** |
+| `src/lib/security/security.test.ts` | request guard (M24) accepts the browser's own same-origin declaration | **PASSED** |
+| `src/lib/security/security.test.ts` | request guard (M24) refuses a sibling subdomain and an unparseable Origin | **PASSED** |
+| `src/lib/security/security.test.ts` | request guard (M24) detects control characters but allows ordinary text | **PASSED** |
+| `src/lib/security/security.test.ts` | request guard (M24) stops reading a body once the ceiling is passed | **PASSED** |
+| `src/lib/security/security.test.ts` | request guard (M24) enforces the ceiling on a stream that declares no length | **PASSED** |
+| `src/lib/security/security.test.ts` | request guard (M24) reassembles a multi-chunk body under the ceiling | **PASSED** |
+| `src/lib/security/security.test.ts` | request guard (M24) names the reason for every rejection | **PASSED** |
+| `src/lib/security/security.test.ts` | request guard (M24) passes a well-formed same-origin query through untouched | **PASSED** |
+| `src/lib/security/security.test.ts` | rate limiter (M24) allows up to the cap then refuses within the window | **PASSED** |
+| `src/lib/security/security.test.ts` | rate limiter (M24) reopens on the next window | **PASSED** |
+| `src/lib/security/security.test.ts` | rate limiter (M24) derives no visitor key — the window is shared by construction | **PASSED** |
 | `src/lib/signal/compose.test.ts` | ui_plan validation (M18) accepts a minimal GapNotice plan | **PASSED** |
 | `src/lib/signal/compose.test.ts` | ui_plan validation (M18) rejects unknown component types | **PASSED** |
 | `src/lib/signal/compose.test.ts` | ui_plan validation (M18) rejects plans that smuggle factual title fields | **PASSED** |
@@ -461,30 +467,6 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/lib/surface/surface.test.ts` | Runtime trace safety (M22) bounds history to the last RUNTIME_TRACE_LIMIT actions | **PASSED** |
 | `src/lib/surface/surface.test.ts` | Runtime trace safety (M22) says NOT MEASURED / NOT COLLECTED instead of inventing numbers | **PASSED** |
 | `src/lib/surface/surface.test.ts` | Runtime trace safety (M22) declares what is never recorded | **PASSED** |
-| `src/lib/sources/verify.test.ts` | source reachability (M27) passes a pinned source that still resolves | **PASSED** |
-| `src/lib/sources/verify.test.ts` | source reachability (M27) fails a moved path — the pin is intact but the file is gone | **PASSED** |
-| `src/lib/sources/verify.test.ts` | source reachability (M27) fails a renamed repository | **PASSED** |
-| `src/lib/sources/verify.test.ts` | source reachability (M27) treats an unreachable host as a failure, never as a pass | **PASSED** |
-| `src/lib/sources/verify.test.ts` | source reachability (M27) exempts only the source types that have nothing public to point at | **PASSED** |
-| `src/lib/sources/verify.test.ts` | source reachability (M27) refuses a URL-less source of any other type | **PASSED** |
-| `src/lib/sources/verify.test.ts` | source reachability (M27) reports every failure, not just the first | **PASSED** |
-| `src/lib/sources/verify.test.ts` | pin integrity (M27) accepts a URL that carries the commit it claims | **PASSED** |
-| `src/lib/sources/verify.test.ts` | pin integrity (M27) rejects a URL pointing at a branch while claiming a pin | **PASSED** |
-| `src/lib/sources/verify.test.ts` | pin integrity (M27) holds for every source in the real corpus | **PASSED** |
-| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) defines the four handoff scenarios | **PASSED** |
-| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) parses scenario ids and falls back on invalid input | **PASSED** |
-| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) keeps baseline deterministic with withheld advice and dry-run Task | **PASSED** |
-| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) marks missing renal context as warning and blocks recommendation | **PASSED** |
-| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) surfaces allergy conflict as warning without treatment advice | **PASSED** |
-| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) fails closed on invalid tool input with error states | **PASSED** |
-| `src/lib/steward/scenarios.test.ts` | steward scenarios (M12) never claims live FHIR, Gemini, or MCP runtime in boundary copy | **PASSED** |
-| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) defines four responsibility layers with graph-backed components | **PASSED** |
-| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) resolves detection components to drift.py and stats.py | **PASSED** |
-| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) rejects invented Redis/MLflow vocabulary in layer copy | **PASSED** |
-| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) finds components and related labels | **PASSED** |
-| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) carries the exact state of the graph node it represents | **PASSED** |
-| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) keeps the boundary component at the weakest state in the layer set | **PASSED** |
-| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) declares a node whose sources overlap the component's own | **PASSED** |
 | `src/lib/visual/tokens.test.ts` | M3 visual contracts defines required semantic token names in globals.css | **PASSED** |
 | `src/lib/visual/tokens.test.ts` | M3 visual contracts defines evidence-state token stems for every badge state family | **PASSED** |
 | `src/lib/visual/tokens.test.ts` | M3 visual contracts keeps TOKEN_HEX in sync with :root hex values in globals.css | **PASSED** |
@@ -492,15 +474,34 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/lib/visual/tokens.test.ts` | M3 visual contracts includes a11y media baselines and focus/print chrome contracts | **PASSED** |
 | `src/lib/visual/tokens.test.ts` | M3 visual contracts does not introduce purple/neon-style hex accents in token sheet | **PASSED** |
 | `src/lib/visual/tokens.test.ts` | M3 visual contracts references no custom property it never defines | **PASSED** |
+| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) defines four responsibility layers with graph-backed components | **PASSED** |
+| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) resolves detection components to drift.py and stats.py | **PASSED** |
+| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) rejects invented Redis/MLflow vocabulary in layer copy | **PASSED** |
+| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) finds components and related labels | **PASSED** |
+| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) carries the exact state of the graph node it represents | **PASSED** |
+| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) keeps the boundary component at the weakest state in the layer set | **PASSED** |
+| `src/lib/xray/layers.test.ts` | Project X-Ray layers (M11) declares a node whose sources overlap the component's own | **PASSED** |
+| `src/app/about/page.test.tsx` | AboutPage renders profile and both education records from the graph | **PASSED** |
+| `src/app/contact/page.test.tsx` | ContactPage — identity hygiene links only canonical graph contact channels | **PASSED** |
+| `src/app/cv/page.test.tsx` | CvPage prints graph-backed identity, experience metrics, and selected projects | **PASSED** |
+| `src/app/cv/page.test.tsx` | CvPage prints the attribution for self-reported impact figures | **PASSED** |
+| `src/app/cv/page.test.tsx` | CvPage prints the evidence badge beside the role those figures belong to | **PASSED** |
+| `src/app/cv/page.test.tsx` | CvPage hides only the print control itself from the printed page | **PASSED** |
+| `src/app/cv/page.test.tsx` | CvPage never prints a bare impact figure with no qualifier anywhere on the page | **PASSED** |
+| `src/app/ending/page.test.tsx` | Ending page (M23) exposes the Ending Signal without gating recruiter routes | **PASSED** |
+| `src/app/ending/page.test.tsx` | Ending page (M23) uses canonical contact channels from the graph, not excluded ones | **PASSED** |
+| `src/app/experience/page.test.tsx` | ExperiencePage — provenance honesty shows Cardstack metrics with owner-confirmation note and state badge | **PASSED** |
+| `src/app/failures/page.test.tsx` | FailuresPage (M14) frames the empty museum and keeps recruiter paths ungated | **PASSED** |
+| `src/app/fork/page.test.tsx` | Fork page (M20) exposes Fork Anish without gating recruiter routes | **PASSED** |
+| `src/app/interview/page.test.tsx` | Interview page (M21) exposes Interview My Work without gating recruiter routes | **PASSED** |
+| `src/app/interview/page.test.tsx` | Interview page (M21) states the answer-key boundary before any question set exists | **PASSED** |
+| `src/app/interview/page.test.tsx` | Interview page (M21) promises no answer, score, or ranking in the page framing | **PASSED** |
+| `src/app/surface/page.test.tsx` | Surface page (M22) exposes Under the Surface without gating recruiter routes | **PASSED** |
+| `src/app/surface/page.test.tsx` | Surface page (M22) shows the runtime trace as unavailable outside the provider rather than faking it | **PASSED** |
+| `src/app/work/page.test.tsx` | WorkPage — evidence-first listing lists all flagship projects with evidence badges | **PASSED** |
+| `src/app/work/page.test.tsx` | WorkPage — evidence-first listing keeps supporting and archive tiers non-empty from corpus | **PASSED** |
+| `src/app/work/page.test.tsx` | WorkPage — evidence-first listing renders empty-tier copy when a tier has no projects | **PASSED** |
 | `src/app/labs/malware/page.test.tsx` | MalwareLabPage (M13) frames the lab as optional and links back to malware Autopsy | **PASSED** |
-| `src/app/labs/mlops/page.test.tsx` | MlopsLabPage (M6) frames the lab as optional and links back to project evidence | **PASSED** |
-| `src/app/labs/steward/page.test.tsx` | StewardLabPage (M12) frames the lab as optional and links back to Steward Autopsy | **PASSED** |
-| `src/app/work/[slug]/page.test.tsx` | ProjectPage — weak evidence honesty surfaces PORTFOLIO EXTENSION via Autopsy RUN / story path on MLOps | **PASSED** |
-| `src/app/work/[slug]/page.test.tsx` | ProjectPage — weak evidence honesty surfaces LIMITED EVIDENCE on the malware SHAP path | **PASSED** |
-| `src/app/work/[slug]/page.test.tsx` | ProjectPage — weak evidence honesty exposes Source Trace triggers on the EVIDENCE lens | **PASSED** |
-| `src/app/work/[slug]/page.test.tsx` | ProjectPage — weak evidence honesty surfaces Project X-Ray and Reversible Architecture on the X-RAY lens | **PASSED** |
-| `src/app/work/[slug]/page.test.tsx` | ProjectPage — weak evidence honesty surfaces Malware Autopsy RUN with Explainability Lab honesty | **PASSED** |
-| `src/app/work/[slug]/page.test.tsx` | ProjectPage — weak evidence honesty surfaces Steward Autopsy RUN with Agent Lab honesty | **PASSED** |
 | `src/app/api/signal/interpret/route.rate-limit.test.ts` | Signal rate limit at the route (M24) serves the window, then refuses with 429 and a Retry-After | **PASSED** |
 | `src/app/api/signal/interpret/route.rate-limit.test.ts` | Signal rate limit at the route (M24) rate limits before reading the body, so a refusal costs nothing | **PASSED** |
 | `src/app/api/signal/interpret/route.test.ts` | POST /api/signal/interpret (M17 + M24 bounds) rejects invalid JSON | **PASSED** |
@@ -513,6 +514,14 @@ See also [`TEST-CATALOG.md`](./TEST-CATALOG.md) for what each suite is meant to 
 | `src/app/api/signal/interpret/route.test.ts` | POST /api/signal/interpret (M17 + M24 bounds) never caches interpretations | **PASSED** |
 | `src/app/api/signal/interpret/route.test.ts` | POST /api/signal/interpret (M17 + M24 bounds) returns a tool-orchestrated gap for nonsense | **PASSED** |
 | `src/app/api/signal/interpret/route.test.ts` | POST /api/signal/interpret (M17 + M24 bounds) returns evidence for a known query without inventing states | **PASSED** |
+| `src/app/labs/mlops/page.test.tsx` | MlopsLabPage (M6) frames the lab as optional and links back to project evidence | **PASSED** |
+| `src/app/labs/steward/page.test.tsx` | StewardLabPage (M12) frames the lab as optional and links back to Steward Autopsy | **PASSED** |
+| `src/app/work/[slug]/page.test.tsx` | ProjectPage — weak evidence honesty surfaces PORTFOLIO EXTENSION via Autopsy RUN / story path on MLOps | **PASSED** |
+| `src/app/work/[slug]/page.test.tsx` | ProjectPage — weak evidence honesty surfaces LIMITED EVIDENCE on the malware SHAP path | **PASSED** |
+| `src/app/work/[slug]/page.test.tsx` | ProjectPage — weak evidence honesty exposes Source Trace triggers on the EVIDENCE lens | **PASSED** |
+| `src/app/work/[slug]/page.test.tsx` | ProjectPage — weak evidence honesty surfaces Project X-Ray and Reversible Architecture on the X-RAY lens | **PASSED** |
+| `src/app/work/[slug]/page.test.tsx` | ProjectPage — weak evidence honesty surfaces Malware Autopsy RUN with Explainability Lab honesty | **PASSED** |
+| `src/app/work/[slug]/page.test.tsx` | ProjectPage — weak evidence honesty surfaces Steward Autopsy RUN with Agent Lab honesty | **PASSED** |
 
 ## Failures
 

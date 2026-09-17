@@ -167,7 +167,7 @@
     "kind": "capability",
     "state": "PUBLIC_CODE_VERIFIED",
     "projectId": "proj.mlops-governance",
-    "sourceIds": ["src.mlops.repo"],
+    "sourceIds": ["src.mlops.monitoring-api", "src.mlops.repo"],
     "aliases": ["monitoring", "observability"]
   },
   {
@@ -195,7 +195,7 @@
     "kind": "capability",
     "state": "PUBLIC_CODE_VERIFIED",
     "projectId": "proj.steward-ai",
-    "sourceIds": ["src.steward.repo", "src.steward.readme"],
+    "sourceIds": ["src.steward.fhir-client", "src.steward.repo", "src.steward.readme"],
     "aliases": ["fhir", "fhir r4"]
   },
   {
@@ -213,14 +213,14 @@
     "kind": "capability",
     "state": "PUBLIC_CODE_VERIFIED",
     "projectId": "proj.steward-ai",
-    "sourceIds": ["src.steward.readme"],
+    "sourceIds": ["src.steward.a2a-agent", "src.steward.readme"],
     "aliases": ["a2a", "adk", "google adk"]
   },
   {
     "id": "ev.steward.safety-boundary",
     "title": "Steward safety / prototype boundary",
     "kind": "boundary",
-    "state": "PUBLIC_CODE_VERIFIED",
+    "state": "PUBLIC_DOCUMENT_VERIFIED",
     "projectId": "proj.steward-ai",
     "sourceIds": ["src.steward.readme"],
     "aliases": ["not clinical", "hackathon", "disclaimer"],

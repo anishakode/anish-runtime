@@ -7,6 +7,7 @@ import {
   getNodesByIds,
   getProfile,
   getProjectsByTier,
+  getSourcesForIds,
 } from "@/lib/evidence/queries";
 
 export const metadata = {
@@ -73,6 +74,13 @@ export default function CvPage() {
           <ul className="space-y-6">
             {experience.map((role) => {
               const metrics = getNodesByIds(role.impactMetricIds);
+              // The printed PDF is the one artifact that leaves this site, so the
+              // attribution has to travel with the numbers rather than living on
+              // /experience. Read from the source notes, same as that page does.
+              const metricSources = getSourcesForIds([
+                ...new Set(metrics.flatMap((m) => m.sourceIds)),
+              ]);
+              const notes = metricSources.filter((s) => s.note);
               return (
                 <li key={role.id}>
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -91,7 +99,16 @@ export default function CvPage() {
                       ))}
                     </ul>
                   ) : null}
-                  <div className="mt-2 no-print">
+                  {/* Prints. A figure that travels without its sourcing is the
+                      overclaim, not the figure itself. */}
+                  {notes.length > 0 ? (
+                    <ul className="mt-3 space-y-1 text-xs text-[var(--muted)]">
+                      {notes.map((s) => (
+                        <li key={s.id}>{s.note}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  <div className="mt-2">
                     <EvidenceBadge state={role.evidenceState} />
                   </div>
                 </li>

@@ -7,9 +7,9 @@ Every claim this portfolio makes in public, and the evidence that answers
 from what the site actually renders.
 
 **Freeze status:** OWNER_CONFIRMED
-**Frozen at:** 2026-09-16
-**Corpus digest:** `42f8efd8bc5c2aa7`
-**Claims:** 96
+**Frozen at:** 2026-09-17
+**Corpus digest:** `551e9d36a463f48f`
+**Claims:** 99
 
 A claim marked **owner's word only** is not weaker because it is dishonest — it is
 professional truth that cannot be made public (proprietary employer code) or that
@@ -55,7 +55,7 @@ These are the facts no validator can check. They are frozen as written; correcti
 
 | Claim                                          | State | Where is the evidence? |
 | ---------------------------------------------- | ----- | ---------------------- |
-| 10 projects · 40 nodes · 45 edges · 23 sources | —     | **owner's word only**  |
+| 10 projects · 40 nodes · 45 edges · 26 sources | —     | **owner's word only**  |
 
 ### education (2)
 
@@ -89,7 +89,7 @@ These are the facts no validator can check. They are frozen as written; correcti
 | Audit event representation                                   | PUBLIC_CODE_VERIFIED         | `src.mlops.audit-sink`                                                          |
 | Data drift monitoring                                        | PUBLIC_CODE_VERIFIED         | `src.mlops.drift-py`<br>`src.mlops.stats-py`                                    |
 | Kolmogorov–Smirnov (KS) statistic                            | PUBLIC_CODE_VERIFIED         | `src.mlops.stats-py`                                                            |
-| Operational monitoring concepts                              | PUBLIC_CODE_VERIFIED         | `src.mlops.repo`                                                                |
+| Operational monitoring concepts                              | PUBLIC_CODE_VERIFIED         | `src.mlops.monitoring-api`<br>`src.mlops.repo`                                  |
 | Policy / governance checks                                   | PUBLIC_CODE_VERIFIED         | `src.mlops.policy`                                                              |
 | MLOps Governance Dashboard — flagship project                | PUBLIC_CODE_VERIFIED         | `src.mlops.repo`                                                                |
 | Population Stability Index (PSI)                             | PUBLIC_CODE_VERIFIED         | `src.mlops.drift-py`                                                            |
@@ -99,12 +99,12 @@ These are the facts no validator can check. They are frozen as written; correcti
 | Python                                                       | OWNER_CONFIRMED_PROFESSIONAL | `src.mlops.repo`<br>`src.resume.canonical`<br>`src.steward.repo`                |
 | REST APIs                                                    | OWNER_CONFIRMED_PROFESSIONAL | `src.resume.canonical`                                                          |
 | SQL                                                          | OWNER_CONFIRMED_PROFESSIONAL | `src.resume.canonical`                                                          |
-| A2A / Google ADK agent orchestration                         | PUBLIC_CODE_VERIFIED         | `src.steward.readme`                                                            |
-| FHIR context for stewardship workflows                       | PUBLIC_CODE_VERIFIED         | `src.steward.readme`<br>`src.steward.repo`                                      |
+| A2A / Google ADK agent orchestration                         | PUBLIC_CODE_VERIFIED         | `src.steward.a2a-agent`<br>`src.steward.readme`                                 |
+| FHIR context for stewardship workflows                       | PUBLIC_CODE_VERIFIED         | `src.steward.fhir-client`<br>`src.steward.readme`<br>`src.steward.repo`         |
 | MCP tool server for stewardship                              | PUBLIC_CODE_VERIFIED         | `src.steward.mcp-server`                                                        |
 | Steward_AI — flagship project                                | PUBLIC_CODE_VERIFIED         | `src.steward.readme`<br>`src.steward.repo`                                      |
 | Browser Steward Agent Lab                                    | PORTFOLIO_EXTENSION          | `src.portfolio.steward-lab`<br>`src.steward.mcp-server`<br>`src.steward.readme` |
-| Steward safety / prototype boundary                          | PUBLIC_CODE_VERIFIED         | `src.steward.readme`                                                            |
+| Steward safety / prototype boundary                          | PUBLIC_DOCUMENT_VERIFIED     | `src.steward.readme`                                                            |
 
 ### exclusion (11)
 
@@ -151,20 +151,20 @@ These are the facts no validator can check. They are frozen as written; correcti
 
 ### project (10)
 
-| Claim                                                                                                                                                                                 | State                    | Where is the evidence?                                                                                           |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| Age / Gender Detector (archive) — Earlier computer-vision experiment — evolution evidence, not a flagship interaction.                                                                | PUBLIC_CODE_VERIFIED     | `src.age-gender.repo`                                                                                            |
-| Boring_AI (supporting) — Test-backed codemod workflow for mechanical web3.py v6 → v7 migrations with optional AI follow-up.                                                           | PUBLIC_CODE_VERIFIED     | `src.boring.package`<br>`src.boring.repo`                                                                        |
-| Feynn EV Analysis (supporting) — Applied EV market-data analysis using public notebooks/data.                                                                                         | PUBLIC_CODE_VERIFIED     | `src.feynn.repo`                                                                                                 |
-| Fraud Detection (supporting) — ML fraud-detection project with public artifacts.                                                                                                      | PUBLIC_CODE_VERIFIED     | `src.fraud.repo`                                                                                                 |
-| Explainable PDF Malware Detection (flagship) — Security ML / explainability study with a verified public project report. Not production malware infrastructure.                       | PUBLIC_DOCUMENT_VERIFIED | `src.malware.repo`<br>`src.malware.report`                                                                       |
-| MLOps Governance Dashboard (flagship) — Monitoring, drift (PSI/KS), data quality, audit events, and governance-oriented MLOps workflows.                                              | PUBLIC_CODE_VERIFIED     | `src.mlops.audit-sink`<br>`src.mlops.drift-py`<br>`src.mlops.policy`<br>`src.mlops.repo`<br>`src.mlops.stats-py` |
-| Netflix Clone (archive) — Early full-stack clone project — archive/evolution evidence.                                                                                                | PUBLIC_CODE_VERIFIED     | `src.netflix.repo`                                                                                               |
-| Park Finder (archive) — Android park locator using public park and maps APIs — archive evidence.                                                                                      | PUBLIC_CODE_VERIFIED     | `src.park-finder.repo`                                                                                           |
-| PDF Text Extraction (archive) — PDF data extraction experiment — archive/evolution evidence.                                                                                          | PUBLIC_CODE_VERIFIED     | `src.pdf-extract.repo`                                                                                           |
-| Steward_AI (flagship) — Healthcare AI stewardship prototype using FHIR context, MCP tools, and A2A/ADK agent concepts — research/hackathon framing, not a production clinical system. | PUBLIC_CODE_VERIFIED     | `src.steward.mcp-server`<br>`src.steward.readme`<br>`src.steward.repo`                                           |
+| Claim                                                                                                                                                                                 | State                    | Where is the evidence?                                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Age / Gender Detector (archive) — Earlier computer-vision experiment — evolution evidence, not a flagship interaction.                                                                | PUBLIC_CODE_VERIFIED     | `src.age-gender.repo`                                                                                                                          |
+| Boring_AI (supporting) — Test-backed codemod workflow for mechanical web3.py v6 → v7 migrations with optional AI follow-up.                                                           | PUBLIC_CODE_VERIFIED     | `src.boring.package`<br>`src.boring.repo`                                                                                                      |
+| Feynn EV Analysis (supporting) — Applied EV market-data analysis using public notebooks/data.                                                                                         | PUBLIC_CODE_VERIFIED     | `src.feynn.repo`                                                                                                                               |
+| Fraud Detection (supporting) — ML fraud-detection project with public artifacts.                                                                                                      | PUBLIC_CODE_VERIFIED     | `src.fraud.repo`                                                                                                                               |
+| Explainable PDF Malware Detection (flagship) — Security ML / explainability study with a verified public project report. Not production malware infrastructure.                       | PUBLIC_DOCUMENT_VERIFIED | `src.malware.repo`<br>`src.malware.report`                                                                                                     |
+| MLOps Governance Dashboard (flagship) — Monitoring, drift (PSI/KS), data quality, audit events, and governance-oriented MLOps workflows.                                              | PUBLIC_CODE_VERIFIED     | `src.mlops.audit-sink`<br>`src.mlops.drift-py`<br>`src.mlops.monitoring-api`<br>`src.mlops.policy`<br>`src.mlops.repo`<br>`src.mlops.stats-py` |
+| Netflix Clone (archive) — Early full-stack clone project — archive/evolution evidence.                                                                                                | PUBLIC_CODE_VERIFIED     | `src.netflix.repo`                                                                                                                             |
+| Park Finder (archive) — Android park locator using public park and maps APIs — archive evidence.                                                                                      | PUBLIC_CODE_VERIFIED     | `src.park-finder.repo`                                                                                                                         |
+| PDF Text Extraction (archive) — PDF data extraction experiment — archive/evolution evidence.                                                                                          | PUBLIC_CODE_VERIFIED     | `src.pdf-extract.repo`                                                                                                                         |
+| Steward_AI (flagship) — Healthcare AI stewardship prototype using FHIR context, MCP tools, and A2A/ADK agent concepts — research/hackathon framing, not a production clinical system. | PUBLIC_CODE_VERIFIED     | `src.steward.a2a-agent`<br>`src.steward.fhir-client`<br>`src.steward.mcp-server`<br>`src.steward.readme`<br>`src.steward.repo`                 |
 
-### source (23)
+### source (26)
 
 | Claim                                                                                                                         | State | Where is the evidence?       |
 | ----------------------------------------------------------------------------------------------------------------------------- | ----- | ---------------------------- |
@@ -177,6 +177,7 @@ These are the facts no validator can check. They are frozen as written; correcti
 | report: Explainable Machine Learning Models for Detecting PDF Malware (public PDF) @ ca79ecc8a013e96d5514243603b174bf86e52ecd | —     | `src.malware.report`         |
 | github_file: Audit sink utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4                                                  | —     | `src.mlops.audit-sink`       |
 | github_file: Drift / PSI utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4                                                 | —     | `src.mlops.drift-py`         |
+| github_file: MLOps monitoring API (data-quality evaluation endpoints) @ a2ba6fc45aaece5c3241569271bcca77124da2b4              | —     | `src.mlops.monitoring-api`   |
 | github_file: Policy utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4                                                      | —     | `src.mlops.policy`           |
 | github_repo: MLOps Governance Dashboard repository @ a2ba6fc45aaece5c3241569271bcca77124da2b4                                 | —     | `src.mlops.repo`             |
 | github_file: Stats / KS utilities @ a2ba6fc45aaece5c3241569271bcca77124da2b4                                                  | —     | `src.mlops.stats-py`         |
@@ -188,6 +189,8 @@ These are the facts no validator can check. They are frozen as written; correcti
 | portfolio_runtime: Portfolio MLOps Runtime Lab (future deterministic extension) (no commit pin)                               | —     | `src.portfolio.runtime-lab`  |
 | portfolio_runtime: Portfolio Steward Agent Lab (deterministic extension) (no commit pin)                                      | —     | `src.portfolio.steward-lab`  |
 | resume: Canonical résumé / profile documentation (no commit pin)                                                              | —     | `src.resume.canonical`       |
+| github_file: Steward A2A orchestrator (Google ADK) @ c9a1d6cfd674d72576208863a5f4c694f9130e50                                 | —     | `src.steward.a2a-agent`      |
+| github_file: Steward FHIR client @ c9a1d6cfd674d72576208863a5f4c694f9130e50                                                   | —     | `src.steward.fhir-client`    |
 | github_file: Steward MCP server @ c9a1d6cfd674d72576208863a5f4c694f9130e50                                                    | —     | `src.steward.mcp-server`     |
 | github_file: Steward_AI README (boundaries + architecture) @ c9a1d6cfd674d72576208863a5f4c694f9130e50                         | —     | `src.steward.readme`         |
 | github_repo: Steward_AI repository @ c9a1d6cfd674d72576208863a5f4c694f9130e50                                                 | —     | `src.steward.repo`           |

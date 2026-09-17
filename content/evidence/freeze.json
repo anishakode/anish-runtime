@@ -2,15 +2,15 @@
   "schema": "anish-runtime/evidence-freeze",
   "schemaVersion": 1,
   "status": "OWNER_CONFIRMED",
-  "frozenAt": "2026-09-16",
-  "corpusDigest": "42f8efd8bc5c2aa7",
+  "frozenAt": "2026-09-17",
+  "corpusDigest": "551e9d36a463f48f",
   "claims": {
     "corpus:counts": {
       "kind": "corpus",
-      "statement": "10 projects · 40 nodes · 45 edges · 23 sources",
+      "statement": "10 projects · 40 nodes · 45 edges · 26 sources",
       "evidenceState": null,
       "evidence": [],
-      "digest": "93c25123c2fa588b"
+      "digest": "c06dfcda8f71f3e9"
     },
     "education:edu.btech-cs": {
       "kind": "education",
@@ -177,8 +177,8 @@
       "kind": "evidence_node",
       "statement": "Operational monitoring concepts",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": ["src.mlops.repo"],
-      "digest": "b7f103636305bb5b"
+      "evidence": ["src.mlops.monitoring-api", "src.mlops.repo"],
+      "digest": "fb45c837a864f6a4"
     },
     "evidence_node:ev.mlops.policy": {
       "kind": "evidence_node",
@@ -247,15 +247,15 @@
       "kind": "evidence_node",
       "statement": "A2A / Google ADK agent orchestration",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": ["src.steward.readme"],
-      "digest": "e58ee27f99b27271"
+      "evidence": ["src.steward.a2a-agent", "src.steward.readme"],
+      "digest": "fcfea0b180a51391"
     },
     "evidence_node:ev.steward.fhir": {
       "kind": "evidence_node",
       "statement": "FHIR context for stewardship workflows",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": ["src.steward.readme", "src.steward.repo"],
-      "digest": "c990edfa317bff52"
+      "evidence": ["src.steward.fhir-client", "src.steward.readme", "src.steward.repo"],
+      "digest": "1f3c035b961e1bb2"
     },
     "evidence_node:ev.steward.mcp": {
       "kind": "evidence_node",
@@ -285,9 +285,9 @@
     "evidence_node:ev.steward.safety-boundary": {
       "kind": "evidence_node",
       "statement": "Steward safety / prototype boundary",
-      "evidenceState": "PUBLIC_CODE_VERIFIED",
+      "evidenceState": "PUBLIC_DOCUMENT_VERIFIED",
       "evidence": ["src.steward.readme"],
-      "digest": "a2bb1792faa8e654"
+      "digest": "3257c3d9abd38e72"
     },
     "exclusion:email.anishakode2002@gmail.com": {
       "kind": "exclusion",
@@ -492,6 +492,7 @@
       "evidence": [
         "src.mlops.audit-sink",
         "src.mlops.drift-py",
+        "src.mlops.monitoring-api",
         "src.mlops.policy",
         "src.mlops.repo",
         "src.mlops.stats-py"
@@ -523,7 +524,13 @@
       "kind": "project",
       "statement": "Steward_AI (flagship) — Healthcare AI stewardship prototype using FHIR context, MCP tools, and A2A/ADK agent concepts — research/hackathon framing, not a production clinical system.",
       "evidenceState": "PUBLIC_CODE_VERIFIED",
-      "evidence": ["src.steward.mcp-server", "src.steward.readme", "src.steward.repo"],
+      "evidence": [
+        "src.steward.a2a-agent",
+        "src.steward.fhir-client",
+        "src.steward.mcp-server",
+        "src.steward.readme",
+        "src.steward.repo"
+      ],
       "digest": "f852d8da9ba70014"
     },
     "source:src.age-gender.repo": {
@@ -588,6 +595,13 @@
       "evidenceState": null,
       "evidence": ["src.mlops.drift-py"],
       "digest": "d0a879b45f7e1e3f"
+    },
+    "source:src.mlops.monitoring-api": {
+      "kind": "source",
+      "statement": "github_file: MLOps monitoring API (data-quality evaluation endpoints) @ a2ba6fc45aaece5c3241569271bcca77124da2b4",
+      "evidenceState": null,
+      "evidence": ["src.mlops.monitoring-api"],
+      "digest": "3e34f2ec1039862e"
     },
     "source:src.mlops.policy": {
       "kind": "source",
@@ -666,6 +680,20 @@
       "evidence": ["src.resume.canonical"],
       "digest": "597214ba9f977e91"
     },
+    "source:src.steward.a2a-agent": {
+      "kind": "source",
+      "statement": "github_file: Steward A2A orchestrator (Google ADK) @ c9a1d6cfd674d72576208863a5f4c694f9130e50",
+      "evidenceState": null,
+      "evidence": ["src.steward.a2a-agent"],
+      "digest": "128fd46483c5a184"
+    },
+    "source:src.steward.fhir-client": {
+      "kind": "source",
+      "statement": "github_file: Steward FHIR client @ c9a1d6cfd674d72576208863a5f4c694f9130e50",
+      "evidenceState": null,
+      "evidence": ["src.steward.fhir-client"],
+      "digest": "ee0fd2a56973e7b4"
+    },
     "source:src.steward.mcp-server": {
       "kind": "source",
       "statement": "github_file: Steward MCP server @ c9a1d6cfd674d72576208863a5f4c694f9130e50",
@@ -688,5 +716,46 @@
       "digest": "3c3ba41d86d3d378"
     }
   },
-  "changeControl": []
+  "changeControl": [
+    {
+      "date": "2026-09-17",
+      "claimId": "evidence_node:ev.steward.a2a",
+      "from": "e58ee27f99b27271",
+      "to": "fcfea0b180a51391",
+      "owner": "Anish Akode",
+      "reason": "Source pointer corrected, claim unchanged. The node claimed PUBLIC_CODE_VERIFIED while tracing only to README.md, so the badge promised code and the trace delivered prose. The code exists: a2a-agent/steward_agent/agent.py at the same pinned commit is 366 lines and imports google.adk.agents.LlmAgent to orchestrate three sub-agents. Repointed at that file, keeping the README for architecture context. The state is not raised - it was already correct and is now actually evidenced. Found by an external cold read of the live site, which proposed downgrading the state; inspecting the repository showed the pointer, not the claim, was wrong."
+    },
+    {
+      "date": "2026-09-17",
+      "claimId": "evidence_node:ev.steward.fhir",
+      "from": "c990edfa317bff52",
+      "to": "1f3c035b961e1bb2",
+      "owner": "Anish Akode",
+      "reason": "Source pointer corrected, claim unchanged. Same defect as ev.steward.a2a: a capability claimed as code-verified while sourced to the repository root and README. Added mcp-server/tools/fhir_client.py at the pinned commit (258 lines, 30 FHIR references) as the primary source."
+    },
+    {
+      "date": "2026-09-17",
+      "claimId": "evidence_node:ev.steward.safety-boundary",
+      "from": "a2bb1792faa8e654",
+      "to": "3257c3d9abd38e72",
+      "owner": "Anish Akode",
+      "reason": "Weakened PUBLIC_CODE_VERIFIED to PUBLIC_DOCUMENT_VERIFIED. This is a stated boundary documented in README.md, not a behaviour demonstrated by code. The legend defines PUBLIC_CODE_VERIFIED as backed by public code at a fingerprinted revision, and a README is a document. No new evidence is required to weaken a claim."
+    },
+    {
+      "date": "2026-09-17",
+      "claimId": "evidence_node:ev.mlops.monitoring",
+      "from": "b7f103636305bb5b",
+      "to": "fb45c837a864f6a4",
+      "owner": "Anish Akode",
+      "reason": "Source pointer corrected, claim unchanged. Found by sweeping the corpus for the defect class behind the three Steward entries rather than fixing only what was reported: this capability claimed PUBLIC_CODE_VERIFIED while citing only the repository root. backend/app/api/monitoring.py at the pinned commit implements the data-quality evaluation endpoints, so it is now the primary source. State unchanged. src/lib/evidence/state-backing.test.ts now fails any non-project node claiming code verification without a non-README code file, so this class cannot return."
+    },
+    {
+      "date": "2026-09-17",
+      "claimId": "corpus:counts",
+      "from": "93c25123c2fa588b",
+      "to": "c06dfcda8f71f3e9",
+      "owner": "Anish Akode",
+      "reason": "Consequence of the four entries above: 23 sources to 26, adding src.steward.a2a-agent, src.steward.fhir-client, and src.mlops.monitoring-api. No project, node, or edge count changed."
+    }
+  ]
 }

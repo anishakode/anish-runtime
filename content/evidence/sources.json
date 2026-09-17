@@ -82,6 +82,33 @@
     "url": "https://github.com/anishakode/Steward_AI/blob/c9a1d6cfd674d72576208863a5f4c694f9130e50/README.md"
   },
   {
+    "id": "src.mlops.monitoring-api",
+    "type": "github_file",
+    "title": "MLOps monitoring API (data-quality evaluation endpoints)",
+    "repo": "anishakode/MLOps-Governance-Dashboard",
+    "path": "backend/app/api/monitoring.py",
+    "commitSha": "a2ba6fc45aaece5c3241569271bcca77124da2b4",
+    "url": "https://github.com/anishakode/MLOps-Governance-Dashboard/blob/a2ba6fc45aaece5c3241569271bcca77124da2b4/backend/app/api/monitoring.py"
+  },
+  {
+    "id": "src.steward.a2a-agent",
+    "type": "github_file",
+    "title": "Steward A2A orchestrator (Google ADK)",
+    "repo": "anishakode/Steward_AI",
+    "path": "a2a-agent/steward_agent/agent.py",
+    "commitSha": "c9a1d6cfd674d72576208863a5f4c694f9130e50",
+    "url": "https://github.com/anishakode/Steward_AI/blob/c9a1d6cfd674d72576208863a5f4c694f9130e50/a2a-agent/steward_agent/agent.py"
+  },
+  {
+    "id": "src.steward.fhir-client",
+    "type": "github_file",
+    "title": "Steward FHIR client",
+    "repo": "anishakode/Steward_AI",
+    "path": "mcp-server/tools/fhir_client.py",
+    "commitSha": "c9a1d6cfd674d72576208863a5f4c694f9130e50",
+    "url": "https://github.com/anishakode/Steward_AI/blob/c9a1d6cfd674d72576208863a5f4c694f9130e50/mcp-server/tools/fhir_client.py"
+  },
+  {
     "id": "src.malware.report",
     "type": "report",
     "title": "Explainable Machine Learning Models for Detecting PDF Malware (public PDF)",

@@ -107,6 +107,10 @@ const REQUIRED = [
   "src/lib/sources/verify.test.ts",
   "scripts/verify-sources.ts",
   ".github/workflows/verify-sources.yml",
+  // Extracted from the workflow so the alerting path — which only runs once
+  // the proof trail is already broken — is reachable by tests.
+  "scripts/provenance-issue.mjs",
+  "scripts/provenance-issue.test.ts",
   "docs/presence/README.md",
   "docs/presence/README-mlops-governance-dashboard.md",
   "docs/presence/README-malware-detection.md",

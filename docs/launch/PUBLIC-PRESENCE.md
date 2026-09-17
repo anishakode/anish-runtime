@@ -13,10 +13,24 @@ rest below is by hand — profile, pins, the four flagship repositories, and Lin
 
 ## GitHub profile
 
-**Bio** (160 characters):
+**Bio** (95 of GitHub's 160 characters):
 
-> AI · ML · Software Engineering. I build intelligent systems from data to model to
-> production. Evidence-first portfolio: `https://anish-runtime.vercel.app`
+> AI · ML · Software Engineering. Don't read what I can do — run it, inspect it, trace the
+> proof.
+
+Sentence one is `identity:positioning` verbatim, so the profile cannot drift from the
+frozen corpus the site and `/evidence.json` serve. An intermediate draft shortened it to
+"AI · ML engineering" and was rejected for exactly that: it contradicted a frozen claim,
+and dropped the term covering the professional experience that is best evidenced.
+
+Sentence two replaces an earlier draft's "I build intelligent systems from data to model
+to production." That line is the only capability claim in the corpus with no evidence
+state — defensible on a page surrounded by badges, a legend, and a source trace, and a
+bare boast on a profile that has none of them. The motto is the honest substitute, and it
+pays off in place: the pinned repositories sit directly beneath it.
+
+The URL is deliberately omitted. GitHub does not linkify bios, so it would be unclickable
+text directly above the Website field that renders it properly.
 
 **Location:** Manchester, UK
 **Website:** `https://anish-runtime.vercel.app`
@@ -58,10 +72,26 @@ central claim that the evidence is inspectable.
 **Featured link:** `https://anish-runtime.vercel.app` — titled "ANISH // RUNTIME — evidence-first engineering
 portfolio".
 
-**Headline** (keep consistent with the frozen positioning):
+**Headline** (123 of LinkedIn's 220 characters):
 
-> AI · ML · Software Engineering — I build intelligent systems from data to model to
-> production
+> AI · ML · Software Engineering | MLOps, model monitoring & drift detection (PSI/KS) |
+> LLM agents | Evidence-first portfolio
+
+Opens with `identity:positioning` verbatim, as every surface must.
+
+Replaces "AI · ML · Software Engineering — I build intelligent systems from data to model
+to production", which failed on two counts. It carried the corpus's only unevidenced
+capability claim onto a surface with no badge, legend, or trace to qualify it — the same
+objection that decided the GitHub bio, and stronger here, since LinkedIn has no evidence
+apparatus at all. It was also the wrong use of the field: the headline is the most heavily
+weighted term in recruiter search, and "I build intelligent systems" matches nothing a
+recruiter types.
+
+The replacement names work rather than titles, and every term traces to evidence: drift
+and monitoring to the MLOps governance dashboard, agents to the Steward ADK orchestrator.
+No job title is claimed — the professional role at Cardstack was data and cloud
+engineering, so "MLOps Engineer" or "ML Engineer" as a title would be an overclaim the
+rest of the corpus refuses to make.
 
 ## Identity hygiene
 

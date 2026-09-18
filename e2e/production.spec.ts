@@ -145,7 +145,8 @@ test.describe("accessibility audit", () => {
     await expect(
       page.getByRole("heading", { level: 1, name: "Anish Akode" }),
     ).toBeVisible();
-    await expect(page.getByText("CV", { exact: true })).toBeHidden();
+    // Scope to the page header — exact text "CV" also matches the nav link.
+    await expect(page.locator("main > header.no-print")).toBeHidden();
     await expect(
       page.getByText(/Browser-printable summary grounded in the Evidence Graph/i),
     ).toBeHidden();

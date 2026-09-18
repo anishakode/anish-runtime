@@ -141,7 +141,14 @@ test.describe("accessibility audit", () => {
     await expect(page.locator("header.site-chrome")).toBeHidden();
     await expect(page.getByRole("link", { name: "Skip to content" })).toBeHidden();
     await expect(page.locator("#main")).toBeVisible();
-    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    // Route chrome ("CV" + how-to-print lede) is no-print; the document h1 is the name.
+    await expect(
+      page.getByRole("heading", { level: 1, name: "Anish Akode" }),
+    ).toBeVisible();
+    await expect(page.getByText("CV", { exact: true })).toBeHidden();
+    await expect(
+      page.getByText(/Browser-printable summary grounded in the Evidence Graph/i),
+    ).toBeHidden();
   });
 
   test("reduced motion settles the landing without staged compilation", async ({

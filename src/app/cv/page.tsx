@@ -28,6 +28,7 @@ export default function CvPage() {
       title="CV"
       description="Browser-printable summary grounded in the Evidence Graph. Use your browser’s print dialog for a PDF."
       headerClassName="no-print"
+      titleAs="p"
     >
       <div className="mb-8 no-print">
         <PrintButton />
@@ -35,7 +36,7 @@ export default function CvPage() {
 
       <article className="cv-document space-y-10">
         <header className="space-y-2 border-b border-[var(--stroke)] pb-6">
-          <h2 className="text-2xl font-semibold tracking-tight">{profile.name}</h2>
+          <h1 className="text-2xl font-semibold tracking-tight">{profile.name}</h1>
           <p className="text-[var(--muted)]">
             {profile.positioning} · {profile.location}
           </p>

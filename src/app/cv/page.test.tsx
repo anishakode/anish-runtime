@@ -13,8 +13,10 @@ function hiddenInPrint(element: HTMLElement | null): boolean {
 describe("CvPage", () => {
   it("prints graph-backed identity, experience metrics, and selected projects", () => {
     render(<CvPage />);
-    expect(screen.getByRole("heading", { name: "CV" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Anish Akode" })).toBeInTheDocument();
+    expect(screen.getByText("CV", { selector: ".page-title" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { level: 1, name: "Anish Akode" }),
+    ).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: /Print \/ Save as PDF/i }),
     ).toBeInTheDocument();
@@ -67,13 +69,13 @@ describe("CvPage", () => {
       screen.getByText(/Browser-printable summary grounded in the Evidence Graph/i),
     ).toBeInTheDocument();
     expect(hiddenInPrint(screen.getByText(/Browser-printable summary/i))).toBe(true);
-    expect(hiddenInPrint(screen.getByRole("heading", { name: "CV" }))).toBe(true);
+    expect(hiddenInPrint(screen.getByText("CV", { selector: ".page-title" }))).toBe(true);
     expect(
       hiddenInPrint(screen.getByRole("button", { name: /Print \/ Save as PDF/i })),
     ).toBe(true);
-    expect(hiddenInPrint(screen.getByRole("heading", { name: "Anish Akode" }))).toBe(
-      false,
-    );
+    expect(
+      hiddenInPrint(screen.getByRole("heading", { level: 1, name: "Anish Akode" })),
+    ).toBe(false);
 
     for (const metric of [
       /30% fewer API integration defects/i,

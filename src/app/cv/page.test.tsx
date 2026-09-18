@@ -58,14 +58,22 @@ describe("CvPage", () => {
     }
   });
 
-  it("hides only the print control itself from the printed page", () => {
-    // A print button inside a PDF is noise; an evidence label is not. This is
-    // the line the earlier version got wrong.
+  it("keeps page chrome and print controls out of the PDF", () => {
+    // On screen the lede explains how to print; in the PDF it must not appear —
+    // the document should open on the person's name.
     render(<CvPage />);
 
     expect(
+      screen.getByText(/Browser-printable summary grounded in the Evidence Graph/i),
+    ).toBeInTheDocument();
+    expect(hiddenInPrint(screen.getByText(/Browser-printable summary/i))).toBe(true);
+    expect(hiddenInPrint(screen.getByRole("heading", { name: "CV" }))).toBe(true);
+    expect(
       hiddenInPrint(screen.getByRole("button", { name: /Print \/ Save as PDF/i })),
     ).toBe(true);
+    expect(hiddenInPrint(screen.getByRole("heading", { name: "Anish Akode" }))).toBe(
+      false,
+    );
 
     for (const metric of [
       /30% fewer API integration defects/i,

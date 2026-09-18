@@ -4,10 +4,13 @@ import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 export function PageShell({
   title,
   description,
+  headerClassName,
   children,
 }: {
   title: string;
   description?: string;
+  /** e.g. `no-print` on /cv so the page chrome does not enter the PDF. */
+  headerClassName?: string;
   children: ReactNode;
 }) {
   return (
@@ -22,7 +25,11 @@ export function PageShell({
           header was max-w-3xl (48rem), so a long title ran past its description
           — the same ragged right edge the idle hero had.
         */}
-        <header className="mb-10 max-w-3xl space-y-3">
+        <header
+          className={["mb-10 max-w-3xl space-y-3", headerClassName]
+            .filter(Boolean)
+            .join(" ")}
+        >
           <h1 className="page-title">{title}</h1>
           {description ? <p className="page-lede max-w-none">{description}</p> : null}
         </header>

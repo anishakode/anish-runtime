@@ -27,6 +27,7 @@ export default function CvPage() {
     <PageShell
       title="CV"
       description="Browser-printable summary grounded in the Evidence Graph. Use your browser’s print dialog for a PDF."
+      headerClassName="no-print"
     >
       <div className="mb-8 no-print">
         <PrintButton />
